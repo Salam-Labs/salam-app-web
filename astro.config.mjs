@@ -8,7 +8,15 @@ import compress from "astro-compress";
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), image(), sitemap(), compress(), solidJs()],
+  integrations: [
+    tailwind(),
+    image({
+      serviceEntryPoint: "@astrojs/image/sharp",
+    }),
+    sitemap(),
+    compress(),
+    solidJs(),
+  ],
   vite: {
     ssr: {
       external: ["svgo"],
