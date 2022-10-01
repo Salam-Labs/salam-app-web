@@ -6,9 +6,9 @@ export const Modal = () => {
   let btnEl;
   let btnSaveEl;
 
-  const onClickClose = () => {
-    setOpen(false);
-  };
+  // const onClickClose = () => {
+  //   setOpen(false);
+  // };
 
   const onClickOverlay = (e) => {
     if (e.target !== e.currentTarget) return;
@@ -22,7 +22,7 @@ export const Modal = () => {
         class="w-52 rounded-md border border-transparent px-5 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 sm:px-6"
         ref={btnEl}
       >
-        OPEN MODAL
+        Watch Trailer
       </button>
 
       <Dismiss
@@ -45,31 +45,6 @@ export const Modal = () => {
             tabindex="-1"
             ref={btnSaveEl}
           >
-            {/* <iframe
-              frameborder="0"
-              scrolling="no"
-              marginheight="0"
-              marginwidth="0"
-              width="788.54"
-              height="443"
-              type="text/html"
-              src="https://www.youtube.com/embed/RpmqwNaGMyM?autoplay=1&fs=1&iv_load_policy=3&showinfo=1&rel=0&cc_load_policy=0&start=0&end=0&origin=https://youtubeembedcode.com"
-            >
-              <div>
-                <small>
-                  <a href="https://youtubeembedcode.com/de/">
-                    youtubeembedcode.com/de/
-                  </a>
-                </small>
-              </div>
-              <div>
-                <small>
-                  <a href="https://bettingutanspelpaus.co/">
-                    bettingutanspelpaus
-                  </a>
-                </small>
-              </div>
-            </iframe> */}
             <iframe
               src="https://www.youtube-nocookie.com/embed/RpmqwNaGMyM?vq=hd1080&modestbranding=1"
               width="800"
