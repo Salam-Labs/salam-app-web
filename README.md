@@ -1,4 +1,4 @@
-# Welcome to [Salam Labs (beta)](https://https://starlit-dusk-920033.netlify.app/)
+# Welcome to [Salam Labs (beta)](https://starlit-dusk-920033.netlify.app/)
 
 This is a beta website. The outcome of this will result in [salamlabs.io](https://salamlabs.io)
 
