@@ -60,7 +60,8 @@ import IconButton from "../elements/IconButton.astro";
           </IconButton>
         </div>
       </div>
-      <div class="-mr-2 flex sm:hidden">
+      <div id="menuButton" class="-mr-2 flex sm:hidden">
+        <!-- menuButton used for dropdowns -->
         <!-- Mobile menu button -->
         <IconButton
           ><p slot="text">Menu</p>
@@ -80,3 +81,10 @@ import IconButton from "../elements/IconButton.astro";
  
   </div>
 </nav>
+
+
+<script>
+  document.getElementById("menuButton").onclick = function () {
+  console.log(2);
+  };
+</script>
