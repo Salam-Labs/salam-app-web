@@ -81,8 +81,8 @@ import IconButton from "../elements/IconButton.astro";
       <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
       <a
         href="#"
-        class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
-        >Home</a
+        class="text-aquamarine hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-semibold"
+        >Salam App</a
       >
       <a
         href="#"
@@ -109,8 +109,18 @@ import IconButton from "../elements/IconButton.astro";
 </nav>
 
 <script>
-  document.getElementById("menuButton").onclick = function () {
-  console.log ("mobile menu is clicked")
-  document.getElementById("mobile-menu").classList.remove("hidden")
+  const menuButton = document.getElementById("menuButton")
+  const mobileMenu = document.getElementById("mobile-menu")
+  let   mobileNavbarHidden = mobileMenu.classList.contains("hidden")
+  menuButton.onclick = function () {  //button is clicked in mobile viw
+     if (mobileNavbarHidden === true){ //the nav bar is hidden
+        document.getElementById("mobile-menu").classList.remove("hidden") //remove class hidden too show the menu
+    }
+
+    else {
+      document.getElementById("mobile-menu").classList.add("hidden") //else is clicked add the class hidden to rmove
+    }
+
+
   }
 </script>
