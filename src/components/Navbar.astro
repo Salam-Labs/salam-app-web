@@ -76,15 +76,15 @@ import IconButton from "../elements/IconButton.astro";
   </div>
 
   <!-- Mobile menu, show/hide based on menu state. -->
-  <div class="sm:hidden" id="mobile-menu">
+  <div class="sm:hidden hidden" id="mobile-menu">
 
  
   </div>
 </nav>
 
-
 <script>
   document.getElementById("menuButton").onclick = function () {
-  console.log(2);
-  };
+  console.log ("mobile menu is clicked")
+  document.getElementById("mobile-menu").classList.remove("hidden")
+  }
 </script>
