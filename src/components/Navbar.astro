@@ -109,18 +109,14 @@ import IconButton from "../elements/IconButton.astro";
 </nav>
 
 <script>
-  const menuButton = document.getElementById("menuButton")
-  const mobileMenu = document.getElementById("mobile-menu")
-  let   mobileNavbarHidden = mobileMenu.classList.contains("hidden")
-  menuButton.onclick = function () {  //button is clicked in mobile viw
-     if (mobileNavbarHidden === true){ //the nav bar is hidden
-        document.getElementById("mobile-menu").classList.remove("hidden") //remove class hidden too show the menu
-    }
+const menuButton =document.getElementById("menuButton");
+const mobileMenu = document.getElementById("mobile-menu");
 
-    else {
-      document.getElementById("mobile-menu").classList.add("hidden") //else is clicked add the class hidden to rmove
-    }
+const menuToggle =  () =>{
+  console.log ("mobile menu toggle");
+  mobileMenu.classList.toggle("hidden");
+}
 
 
-  }
+menuButton.onclick = ()=> {menuToggle();}
 </script>
