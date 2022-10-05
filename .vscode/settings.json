@@ -10,5 +10,12 @@
   "[astro]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "conventionalCommits.scopes": ["main", "styles", "components", "hero", "deps"]
+  "conventionalCommits.scopes": [
+    "main",
+    "styles",
+    "components",
+    "hero",
+    "deps",
+    "assets"
+  ]
 }
