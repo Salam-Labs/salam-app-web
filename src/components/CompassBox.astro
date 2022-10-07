@@ -1,0 +1,27 @@
+---
+import CompassCircle from "@elements/CompassCircle.astro";
+import Kaaba from "../elements/Kaaba.astro";
+---
+
+<div class="h-32 w-32" id="kaaba">
+  <Kaaba />
+</div>
+<div style="height: 700px; width:700px" id="compass_circle">
+  <CompassCircle />
+</div>
+
+<script>
+  import anime from "animejs";
+
+  const path = anime.path("#compass_circle > svg path");
+
+  anime({
+    targets: "#kaaba > svg ",
+    translateX: path("x"),
+    translateY: path("y"),
+    rotate: path("angle"),
+    easing: "linear",
+    duration: 2000,
+    loop: true,
+  });
+</script>
