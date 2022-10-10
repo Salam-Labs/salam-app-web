@@ -3,25 +3,42 @@ import CompassCircle from "@elements/CompassCircle.astro";
 import Kaaba from "../elements/Kaaba.astro";
 ---
 
-<div class="h-32 w-32" id="kaaba">
-  <Kaaba />
-</div>
-<div style="height: 700px; width:700px" id="compass_circle">
-  <CompassCircle />
+<div class="p-10 m-52">
+  <div class="-translate-x-10 translate-y-10 h-32 w-32 z-20" id="kaaba">
+    <Kaaba />
+  </div>
+  <div
+    style="height: 700px; width:700px"
+    id="compass_circle"
+    class="text-white z-10"
+  >
+    <CompassCircle />
+  </div>
+  <!-- <div style="height: 300; width:300px"><CompassNeedle /></div> -->
 </div>
 
 <script>
   import anime from "animejs";
 
-  const path = anime.path("#compass_circle > svg path");
+  const path = anime.path("#compass_inner_circle");
 
   anime({
-    targets: "#kaaba > svg ",
+    targets: "#kaaba > svg",
     translateX: path("x"),
     translateY: path("y"),
     rotate: path("angle"),
     easing: "linear",
-    duration: 2000,
+    duration: 10_000,
+    loop: true,
+  });
+
+  anime({
+    targets: "#compass_circle > svg > svg",
+    translateX: path("x"),
+    translateY: path("y"),
+    rotate: path("angle"),
+    easing: "linear",
+    duration: 10_000,
     loop: true,
   });
 </script>
