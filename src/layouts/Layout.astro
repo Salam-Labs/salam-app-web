@@ -1,5 +1,7 @@
 ---
-import Navbar from "../components/Navbar.astro";
+import IconButton from "@elements/IconButton.astro";
+import Icon from "astro-icon";
+import { NavBar } from "../solid/Navbar.jsx";
 
 export interface Props {
   title: string;
@@ -19,7 +21,25 @@ const { title } = Astro.props as Props;
     /><meta content={Astro.generator} name="generator" /><title>{title}</title>
   </head>
   <body class="bg-smoke-400">
-    <Navbar title="Salam App" />
+    <NavBar client:load>
+      <IconButton slot="get_app_btn"
+        ><p slot="text">Salam App</p>
+        <div slot="icon" class="flex">
+          <Icon name="file-icons:apple" height="20px" />
+
+          <Icon name="uil:android" height="20px" />
+        </div>
+      </IconButton>
+      <Icon
+        name="bi:moon-stars-fill"
+        height="30px"
+        class="text-swans-50"
+        slot="salam_app_logo"
+      />
+      <Icon name="ri:menu-line" slot="navbar_close" height="20px" />
+      <Icon name="ri:close-fill" slot="navbar_open" height="20px" />
+    </NavBar>
+
     <slot />
   </body>
 </html>
