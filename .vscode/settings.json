@@ -17,6 +17,7 @@
     "hero",
     "deps",
     "assets",
-    "compass"
+    "compass",
+    "team"
   ]
 }

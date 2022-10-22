@@ -36,6 +36,6 @@
     "strict": true,
     // Enable top-level await, and other modern ESM features.
     "target": "ESNext",
-    "types": ["@astrojs/image/client"]
+    "types": ["@astrojs/image/client", "unplugin-icons/types/astro"]
   }
 }

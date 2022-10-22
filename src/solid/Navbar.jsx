@@ -24,7 +24,7 @@ export const NavBar = (props) => {
             <div class="hidden sm:block sm:ml-6">
               <div class="flex space-x-4 justify-end items-center">
                 <a
-                  href="#"
+                  href="/"
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
                 >
                   HOME
@@ -52,6 +52,12 @@ export const NavBar = (props) => {
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
                 >
                   CONTACT
+                </a>
+                <a
+                  href="/team"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                >
+                  TEAM
                 </a>
                 <div class="px-3">{props.get_app_btn}</div>
               </div>
