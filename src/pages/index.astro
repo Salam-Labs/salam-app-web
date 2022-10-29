@@ -3,6 +3,7 @@ import Features from "@components/Features.astro";
 import Hero from "@components/Hero.astro";
 import Stats from "@components/Stats.astro";
 import Layout from "@layouts/Layout.astro";
+import { Testimonials } from "src/solid/Testimonials";
 ---
 
 <Layout title="Welcome to Salam App.">
@@ -11,6 +12,7 @@ import Layout from "@layouts/Layout.astro";
   <Features />
   <!-- <CompassBox /> -->
   <Stats />
+  <Testimonials client:idle />
 </Layout>
 
 <style>
