@@ -13,7 +13,7 @@ import CiTwitter from "~icons/ci/twitter";
     <div class="container px-5 py-24 mx-auto">
       <div class="flex flex-col text-center w-full mb-20">
         <h1
-          class="text-2xl font-medium title-font mb-4 text-white tracking-widest"
+          class="text-3xl font-extrabold tracking-tight title-font mb-4 text-white sm:text-4xl"
         >
           OUR TEAM!
         </h1>
@@ -22,10 +22,8 @@ import CiTwitter from "~icons/ci/twitter";
         </p>
       </div>
       <div class="flex flex-wrap -m-4">
-        <div class="p-4 lg:w-1/2">
-          <div
-            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
-          >
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
             <Image
               class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
               src={SparkImage}
@@ -33,7 +31,36 @@ import CiTwitter from "~icons/ci/twitter";
               width={200}
               height={200}
             />
-            <div class="flex-grow sm:pl-8">
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                Alper Kamu
+              </h2>
+              <h3 class="text-gray-400 mb-3">UI Developer</h3>
+              <p class="mb-4">
+                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
+                vaporware.
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiTwitter />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiLinkedin />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <Image
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              src={SparkImage}
+              alt=""
+              width={200}
+              height={200}
+            />
+            <div class="w-full mt-10">
               <h2 class="title-font font-medium text-lg text-white">
                 Holden Caulfield
               </h2>
@@ -53,10 +80,8 @@ import CiTwitter from "~icons/ci/twitter";
             </div>
           </div>
         </div>
-        <div class="p-4 lg:w-1/2">
-          <div
-            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
-          >
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
             <Image
               class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
               src={SparkImage}
@@ -64,38 +89,7 @@ import CiTwitter from "~icons/ci/twitter";
               width={200}
               height={200}
             />
-            <div class="flex-grow sm:pl-8">
-              <h2 class="title-font font-medium text-lg text-white">
-                Alper Kamu
-              </h2>
-              <h3 class="text-gray-400 mb-3">Designer</h3>
-              <p class="mb-4">
-                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
-                vaporware.
-              </p>
-              <span class="inline-flex">
-                <a class="text-white">
-                  <CiTwitter />
-                </a>
-                <a class="ml-2 text-white">
-                  <CiLinkedin />
-                </a>
-              </span>
-            </div>
-          </div>
-        </div>
-        <div class="p-4 lg:w-1/2">
-          <div
-            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
-          >
-            <Image
-              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-              src={SparkImage}
-              alt=""
-              width={200}
-              height={200}
-            />
-            <div class="flex-grow sm:pl-8">
+            <div class="w-full mt-10">
               <h2 class="title-font font-medium text-lg text-white">
                 Atticus Finch
               </h2>
@@ -115,10 +109,8 @@ import CiTwitter from "~icons/ci/twitter";
             </div>
           </div>
         </div>
-        <div class="p-4 lg:w-1/2">
-          <div
-            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
-          >
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
             <Image
               class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
               src={SparkImage}
@@ -126,11 +118,11 @@ import CiTwitter from "~icons/ci/twitter";
               width={200}
               height={200}
             />
-            <div class="flex-grow sm:pl-8">
+            <div class="w-full mt-10">
               <h2 class="title-font font-medium text-lg text-white">
                 Henry Letham
               </h2>
-              <h3 class="text-gray-400 mb-3">Designer</h3>
+              <h3 class="text-gray-500 mb-3">UI Developer</h3>
               <p class="mb-4">
                 DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
                 vaporware.
@@ -146,18 +138,144 @@ import CiTwitter from "~icons/ci/twitter";
             </div>
           </div>
         </div>
+        <div class="flex flex-wrap -m-4 mt-40">
+          <div class="p-4 lg:w-1/2">
+            <div
+              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+            >
+              <Image
+                class="mx-auto h-40 w-40 rounded-full xl:w-40 xl:h-40"
+                src={SparkImage}
+                alt=""
+                width={200}
+                height={200}
+              />
+              <div class="flex-g mt-10row sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-white">
+                  Holden Caulfield
+                </h2>
+                <h3 class="text-gray-400 mb-3">UI Developer</h3>
+                <p class="mb-4">
+                  DIY tote bag drinking vinegar cronut adaptogen squid fanny
+                  pack vaporware.
+                </p>
+                <span class="inline-flex">
+                  <a class="text-white">
+                    <CiTwitter />
+                  </a>
+                  <a class="ml-2 text-white">
+                    <CiLinkedin />
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div
+              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+            >
+              <Image
+                class="mx-auto h-40 w-40 rounded-full xl:w-40 xl:h-40"
+                src={SparkImage}
+                alt=""
+                width={200}
+                height={200}
+              />
+              <div class="flex-g mt-10row sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-white">
+                  Alper Kamu
+                </h2>
+                <h3 class="text-gray-400 mb-3">Designer</h3>
+                <p class="mb-4">
+                  DIY tote bag drinking vinegar cronut adaptogen squid fanny
+                  pack vaporware.
+                </p>
+                <span class="inline-flex">
+                  <a class="text-white">
+                    <CiTwitter />
+                  </a>
+                  <a class="ml-2 text-white">
+                    <CiLinkedin />
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div
+              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+            >
+              <Image
+                class="mx-auto h-40 w-40 rounded-full xl:w-40 xl:h-40"
+                src={SparkImage}
+                alt=""
+                width={200}
+                height={200}
+              />
+              <div class="flex-g mt-10row sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-white">
+                  Atticus Finch
+                </h2>
+                <h3 class="text-gray-400 mb-3">UI Developer</h3>
+                <p class="mb-4">
+                  DIY tote bag drinking vinegar cronut adaptogen squid fanny
+                  pack vaporware.
+                </p>
+                <span class="inline-flex">
+                  <a class="text-white">
+                    <CiTwitter />
+                  </a>
+                  <a class="ml-2 text-white">
+                    <CiLinkedin />
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class="p-4 lg:w-1/2">
+            <div
+              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+            >
+              <Image
+                class="mx-auto h-40 w-40 rounded-full xl:w-40 xl:h-40"
+                src={SparkImage}
+                alt=""
+                width={200}
+                height={200}
+              />
+              <div class="flex-g mt-10row sm:pl-8">
+                <h2 class="title-font font-medium text-lg text-white">
+                  Henry Letham
+                </h2>
+                <h3 class="text-gray-400 mb-3">Designer</h3>
+                <p class="mb-4">
+                  DIY tote bag drinking vinegar cronut adaptogen squid fanny
+                  pack vaporware.
+                </p>
+                <span class="inline-flex">
+                  <a class="text-white">
+                    <CiTwitter />
+                  </a>
+                  <a class="ml-2 text-white">
+                    <CiLinkedin />
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
+
+  <style>
+    @tailwind base; /* Preflight will be injected here */
+
+    @tailwind components;
+
+    @tailwind utilities;
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
 </Layout>
-
-<style>
-  @tailwind base; /* Preflight will be injected here */
-
-  @tailwind components;
-
-  @tailwind utilities;
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
