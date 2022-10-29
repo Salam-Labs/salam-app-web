@@ -9,391 +9,146 @@ import CiTwitter from "~icons/ci/twitter";
 
 <Layout title="Welcome to Salam App.">
   <!-- This example requires Tailwind CSS v2.0+ -->
-  <div class="bg-white">
-    <div
-      class="max-w-7xl mx-auto py-12 px-4 text-center sm:px-6 lg:px-8 lg:py-24"
-    >
-      <div class="space-y-12">
-        <div class="space-y-5 sm:mx-auto sm:max-w-xl sm:space-y-4 lg:max-w-5xl">
-          <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">
-            Meet our team
-          </h2>
-          <p class="text-xl text-gray-500">
-            Muslims, from across the world, for the sake of Islam!
-          </p>
-        </div>
-        <ul
-          role="list"
-          class="mx-auto space-y-16 sm:grid sm:grid-cols-2 sm:gap-16 sm:space-y-0 lg:grid-cols-3 lg:max-w-5xl"
+  <section class="text-white body-font">
+    <div class="container px-5 py-24 mx-auto">
+      <div class="flex flex-col text-center w-full mb-20">
+        <h1
+          class="text-2xl font-medium title-font mb-4 text-white tracking-widest"
         >
-          <li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          OUR TEAM!
+        </h1>
+        <p class="lg:w-2/3 mx-auto leading-relaxed text-base">
+          Muslims, from across the world, for the sake of Islam!
+        </p>
+      </div>
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 lg:w-1/2">
+          <div
+            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+          >
+            <Image
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              src={SparkImage}
+              alt=""
+              width={200}
+              height={200}
+            />
+            <div class="flex-grow sm:pl-8">
+              <h2 class="title-font font-medium text-lg text-white">
+                Holden Caulfield
+              </h2>
+              <h3 class="text-gray-400 mb-3">UI Developer</h3>
+              <p class="mb-4">
+                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
+                vaporware.
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiTwitter />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiLinkedin />
+                </a>
+              </span>
             </div>
-          </li>
-          <li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/2">
+          <div
+            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+          >
+            <Image
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              src={SparkImage}
+              alt=""
+              width={200}
+              height={200}
+            />
+            <div class="flex-grow sm:pl-8">
+              <h2 class="title-font font-medium text-lg text-white">
+                Alper Kamu
+              </h2>
+              <h3 class="text-gray-400 mb-3">Designer</h3>
+              <p class="mb-4">
+                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
+                vaporware.
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiTwitter />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiLinkedin />
+                </a>
+              </span>
             </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/2">
+          <div
+            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+          >
+            <Image
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              src={SparkImage}
+              alt=""
+              width={200}
+              height={200}
+            />
+            <div class="flex-grow sm:pl-8">
+              <h2 class="title-font font-medium text-lg text-white">
+                Atticus Finch
+              </h2>
+              <h3 class="text-gray-400 mb-3">UI Developer</h3>
+              <p class="mb-4">
+                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
+                vaporware.
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiTwitter />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiLinkedin />
+                </a>
+              </span>
             </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/2">
+          <div
+            class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
+          >
+            <Image
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              src={SparkImage}
+              alt=""
+              width={200}
+              height={200}
+            />
+            <div class="flex-grow sm:pl-8">
+              <h2 class="title-font font-medium text-lg text-white">
+                Henry Letham
+              </h2>
+              <h3 class="text-gray-400 mb-3">Designer</h3>
+              <p class="mb-4">
+                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
+                vaporware.
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiTwitter />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiLinkedin />
+                </a>
+              </span>
             </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li><li>
-            <div class="space-y-6">
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="space-y-2">
-                <div class="text-lg leading-6 font-medium space-y-1">
-                  <h3>Spark</h3>
-                  <p class="text-emerald-500">Web Manager</p>
-                </div>
-                <ul role="list" class="flex justify-center space-x-5">
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">Twitter</span>
-                      <CiTwitter />
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="text-gray-400 hover:text-gray-500">
-                      <span class="sr-only">LinkedIn</span>
-                      <CiLinkedin />
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </li>
-
-          <!-- More people... -->
-        </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 </Layout>
 
 <style>
