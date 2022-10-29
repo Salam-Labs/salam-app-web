@@ -59,6 +59,12 @@ export const NavBar = (props) => {
                 >
                   TEAM
                 </a>
+                <a
+                  href="/careers"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                >
+                  CAREER
+                </a>
                 <div class="px-3">{props.get_app_btn}</div>
               </div>
             </div>
