@@ -18,6 +18,7 @@
     "deps",
     "assets",
     "compass",
-    "team"
+    "team",
+    "footer"
   ]
 }
