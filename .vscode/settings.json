@@ -19,6 +19,7 @@
     "assets",
     "compass",
     "team",
-    "footer"
+    "footer",
+    "ci"
   ]
 }
