@@ -26,23 +26,23 @@ specifiers:
   prettier: ^2.7.1
   prettier-plugin-astro: ^0.7.0
   solid-dismiss: ^1.3.1
-  solid-js: ^1.6.0
+  solid-js: ^1.6.1
   tailwindcss: ^3.2.1
   unplugin-icons: ^0.14.12
 
 dependencies:
   '@formkit/auto-animate': 1.0.0-beta.3
-  '@motionone/solid': 10.14.2_solid-js@1.6.0
+  '@motionone/solid': 10.14.2_solid-js@1.6.1
   animejs: 3.2.1
   astro-icon: 0.8.0
   motion: 10.14.2
-  solid-dismiss: 1.3.1_solid-js@1.6.0
+  solid-dismiss: 1.3.1_solid-js@1.6.1
   tailwindcss: 3.2.1
 
 devDependencies:
   '@astrojs/image': 0.11.0
   '@astrojs/sitemap': 1.0.0
-  '@astrojs/solid-js': 1.2.2_solid-js@1.6.0
+  '@astrojs/solid-js': 1.2.2_solid-js@1.6.1
   '@astrojs/tailwind': 2.1.1_tailwindcss@3.2.1
   '@iconify/json': 2.1.130
   '@tailwindcss/typography': 0.5.7_tailwindcss@3.2.1
@@ -59,7 +59,7 @@ devDependencies:
   lint-staged: 13.0.3
   prettier: 2.7.1
   prettier-plugin-astro: 0.7.0
-  solid-js: 1.6.0
+  solid-js: 1.6.1
   unplugin-icons: 0.14.12
 
 packages:
@@ -197,14 +197,14 @@ packages:
       zod: 3.18.0
     dev: true
 
-  /@astrojs/solid-js/1.2.2_solid-js@1.6.0:
+  /@astrojs/solid-js/1.2.2_solid-js@1.6.1:
     resolution: {integrity: sha512-kC16HKo4LVQfecfRHqRsqaVMQ7wrziege0YieZipuY3HvsX4l3i4O+QCnyHQsJ9W5MMdUvFAtf1IP1nJAdvisA==}
     engines: {node: ^14.18.0 || >=16.12.0}
     peerDependencies:
       solid-js: ^1.4.3
     dependencies:
       babel-preset-solid: 1.5.0
-      solid-js: 1.6.0
+      solid-js: 1.6.1
       vitefu: 0.1.0
     transitivePeerDependencies:
       - '@babel/core'
@@ -843,15 +843,15 @@ packages:
       tslib: 2.4.0
     dev: false
 
-  /@motionone/solid/10.14.2_solid-js@1.6.0:
+  /@motionone/solid/10.14.2_solid-js@1.6.1:
     resolution: {integrity: sha512-dz/bWsKMi2R7WJfymRB5hQfeKrSfNDRf5MgBMaRnEU9bQFrXWAidKd3KMTCBxNqugM946tCN5x6NTP4+mD9KmQ==}
     peerDependencies:
       solid-js: ^1.4.1
     dependencies:
       '@motionone/dom': 10.14.2
       '@motionone/utils': 10.14.0
-      '@solid-primitives/props': 2.2.2_solid-js@1.6.0
-      solid-js: 1.6.0
+      '@solid-primitives/props': 2.2.2_solid-js@1.6.1
+      solid-js: 1.6.1
       tslib: 2.4.0
     dev: false
 
@@ -2218,21 +2218,21 @@ packages:
       - typescript
     dev: true
 
-  /@solid-primitives/props/2.2.2_solid-js@1.6.0:
+  /@solid-primitives/props/2.2.2_solid-js@1.6.1:
     resolution: {integrity: sha512-vjRRoi/z3S2ylIJKCs+mN07oxDmt2S9gPCbTqkEx8jYHnvzocpt34UQdglLoSklTE6jI37JhW3g/Cs8Qr/peHg==}
     peerDependencies:
       solid-js: ^1.3.0
     dependencies:
-      '@solid-primitives/utils': 3.0.2_solid-js@1.6.0
-      solid-js: 1.6.0
+      '@solid-primitives/utils': 3.0.2_solid-js@1.6.1
+      solid-js: 1.6.1
     dev: false
 
-  /@solid-primitives/utils/3.0.2_solid-js@1.6.0:
+  /@solid-primitives/utils/3.0.2_solid-js@1.6.1:
     resolution: {integrity: sha512-LCU3tVrJmyRqJ0ocG5uCEuUNqmGkcAC+cWpDEE49AuvtehkdQfv4CfqvdNJgs3eoQRQhLOrVcgd1bHFJY4lsrQ==}
     peerDependencies:
       solid-js: ^1.4.1
     dependencies:
-      solid-js: 1.6.0
+      solid-js: 1.6.1
     dev: false
 
   /@tailwindcss/typography/0.5.7_tailwindcss@3.2.1:
@@ -9023,16 +9023,16 @@ packages:
       tslib: 2.4.0
     dev: true
 
-  /solid-dismiss/1.3.1_solid-js@1.6.0:
+  /solid-dismiss/1.3.1_solid-js@1.6.1:
     resolution: {integrity: sha512-wkiVf2ExaKp/tyi5trLdfQDdsWJp11STBUr0f7g8F73LICxI+0dirNX/ptnapsP+L7PJBKU3l5c4EUw/s7iAJg==}
     peerDependencies:
       solid-js: '1'
     dependencies:
-      solid-js: 1.6.0
+      solid-js: 1.6.1
     dev: false
 
-  /solid-js/1.6.0:
-    resolution: {integrity: sha512-db5s65ErgZnBhapPx77qauzul8akHlMCvirS+Y86U4abMa3uizMVNW9ql3UxbO0yMzMGNpFJwUiOlXmJCbwVpA==}
+  /solid-js/1.6.1:
+    resolution: {integrity: sha512-i8OmR419Hr0918Or6sm1ET/cgmxTtAB7Bdz/UwhZ7G2THixrvVSO3jd+C7YqMKKfVwmf8PJ2gUSbKE8NKv28GA==}
     dependencies:
       csstype: 3.1.0
 
