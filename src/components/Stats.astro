@@ -28,8 +28,10 @@
           </svg>
         </div>
 
-        <div class="ml-4">
-          <h2 class="font-semibold">574 Messages</h2>
+        <div class="ml-4 ">
+          <div class="flex">
+          <h2 class="font-semibold number-animate">129 </h2> <h2 class="font-semibold">&nbsp; golam</h2>
+          </div>
           <p class="mt-2 text-sm text-gray-500">Last opened 4 days ago</p>
         </div>
       </div>
@@ -55,8 +57,10 @@
           </svg>
         </div>
 
-        <div class="ml-4">
-          <h2 class="font-semibold">1823 Users</h2>
+        <div class="ml-4 ">
+          <div class="flex">
+          <h2 class="font-semibold number-animate">129 </h2>    <h2 class="font-semibold">&nbsp; golam</h2>
+          </div>
           <p class="mt-2 text-sm text-gray-500">Last checked 3 days ago</p>
         </div>
       </div>
@@ -81,8 +85,10 @@
           </svg>
         </div>
 
-        <div class="ml-4">
-          <h2 class="font-semibold">548 Posts</h2>
+        <div class="ml-4 ">
+          <div class="flex">
+          <h2 class="font-semibold number-animate">129 </h2>    <h2 class="font-semibold">&nbsp; golam</h2>
+          </div>
           <p class="mt-2 text-sm text-gray-500">Last authored 1 day ago</p>
         </div>
       </div>
@@ -107,11 +113,38 @@
           </svg>
         </div>
 
-        <div class="ml-4">
-          <h2 class="font-semibold">129 Comments</h2>
+        <div class="ml-4 ">
+          <div class="flex">
+          <h2 class="font-semibold number-animate">129 </h2>    <h2 class="font-semibold">&nbsp; golam</h2>
+          </div>
           <p class="mt-2 text-sm text-gray-500">Last commented 8 days ago</p>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<script>
+    import anime from "animejs";
+    // Don't forget to use the polyfill for forEach! :) 
+
+document.querySelectorAll('.number-animate').forEach( (el) => {
+  const endValue = el.getAttribute('data-end-value');
+  const incrementValue = el.getAttribute('data-increment');
+  const durationValue = el.getAttribute('data-duration');
+  
+  if (endValue) numberAnimation(el, endValue, incrementValue, durationValue);
+  
+});
+
+
+function numberAnimation(el, endValue, incrementor, duration) {
+  anime({
+    targets: el,
+    textContent: endValue,
+    round: incrementor ? 1/incrementor : 1/5,
+    easing: 'easeInOutQuad',
+    duration: duration ? duration : 4000,
+  });
+}
+</script>
