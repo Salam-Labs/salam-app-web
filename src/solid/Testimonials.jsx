@@ -1,4 +1,4 @@
-import avatarImage1 from "../../public/assets/profiles/spark.png";
+
 
 const testimonials = [
   [
