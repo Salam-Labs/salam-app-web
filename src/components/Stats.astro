@@ -22,41 +22,140 @@ import Icon from "astro-icon";
     >
       <div class="relative group shadow-sm w-64 cursor-pointer select-none">
         <div
-          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur-md opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"
+          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
         >
         </div>
         <div
-          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-black"
+          class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
         >
-          <div class="flex h-full w-full justify-center p-5 space-x-2 w-26">
-            <div
-              class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black"
-            >
-              <Icon name="ic:round-download" height="30px" />
-            </div>
-            <div
-              class="flex flex-1 text-white text-center justify-start items-center space-x-1"
-            >
-              <p
-                class="font-semibold number-animate w-10"
-                data-end-value="1500"
-                data-increment="10"
-                data-duration="2000"
+          <figure class="relative p-5 h-full w-full">
+            <div class="flex justify-center space-x-2 w-26">
+              <div
+                class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black"
               >
-                0
-              </p>
-              <p class="font-semibold">&nbsp; Downloads</p>
+                <Icon name="ic:round-download" height="30px" />
+              </div>
+              <div
+                class="flex flex-1 text-white text-center justify-start items-center space-x-1"
+              >
+                <p
+                  class="font-semibold number-animate w-10"
+                  data-end-value="1500"
+                  data-increment="10"
+                  data-duration="2000"
+                >
+                  0
+                </p>
+                <p class="font-semibold">&nbsp; Downloads</p>
+              </div>
             </div>
-          </div>
+          </figure>
         </div>
       </div>
+      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+        >
+        </div>
+        <div
+          class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
+        >
+          <figure class="relative p-5 h-full w-full">
+            <div class="flex justify-center space-x-2 w-26">
+              <div
+                class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
+              >
+                <Icon name="ic:sharp-star" height="30px" />
+              </div>
+              <div
+                class="flex flex-1 text-white text-center justify-start items-center space-x-1"
+              >
+                <p
+                  class="font-semibold number-animate w-10"
+                  data-end-value="4.8"
+                  data-increment=".1"
+                  data-duration="2000"
+                >
+                  0
+                </p>
+                <p class="font-semibold">&nbsp; Rating</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+        >
+        </div>
+        <div
+          class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
+        >
+          <figure class="relative p-5 h-full w-full">
+            <div class="flex justify-center space-x-2 w-26">
+              <div
+                class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black"
+              >
+                <Icon name="ic:baseline-reviews" height="30px" />
+              </div>
+              <div
+                class="flex flex-1 text-white text-center justify-start items-center space-x-1"
+              >
+                <p
+                  class="font-semibold number-animate w-10"
+                  data-end-value="300"
+                  data-increment="10"
+                  data-duration="2000"
+                >
+                  0
+                </p>
+                <p class="font-semibold">&nbsp; Reviews</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
+        <div
+          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
+        >
+        </div>
+        <div
+          class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
+        >
+          <figure class="relative p-5 h-full w-full">
+            <div class="flex justify-center space-x-2 w-26">
+              <div
+                class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
+              >
+                <Icon name="fluent:people-community-24-filled" height="30px" />
+              </div>
+              <div
+                class="flex flex-1 text-white text-center justify-start items-center space-x-1"
+              >
+                <p
+                  class="font-semibold number-animate w-10"
+                  data-end-value="15000"
+                  data-increment="1000"
+                  data-duration="2000"
+                >
+                  0
+                </p>
+                <p class="font-semibold">&nbsp; Community</p>
+              </div>
+            </div>
+          </figure>
+        </div>
+      </div>
+      <!--       
       <div class="relative group shadow-sm w-64 cursor-pointer select-none">
         <div
           class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur-md opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"
         >
         </div>
         <div
-          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-black"
+          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-gray-600"
         >
           <div class="flex h-full w-full justify-center p-5 space-x-2 w-26">
             <div
@@ -86,7 +185,7 @@ import Icon from "astro-icon";
         >
         </div>
         <div
-          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-black"
+          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-gray-600"
         >
           <div class="flex h-full w-full justify-center p-5 space-x-2 w-26">
             <div
@@ -116,7 +215,7 @@ import Icon from "astro-icon";
         >
         </div>
         <div
-          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-black"
+          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-gray-600"
         >
           <div class="flex h-full w-full justify-center p-5 space-x-2 w-26">
             <div
@@ -140,30 +239,32 @@ import Icon from "astro-icon";
           </div>
         </div>
       </div>
+    </div> -->
     </div>
   </div>
-</div>
 
-<script>
-  import anime from "animejs";
-  // Don't forget to use the polyfill for forEach! :)
+  <script>
+    import anime from "animejs";
+    // Don't forget to use the polyfill for forEach! :)
 
-  document.querySelectorAll(".number-animate").forEach((el) => {
-    const endValue = el.getAttribute("data-end-value");
-    const incrementValue = el.getAttribute("data-increment");
-    const durationValue = el.getAttribute("data-duration");
+    document.querySelectorAll(".number-animate").forEach((el) => {
+      const endValue = el.getAttribute("data-end-value");
+      const incrementValue = el.getAttribute("data-increment");
+      const durationValue = el.getAttribute("data-duration");
 
-    if (endValue) numberAnimation(el, endValue, incrementValue, durationValue);
-  });
-
-  // @ts-ignore
-  function numberAnimation(el, endValue, incrementor, duration) {
-    anime({
-      targets: el,
-      textContent: endValue,
-      round: incrementor ? 1 / incrementor : 1 / 5,
-      easing: "easeInOutQuad",
-      duration: duration ? duration : 4000,
+      if (endValue)
+        numberAnimation(el, endValue, incrementValue, durationValue);
     });
-  }
-</script>
+
+    // @ts-ignore
+    function numberAnimation(el, endValue, incrementor, duration) {
+      anime({
+        targets: el,
+        textContent: endValue,
+        round: incrementor ? 1 / incrementor : 1 / 5,
+        easing: "easeInOutQuad",
+        duration: duration ? duration : 4000,
+      });
+    }
+  </script>
+</div>
