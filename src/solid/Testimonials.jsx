@@ -99,7 +99,6 @@ export function Testimonials() {
                               <div className="font-display text-base text-white">
                                 {testimonial.author.name}
                               </div>
-
                             </div>
                           </figcaption>
                         </figure>

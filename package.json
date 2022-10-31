@@ -34,7 +34,7 @@
     "@types/animejs": "^3.1.6",
     "@typescript-eslint/parser": "^5.41.0",
     "astro": "^1.6.1",
-    "astro-compress": "^1.1.1",
+    "astro-compress": "1.0.12",
     "dprint": "^0.32.2",
     "eslint": "^8.26.0",
     "eslint-config-hardcore": "^25.1.0",
@@ -44,7 +44,7 @@
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "prettier-plugin-astro": "^0.7.0",
-    "solid-js": "^1.6.0",
+    "solid-js": "^1.6.1",
     "unplugin-icons": "^0.14.12"
   },
   "packageManager": "pnpm@7.14.0"

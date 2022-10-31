@@ -7,7 +7,9 @@ export const NavBar = (props) => {
       <div class="max-w-7xl mx-auto px-2 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
-            <div class="flex-shrink-0">{props.salam_app_logo}</div>
+            <div class="flex-shrink-0">
+              <a href="/">{props.salam_app_logo}</a>
+            </div>
           </div>
           <div class=" flex items-center sm:hidden">
             <button
@@ -23,24 +25,6 @@ export const NavBar = (props) => {
           <div class="flex-1 items-center justify-center sm:items-stretch sm:justify-start hidden sm:block ">
             <div class="hidden sm:block sm:ml-6">
               <div class="flex space-x-4 justify-end items-center">
-                <a
-                  href="/"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
-                >
-                  HOME
-                </a>
-                <a
-                  href="#"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
-                >
-                  SOCIALS
-                </a>
-                <a
-                  href="#"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
-                >
-                  UPDATES
-                </a>
                 <a
                   href="#"
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
