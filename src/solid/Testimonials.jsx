@@ -1,5 +1,3 @@
-
-
 const testimonials = [
   [
     {
@@ -7,7 +5,6 @@ const testimonials = [
         "TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.",
       author: {
         name: "Sheryl Berge",
-
       },
     },
     {
@@ -15,7 +12,6 @@ const testimonials = [
         "I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are saying it has something to do with my books. Please get back to me right away.",
       author: {
         name: "Amy Hahn",
-
       },
     },
   ],
@@ -25,7 +21,6 @@ const testimonials = [
         "The best part about TaxPal is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.",
       author: {
         name: "Leland Kiehn",
-
       },
     },
     {
@@ -33,7 +28,6 @@ const testimonials = [
         "There are so many things I had to do with my old software that I just don’t do at all with TaxPal. Suspicious but I can’t say I don’t love it.",
       author: {
         name: "Erin Powlowski",
-
       },
     },
   ],
@@ -43,7 +37,6 @@ const testimonials = [
         "I used to have to remit tax to the EU and with TaxPal I somehow don’t have to do that anymore. Nervous to travel there now though.",
       author: {
         name: "Peter Renolds",
-
       },
     },
     {
@@ -51,7 +44,6 @@ const testimonials = [
         "This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax fraud. Please answer your damn emails, this is important.",
       author: {
         name: "Amy Hahn",
-
       },
     },
   ],
@@ -85,7 +77,7 @@ export function Testimonials() {
               <ul className="space-y-6 sm:space-y-8">
                 {column.map((testimonial, testimonialIndex) => (
                   <li key={testimonialIndex}>
-                    <div class="relative group shadow-xl shadow-slate-900">
+                    <div class="relative group shadow-xl shadow-slate-900 select-none cursor-pointer">
                       <div class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
                       <div class="relative px-7 py-6 bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9  border-2 border-aquamarine">
                         <figure className="relative rounded-2xl  p-6 ">
