@@ -49,7 +49,7 @@ export const NavBar = (props) => {
                 >
                   CAREER
                 </a>
-                <div class="px-3">{props.get_app_btn}</div>
+                <a class="px-3" href="#download"  >{props.get_app_btn}</a> 
               </div>
             </div>
           </div>
@@ -61,31 +61,37 @@ export const NavBar = (props) => {
           <div class="px-2 pt-2 pb-3 space-y-1 absolute w-full bg-smoke-400">
             <a
               href="#"
-              class="bg-gray-900 text-white block px-3 py-2 rounded-md text-base font-medium"
+              class="text-gray-300  hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               aria-current="page"
             >
-              Dashboard
+              Feature Request
             </a>
 
             <a
               href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Contact
+            </a>
+
+            <a
+              href="#"
+              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Team
             </a>
 
             <a
               href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Projects
+              Career 
             </a>
-
             <a
-              href="#"
-              class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+              href="#download"
+              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Calendar
+              Download 
             </a>
           </div>
         </div>
