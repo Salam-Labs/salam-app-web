@@ -13,7 +13,7 @@ import Icon from "astro-icon";
       >
         Statistics.
       </h2>
-      <p class="mt-4 text-white text-lg tracking-tight text-slate-700">
+      <p class="mt-4 text-white text-lg tracking-tight text-slate-700" id="stats">
         Great reception from Muslims worldwide.
       </p>
     </div>
@@ -246,7 +246,7 @@ import Icon from "astro-icon";
   <script>
     import anime from "animejs";
     // Don't forget to use the polyfill for forEach! :)
-
+function startCounter(){
     document.querySelectorAll(".number-animate").forEach((el) => {
       const endValue = el.getAttribute("data-end-value");
       const incrementValue = el.getAttribute("data-increment");
@@ -266,5 +266,21 @@ import Icon from "astro-icon";
         duration: duration ? duration : 4000,
       });
     }
+  }
+
+
+  const intersectionObserver = new IntersectionObserver((entries) => {
+	// If intersectionRatio is 0, the target is out of view
+	// and we do not need to do anything.
+	if (entries[0].intersectionRatio <= 0) return;
+
+    startCounter(); //when the div is visible start the stats counter
+
+	intersectionObserver.unobserve(document.getElementById("stats"));
+});
+
+intersectionObserver.observe(document.getElementById("stats"));// start observing
+
+ 
   </script>
 </div>
