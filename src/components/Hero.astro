@@ -1,287 +1,70 @@
 ---
-import Icon from "astro-icon";
+import { Image } from "@astrojs/image/components";
+import quranImage from "../../public/assets/quran1.png";
+import { Modal } from "../solid/Modal.jsx";
 ---
 
-<div class="flex justify-center items-center bg-smoke-400 text-white">
-  <div
-    class="flex flex-col py-16 overflow-hidden lg:py-24 justify-center items-center"
-  >
-    <div class="mx-auto max-w-2xl md:text-center mb-4">
-      <h2
-        id="testimonials-title"
-        class="font-display font-bold text-3xl tracking-tight text-white sm:text-4xl"
-      >
-        Statistics.
-      </h2>
-      <p class="mt-4 text-white text-lg tracking-tight text-slate-700" id="stats">
-        Great reception from Muslims worldwide.
-      </p>
-    </div>
-    <div
-      class="mt-4 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 px-6 w-full"
-    >
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
-        >
-        </div>
-        <div
-          class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
-        >
-        <figure class="relative p-5 h-full w-full">
-          <div class="flex justify-center space-x-2 w-26">
-            <div
-              class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
+<div class="bg-grey-500 pb-8 sm:pb-12 lg:pb-12">
+  <div class="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48">
+    <div class="sm:mx-16 sm:w-fit sm:px-4 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
+      <div class="">
+        <div class="flex flex-col">
+          <div class="flex flex-col">
+            <h1
+              class="text-6xl font-extrabold text-white tracking-tight text-center sm:text-left sm:text-8xl"
             >
-              <Icon name="fluent:people-community-24-filled" height="30px" />
-            </div>
-            <div
-              class="flex flex-1 text-white text-center justify-start items-center "
+              AD-FREE.
+            </h1>
+            <h1
+              class="text-5xl font-extrabold text-white tracking-tight text-center sm:text-left lg:ml-12 sm:text-8xl"
             >
-              <p
-                class="font-semibold number-animate min-w-[23%]"
-                data-end-value="1500"
-                data-increment="1"
-                data-duration="3000"
-              >
-                0
-              </p>
+              PRIVACY.
+            </h1>
+            <h1
+              class="text-4xl font-extrabold text-white tracking-tight text-center sm:text-left lg:ml-24 sm:text-7xl"
+            >
+              FOREVER FREE.
+            </h1>
+          </div>
+          <div
+            class="flex justify-end flex-col items-center sm:items-start lg:items-end"
+          >
+            <p
+              class="mt-2 text-2xl sm:text-4xl text-white content-end font-bold mb-5"
+            >
+              NO COMPROMISES.
+            </p>
 
-              <p class="font-semibold">+&nbsp;Downloads</p>
-            </div>
-          </div>
-        </figure>
-        </div>
-      </div>
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
-        >
-        </div>
-        <div
-          class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
-        >
-        <figure class="relative p-5 h-full w-full">
-          <div class="flex justify-center space-x-2 w-26">
-            <div
-              class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
-            >
-              <Icon name="fluent:people-community-24-filled" height="30px" />
-            </div>
-            <div
-              class="flex flex-1 text-white text-center justify-start items-center "
-            >
-              <p
-                class="font-semibold number-animate min-w-[16%]"
-                data-end-value="4.9"
-                data-increment=".1"
-                data-duration="3000"
-              >
-                0
-              </p>
-              <p class="font-semibold">+&nbsp; Ratings</p>
-            </div>
-          </div>
-        </figure>
-        </div>
-      </div>
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
-        >
-        </div>
-        <div
-          class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
-        >
-        <figure class="relative p-5 h-full w-full">
-          <div class="flex justify-center space-x-2 w-26">
-            <div
-              class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
-            >
-              <Icon name="fluent:people-community-24-filled" height="30px" />
-            </div>
-            <div
-              class="flex flex-1 text-white text-center justify-start items-center "
-            >
-              <p
-                class="font-semibold number-animate min-w-[19%]"
-                data-end-value="300"
-                data-increment="1"
-                data-duration="3000"
-              >
-                0
-              </p>
-              <p class="font-semibold">+&nbsp; Reviews</p>
-            </div>
-          </div>
-        </figure>
-        </div>
-      </div>
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
-        >
-        </div>
-        <div
-          class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
-        >
-          <figure class="relative p-5 h-full w-full">
-            <div class="flex justify-center space-x-2 w-26">
-              <div
-                class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
-              >
-                <Icon name="fluent:people-community-24-filled" height="30px" />
-              </div>
-              <div
-                class="flex flex-1 text-white text-center justify-start items-center "
-              >
-                <p
-                  class="font-semibold number-animate min-w-[12%]"
-                  data-end-value="15"
-                  data-increment="1"
-                  data-duration="3000"
-                >
-                  0
-                </p>
-                <p class="font-semibold">k&nbsp;Community</p>
-              </div>
-            </div>
-          </figure>
-        </div>
-      </div>
-      <!--       
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur-md opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"
-        >
-        </div>
-        <div
-          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-gray-600"
-        >
-          <div class="flex h-full w-full justify-center p-5 space-x-2 w-26">
-            <div
-              class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
-            >
-              <Icon name="ic:sharp-star" height="30px" />
-            </div>
-            <div
-              class="flex flex-1 text-white text-center justify-start items-center space-x-1"
-            >
-              <p
-                class="font-semibold number-animate w-10"
-                data-end-value="4.8"
-                data-increment=".1"
-                data-duration="2000"
-              >
-                0
-              </p>
-              <p class="font-semibold">&nbsp; Rating</p>
-            </div>
+            <Modal client:idle />
           </div>
         </div>
       </div>
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
-        <div
-          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur-md opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"
-        >
-        </div>
-        <div
-          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-gray-600"
-        >
-          <div class="flex h-full w-full justify-center p-5 space-x-2 w-26">
-            <div
-              class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black"
-            >
-              <Icon name="ic:baseline-reviews" height="30px" />
-            </div>
-            <div
-              class="flex flex-1 text-white text-center justify-start items-center space-x-1"
-            >
-              <p
-                class="font-semibold number-animate w-10"
-                data-end-value="300"
-                data-increment="10"
-                data-duration="2000"
-              >
-                0
-              </p>
-              <p class="font-semibold">&nbsp; Reviews</p>
-            </div>
+    </div>
+    <!-- -->
+
+    <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
+      <div
+        class="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
+      >
+        <div class="hidden sm:block">
+          <div
+            class="absolute inset-y-0 left-1/2 w-screen bg-grey-500 rounded-l-3xl lg:left-80 lg:right-0 lg:w-full"
+          >
           </div>
         </div>
-      </div>
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
         <div
-          class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur-md opacity-20 group-hover:opacity-30 transition duration-1000 group-hover:duration-200"
+          class="hidden sm:block relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12"
         >
-        </div>
-        <div
-          class="flex ring-8 ring-gray-900/5 rounded-lg leading-none items-top justify-start space-x-9 border-2 border-aquamarine w-full bg-gray-600"
-        >
-          <div class="flex h-full w-full justify-center p-5 space-x-2 w-26">
-            <div
-              class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
-            >
-              <Icon name="fluent:people-community-24-filled" height="30px" />
-            </div>
-            <div
-              class="flex flex-1 text-white text-center justify-start items-center space-x-1"
-            >
-              <p
-                class="font-semibold number-animate w-10"
-                data-end-value="15000"
-                data-increment="1000"
-                data-duration="2000"
-              >
-                0
-              </p>
-              <p class="font-semibold">&nbsp; Community</p>
-            </div>
-          </div>
+          <Image
+            src={quranImage}
+            alt="quranImage"
+            height={620}
+            width={300}
+            class="relative mr-auto ml-44"
+            max-height="700"
+          />
         </div>
       </div>
-    </div> -->
     </div>
   </div>
-
-  <script>
-    import anime from "animejs";
-    // Don't forget to use the polyfill for forEach! :)
-function startCounter(){
-    document.querySelectorAll(".number-animate").forEach((el) => {
-      const endValue = el.getAttribute("data-end-value");
-      const incrementValue = el.getAttribute("data-increment");
-      const durationValue = el.getAttribute("data-duration");
-
-      if (endValue)
-        numberAnimation(el, endValue, incrementValue, durationValue);
-    });
-
-    // @ts-ignore
-    function numberAnimation(el, endValue, incrementor, duration) {
-      anime({
-        targets: el,
-        textContent: endValue,
-        round: incrementor ? 1 / incrementor : 1 / 5,
-        easing: "easeInOutQuad",
-        duration: duration ? duration : 4000,
-      });
-    }
-  }
-
-
-  const intersectionObserver = new IntersectionObserver((entries) => {
-	// If intersectionRatio is 0, the target is out of view
-	// and we do not need to do anything.
-	if (entries[0].intersectionRatio <= 0) return;
-
-    startCounter(); //when the div is visible start the stats counter
-
-	intersectionObserver.unobserve(document.getElementById("stats"));
-});
-// start observing
-intersectionObserver.observe(document.getElementById("stats"));
-
- 
-  </script>
 </div>
