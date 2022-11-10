@@ -2,6 +2,8 @@
 import Layout from "@layouts/Layout.astro";
 import quranImage from "../../public/assets/quran1.png";
 import { Image } from "@astrojs/image/components";
+import Swiper from "swiper";
+import "swiper/css";
 ---
 
 <Layout title="Welcome to Salam App.">
@@ -60,27 +62,26 @@ import { Image } from "@astrojs/image/components";
     </div>
   </div>
   <!--this part is quran only below is themes -->
-  <div class=" sm:flex sm:flex-row-reverse sm:justify-around sm:m-6">
+  <div class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6">
     <div>
       <div
-        class="text-center sm:text-left text-7xl text-white font-bold  mt-20 underline underline-offset-8 decoration-aquamarine"
+        class="text-center sm:text-left text-7xl text-white font-bold mt-20 underline underline-offset-8 decoration-aquamarine"
       >
         THEMES
       </div>
       <p class="text-white text-4xl font-semibold mt-10 ml-16">
-        Featuring 4 Themes 
+        Featuring 4 Themes
       </p>
       <ul class="mt-7 ml-28">
-        <li class="text-white text-2xl font-medium list-disc">
-          Rshidun
-        </li>
+        <li class="text-white text-2xl font-medium list-disc">Rshidun</li>
         <li class="text-white text-2xl font-medium list-disc">Pastel</li>
         <li class="text-white text-2xl font-medium list-disc">Classic</li>
         <li class="text-white text-2xl font-medium list-disc">Edster</li>
       </ul>
 
-      <p class="text-white text-4xl font-semibold mt-16 ml-16">Adapting to prayer times</p>
-     
+      <p class="text-white text-4xl font-semibold mt-16 ml-16">
+        Adapting to prayer times
+      </p>
     </div>
     <div>
       <Image
@@ -119,19 +120,4 @@ import { Image } from "@astrojs/image/components";
   }
 </style>
 
-<script>
-  console.log("placeholder for image changer scripts");
-  document.getElementById("quranLeft").onclick = function () {
-    console.log("quran left");
-  };
-  document.getElementById("quranRight").onclick = function () {
-    console.log("quran right");
-  };
-//upper code is for quran below is themes
-  document.getElementById("themeLeft").onclick = function () {
-    console.log("theme left");
-  };
-  document.getElementById("themeRight").onclick = function () {
-    console.log("theme right");
-  };
-</script>
+<script></script>
