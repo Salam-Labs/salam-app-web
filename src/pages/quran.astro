@@ -1,9 +1,20 @@
 ---
 import Layout from "@layouts/Layout.astro";
-// import quranImage from "../../public/assets/quran1.png";
-// import { Image } from "@astrojs/image/components";
----
+import { Image } from "@astrojs/image/components";
 
+import quran1 from "../../public/quran/quranList.png";
+import quran2 from "../../public/quran/quranOnly.png";
+import quran3 from "../../public/quran/quranPlayer.png";
+import quran4 from "../../public/quran/VerseByVerse.png";
+import quran5 from "../../public/quran/translation.png";
+
+import theme1 from  "../../public/themes/classic.png";
+import theme2 from "../../public/themes/default.png";
+import theme3 from "../../public/themes/pastel.png";
+import theme4 from "../../public/themes/rashidun.png";
+
+---
+    
 <Layout title="Welcome to Salam App.">
   <div class="sm:flex sm:justify-around sm:m-6">
     <div>
@@ -12,7 +23,7 @@ import Layout from "@layouts/Layout.astro";
       >
         QURAN
       </div>
-      <p class="text-white  text-4xl font-semibold mt-10  ml-16">
+      <p class="text-white text-4xl font-semibold mt-10 ml-16">
         Featuring 3 modes
       </p>
       <ul class="mt-7 ml-28">
@@ -35,27 +46,54 @@ import Layout from "@layouts/Layout.astro";
       </ul>
     </div>
     <div class="swiper mySwiper mx-auto sm:mx-0 mt-12 flex-shrink-0">
-      <div  class="swiper-wrapper ">
-        <img
-          class="swiper-slide min-w-full "
-          height="620px"
-          width="300px"
+      <div class="swiper-wrapper">
+        <Image
+          src={quran1}
           alt="picture of quran"
-          src="https://www.salamlabs.io/wp-content/uploads/2022/08/1-2_iphone12black_portrait-542x1024.png"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
         />
-        <img
-          class="swiper-slide min-w-full "
-          height="620px"
-          width="300px" 
+        <Image
+          src={quran2}
           alt="picture of quran"
-          src="https://www.salamlabs.io/wp-content/uploads/2022/08/1-2_iphone12black_portrait-542x1024.png"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
         />
-        <img
-          class="swiper-slide min-w-full "
-          height="620px"
-          width="300px"
+        <Image
+          src={quran3}
           alt="picture of quran"
-          src="https://www.salamlabs.io/wp-content/uploads/2022/08/1-2_iphone12black_portrait-542x1024.png"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
+        />
+        <Image
+          src={quran4}
+          alt="picture of quran"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
+        />
+        <Image
+          src={quran5}
+          alt="picture of quran"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
+        />
+        <Image
+          src={quran1}
+          alt="picture of quran"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
         />
       </div>
       <div class="swiper-pagination m-[-10px]"></div>
@@ -85,42 +123,46 @@ import Layout from "@layouts/Layout.astro";
     </div>
     <div class="swiper mySwiper mx-auto sm:mx-0 mt-12">
       <div class="swiper-wrapper">
-        <img
-          class="swiper-slide min-w-full"
-          height="620px"
-          width="300px"
+        <Image
+          src={theme1}
           alt="picture of quran"
-          src="https://www.salamlabs.io/wp-content/uploads/2022/08/1-2_iphone12black_portrait-542x1024.png"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
         />
-        <img
-          class="swiper-slide min-w-full"
-          height="620px"
-          width="300px"
+        <Image
+          src={theme2}
           alt="picture of quran"
-          src="https://www.salamlabs.io/wp-content/uploads/2022/08/1-2_iphone12black_portrait-542x1024.png"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
         />
-        <img
-          class="swiper-slide min-w-full"
-          height="620px"
-          width="300px"
+        <Image
+          src={theme3}
           alt="picture of quran"
-          src="https://www.salamlabs.io/wp-content/uploads/2022/08/1-2_iphone12black_portrait-542x1024.png"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
         />
-        <img
-          class="swiper-slide min-w-full"
-          height="620px"
-          width="300px"
+        <Image
+          src={theme4}
           alt="picture of quran"
-          src="https://www.salamlabs.io/wp-content/uploads/2022/08/1-2_iphone12black_portrait-542x1024.png"
+          height={620}
+          width={300}
+          class="swiper-slide min-w-full"
+          max-height="700"
         />
       </div>
-      <div class="swiper-pagination m-[-10px] "></div>
+      <div class="swiper-pagination m-[-10px]"></div>
     </div>
   </div>
   <!-- this part is themes only below is -->
 </Layout>
 
-<style> 
+<style>
   @tailwind components;
   @tailwind utilities;
   @tailwind base;
@@ -131,15 +173,19 @@ import Layout from "@layouts/Layout.astro";
     height: 620px;
     width: 300px;
   }
- 
-  </style>
+</style>
 
 <script>
-  import Swiper, { Navigation, Pagination } from "swiper";
+  import Swiper, { Navigation, Pagination, Autoplay } from "swiper";
   import "swiper/css";
   import "swiper/css/pagination";
+  import "swiper/css/autoplay";
 
   var swiper = new Swiper(".mySwiper", {
+    autoplay: {
+    delay: 2000,
+    pauseOnMouseEnter: true
+  },
     loop: true,
     preloadImages: false,
     lazy: true,
@@ -147,6 +193,6 @@ import Layout from "@layouts/Layout.astro";
       el: ".swiper-pagination",
       clickable: true,
     },
-    modules: [Navigation, Pagination],
+    modules: [ Navigation, Pagination, Autoplay],
   });
 </script>
