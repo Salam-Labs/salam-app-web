@@ -2,19 +2,18 @@
 import Layout from "@layouts/Layout.astro";
 import { Image } from "@astrojs/image/components";
 
-import quran1 from "../../public/quran/quranList.png";
-import quran2 from "../../public/quran/quranOnly.png";
-import quran3 from "../../public/quran/quranPlayer.png";
-import quran4 from "../../public/quran/verseByVerse.png";
-import quran5 from "../../public/quran/translation.png";
-
-import theme1 from  "../../public/themes/classic.png";
-import theme2 from "../../public/themes/default.png";
-import theme3 from "../../public/themes/pastel.png";
-import theme4 from "../../public/themes/Rashidun.png";
-
+import quran1 from "public/quran/quranList.png";
+import quran2 from "public/quran/quranOnly.png";
+import quran3 from "public/quran/quranPlayer.png";
+import quran4 from "public/quran/verseByVerse.png";
+import quran5 from "public/quran/translation.png";
+ 
+import theme1 from "public/themes/classic.png";
+import theme2 from "public/themes/default.png";
+import theme3 from "public/themes/pastel.png";
+import theme4 from "public/themes/Rashidun.png";
 ---
-    
+
 <Layout title="Welcome to Salam App.">
   <div class="sm:flex sm:justify-around sm:m-6">
     <div>
@@ -50,48 +49,48 @@ import theme4 from "../../public/themes/Rashidun.png";
         <Image
           src={quran1}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
         <Image
           src={quran2}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
         <Image
           src={quran3}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
         <Image
           src={quran4}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
         <Image
           src={quran5}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
         <Image
           src={quran1}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
@@ -126,32 +125,32 @@ import theme4 from "../../public/themes/Rashidun.png";
         <Image
           src={theme1}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
         <Image
           src={theme2}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
         <Image
           src={theme3}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
         <Image
           src={theme4}
           alt="picture of quran"
-          height={620}
-          width={300}
+          height={666}
+          width={330}
           class="swiper-slide min-w-full"
           max-height="700"
         />
@@ -163,13 +162,12 @@ import theme4 from "../../public/themes/Rashidun.png";
 </Layout>
 
 <style>
-
   html {
     scroll-behavior: smooth;
   }
   .swiper {
-    height: 620px;
-    width: 300px;
+    height: 666px;
+    width: 330px;
   }
 </style>
 
@@ -181,9 +179,9 @@ import theme4 from "../../public/themes/Rashidun.png";
 
   var swiper = new Swiper(".mySwiper", {
     autoplay: {
-    delay: 2000,
-    pauseOnMouseEnter: true
-  },
+      delay: 2000,
+      pauseOnMouseEnter: true,
+    },
     loop: true,
     preloadImages: false,
     lazy: true,
@@ -191,6 +189,6 @@ import theme4 from "../../public/themes/Rashidun.png";
       el: ".swiper-pagination",
       clickable: true,
     },
-    modules: [ Navigation, Pagination, Autoplay],
+    modules: [Navigation, Pagination, Autoplay],
   });
 </script>
