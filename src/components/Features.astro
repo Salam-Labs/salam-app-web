@@ -1,9 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Icon from "astro-icon";
-import quranImage from "public/quran/quran1.png";
-import verse from "public/quran/verseByVerse.png";
-import mushaf from "public/quran/quranMushaf.png";
+import quranImage from "public/quran/verseByVerse.png";
 ---
 
 <div class="py-16 bg-smoke-400 overflow-hidden lg:py-24">
@@ -109,7 +107,7 @@ import mushaf from "public/quran/quranMushaf.png";
         </p>
 
         <div class="mt-10 space-y-10">
-          <div class="relative">
+          <div class="relative p-3" id="verse" onclick="chnagePic('verseByVerse.png' ,'verse')">
             <dt>
               <div
                 class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -126,7 +124,7 @@ import mushaf from "public/quran/quranMushaf.png";
             </dd>
           </div>
 
-          <div class="relative">
+          <div class="relative p-3" id="mushaf" onclick="chnagePic('quranMushaf.png' ,'mushaf')">
             <dt>
               <div
                 class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -143,7 +141,7 @@ import mushaf from "public/quran/quranMushaf.png";
             </dd>
           </div>
 
-          <div class="relative">
+          <div class="relative p-3" id="list" onclick="chnagePic('quranList.png' ,'list')">
             <dt>
               <div
                 class="absolute flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -163,20 +161,30 @@ import mushaf from "public/quran/quranMushaf.png";
 
       <div class="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
         <Image
-          id="img"  
+          id="img"
           src={quranImage}
           alt="quranImage"
-          height={620}
-          width={300}
+          height={665}
+          width={345}
           class="relative mx-auto"
         />
       </div>
     </div>
-<!-- commented code was deleted from here -->
+    <!-- commented code was deleted from here -->
   </div>
 </div>
 
-<script>
-  console.log ("Hello World");
-  document.getElementById("img");  
+<script is:inline>
+  function chnagePic(pic , id) {
+    console.log(pic);
+    document.getElementById("img").src = "../../public/quran/" + pic;
+    //when it is clicked take away the styles that were given on previous click
+    document.getElementById("verse").style=""
+    document.getElementById("mushaf").style=""
+    document.getElementById("list").style=""
+    //read uppper comment
+    document.getElementById(id).style="background-color:#40444E;border-radius: 3vh;color:aquamarine;" 
+
+  }
+
 </script>
