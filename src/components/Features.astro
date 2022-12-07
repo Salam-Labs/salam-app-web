@@ -1,7 +1,7 @@
 ---
 import { Image } from "@astrojs/image/components";
 import Icon from "astro-icon";
-import quranImage from "public/quran/quranList.png";
+import quranImage from "public/quran/quranPlayer.png";
 ---
 
 <div class="py-16 bg-smoke-400 overflow-hidden lg:py-24">
@@ -107,7 +107,11 @@ import quranImage from "public/quran/quranList.png";
         </p>
 
         <div class="mt-10 space-y-10">
-          <div class="relative p-3" id="verse" onclick="changePic('verseByVerse.png' ,'verse')">
+          <div
+            class="relative p-3"
+            id="verse"
+            onclick="changePic('verseByVerse.png' ,'verse')"
+          >
             <dt>
               <div
                 class="absolute mt-3 flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -124,7 +128,11 @@ import quranImage from "public/quran/quranList.png";
             </dd>
           </div>
 
-          <div class="relative p-3" id="mushaf" onclick="changePic('quranMushaf.png' ,'mushaf')">
+          <div
+            class="relative p-3"
+            id="mushaf"
+            onclick="changePic('quranMushaf.png' ,'mushaf')"
+          >
             <dt>
               <div
                 class="absolute mt-3 flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -141,7 +149,11 @@ import quranImage from "public/quran/quranList.png";
             </dd>
           </div>
 
-          <div class="relative p-3" id="list" onclick="changePic('quranList.png' ,'list')">
+          <div
+            class="relative p-3"
+            id="list"
+            onclick="changePic('quranList.png' ,'list')"
+          >
             <dt>
               <div
                 class="absolute mt-1 flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -174,17 +186,29 @@ import quranImage from "public/quran/quranList.png";
   </div>
 </div>
 
+<style>
+  .selected {
+    background-color: #40444e;
+    border-radius: 3vh;
+  }
+</style>
+
 <script is:inline>
-  function changePic(pic , id) {
-    console.log(pic);
+
+  function changePic(pic, id) {
+
     document.getElementById("img").src = "../../public/quran/" + pic;
     //when it is clicked take away the styles that were given on previous click
-    document.getElementById("verse").style=""
-    document.getElementById("mushaf").style=""
-    document.getElementById("list").style=""
-    //read uppper comment
-    document.getElementById(id).style="background-color:#40444E;border-radius: 3vh;color:aquamarine;" 
 
+    const idNames = ["verse", "list", "mushaf"]; 
+    //list of id names that can be selected this function below deletes the class that makes it look like its selecyed
+
+    idNames.forEach(function (item) {
+      document.getElementById(item).classList.remove("selected");
+    });
+
+    
+    document.getElementById(id).classList.toggle("selected");
+    
   }
-
 </script>
