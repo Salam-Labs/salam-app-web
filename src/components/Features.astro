@@ -107,7 +107,7 @@ import quranImage from "public/quran/quranList.png";
         </p>
 
         <div class="mt-10 space-y-10">
-          <div class="relative p-3" id="verse" onclick="chnagePic('verseByVerse.png' ,'verse')">
+          <div class="relative p-3" id="verse" onclick="changePic('verseByVerse.png' ,'verse')">
             <dt>
               <div
                 class="absolute mt-3 flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -124,7 +124,7 @@ import quranImage from "public/quran/quranList.png";
             </dd>
           </div>
 
-          <div class="relative p-3" id="mushaf" onclick="chnagePic('quranMushaf.png' ,'mushaf')">
+          <div class="relative p-3" id="mushaf" onclick="changePic('quranMushaf.png' ,'mushaf')">
             <dt>
               <div
                 class="absolute mt-3 flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -141,7 +141,7 @@ import quranImage from "public/quran/quranList.png";
             </dd>
           </div>
 
-          <div class="relative p-3" id="list" onclick="chnagePic('quranList.png' ,'list')">
+          <div class="relative p-3" id="list" onclick="changePic('quranList.png' ,'list')">
             <dt>
               <div
                 class="absolute mt-1 flex items-center justify-center h-12 w-12 rounded-md bg-aquamarine text-black"
@@ -175,7 +175,7 @@ import quranImage from "public/quran/quranList.png";
 </div>
 
 <script is:inline>
-  function chnagePic(pic , id) {
+  function changePic(pic , id) {
     console.log(pic);
     document.getElementById("img").src = "../../public/quran/" + pic;
     //when it is clicked take away the styles that were given on previous click
