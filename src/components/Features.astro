@@ -197,7 +197,8 @@ import quranImage from "public/quran/quranPlayer.png";
 
   function changePic(pic, id) {
 
-    document.getElementById("img").src = "../../public/quran/" + pic;
+    document.getElementById("img").src =  "../quran/" + pic;
+    // document.getElementById("img").src = "../../public/quran/" + pic;
     //when it is clicked take away the styles that were given on previous click
 
     const idNames = ["verse", "list", "mushaf"]; 
@@ -211,4 +212,6 @@ import quranImage from "public/quran/quranPlayer.png";
     document.getElementById(id).classList.toggle("selected");
     
   }
+
+
 </script>
