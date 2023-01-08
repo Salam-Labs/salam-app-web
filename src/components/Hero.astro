@@ -1,7 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
 import { Modal } from "../solid/Modal.jsx";
-import  HeroImage from  "public/themes/classic.png";
 ---
 
 <div class="bg-grey-500 pb-8 sm:pb-12 lg:pb-12">
@@ -44,7 +42,7 @@ import  HeroImage from  "public/themes/classic.png";
 
     <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
       <div
-        class="py-12 sm:relative sm:mt-12 sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
+        class="py-12 sm:relative sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
       >
         <div class="hidden sm:block">
           <div
@@ -55,17 +53,13 @@ import  HeroImage from  "public/themes/classic.png";
         <div
           class="hidden sm:block relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12"
         >
-          <Image
-            src={HeroImage}
-            alt="quranImage"
-            height={665}
-            width={345} 
-            class="relative mr-auto ml-44"
-            max-height="700"
+          <img
+            src="/prayerTime1.png"
+            class="h-[645px] w-[352.5px] relative mr-auto ml-44"
+            alt="photo of salam app"
           />
         </div>
       </div>
     </div>
   </div>
 </div>
-

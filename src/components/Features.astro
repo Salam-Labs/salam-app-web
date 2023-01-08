@@ -1,7 +1,5 @@
 ---
-import { Image } from "@astrojs/image/components";
 import Icon from "astro-icon";
-import quranImage from "public/quran/quranPlayer.png";
 ---
 
 <div class="py-16 bg-smoke-400 overflow-hidden lg:py-24">
@@ -34,10 +32,8 @@ import quranImage from "public/quran/quranPlayer.png";
                 Shooting Stars
               </h2>
               <p class="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine, ramps microdosing
-                banh mi pug VHS try-hard ugh iceland kickstarter tumblr
-                live-edge tilde.
+                Explore the meanings and teachings of the Qur'an and Hadith with
+                our comprehensive collection of tafsir and Hadith commentary.
               </p>
               <a class="mt-3 text-white inline-flex items-center"
                 >Learn More
@@ -56,10 +52,9 @@ import quranImage from "public/quran/quranPlayer.png";
                 The Catalyzer
               </h2>
               <p class="leading-relaxed text-base">
-                Blue bottle crucifix vinyl post-ironic four dollar toast vegan
-                taxidermy. Gastropub indxgo juice poutine, ramps microdosing
-                banh mi pug VHS try-hard ugh iceland kickstarter tumblr
-                live-edge tilde.
+                Stay on track with your spiritual practice using our daily
+                notification feature, which reminds you to recite Qur'an, pray,
+                and perform other important Islamic duties.
               </p>
               <a class="mt-3 text-white inline-flex items-center"
                 >Learn More
@@ -110,7 +105,7 @@ import quranImage from "public/quran/quranPlayer.png";
           <div
             class="relative p-3"
             id="verse"
-            onclick="changePic('verseByVerse.png' ,'verse')"
+            onclick="changePic('quran3.png' ,'verse')"
           >
             <dt>
               <div
@@ -131,7 +126,7 @@ import quranImage from "public/quran/quranPlayer.png";
           <div
             class="relative p-3"
             id="mushaf"
-            onclick="changePic('quranMushaf.png' ,'mushaf')"
+            onclick="changePic('quran5.png' ,'mushaf')"
           >
             <dt>
               <div
@@ -152,7 +147,7 @@ import quranImage from "public/quran/quranPlayer.png";
           <div
             class="relative p-3"
             id="list"
-            onclick="changePic('quranList.png' ,'list')"
+            onclick="changePic('quran2.png' ,'list')"
           >
             <dt>
               <div
@@ -172,13 +167,11 @@ import quranImage from "public/quran/quranPlayer.png";
       </div>
 
       <div class="mt-10 -mx-4 relative lg:mt-0" aria-hidden="true">
-        <Image
+        <img
           id="img"
-          src={quranImage}
-          alt="quranImage"
-          height={665}
-          width={345}
-          class="relative mx-auto"
+          src="/quran1.png"
+          class="h-[645px] w-[352.5px] relative mr-auto ml-44"
+          alt="photo of salam app"
         />
       </div>
     </div>
@@ -194,24 +187,26 @@ import quranImage from "public/quran/quranPlayer.png";
 </style>
 
 <script is:inline>
-
   function changePic(pic, id) {
+    document.querySelector("#img").src = "./" + pic;
 
-    document.getElementById("img").src =  "../quran/" + pic;
     // document.getElementById("img").src = "../../public/quran/" + pic;
-    //when it is clicked take away the styles that were given on previous click
+    // when it is clicked take away the styles that were given on previous click
 
-    const idNames = ["verse", "list", "mushaf"]; 
-    //list of id names that can be selected this function below deletes the class that makes it look like its selecyed
+    const idNames = ["verse", "list", "mushaf"];
 
-    idNames.forEach(function (item) {
+    // list of id names that can be selected this function below deletes the class that makes it look like its selecyed
+
+    idNames.forEach(function removeClass(item) {
       document.getElementById(item).classList.remove("selected");
     });
 
-    
     document.getElementById(id).classList.toggle("selected");
-    
   }
 
-
+  changePic("quran5.png", "mushaf");
 </script>
+
+
+
+

@@ -2,48 +2,48 @@ const testimonials = [
   [
     {
       content:
-        "TaxPal is so easy to use I can’t help but wonder if it’s really doing the things the government expects me to do.",
+        "Love this app with the customability of the calculation methods and madhab selection. The Qibla compass is accurate for me. The design, aesthetics and themes are amazing.",
       author: {
-        name: "Sheryl Berge",
+        name: "Mohammed Khan",
       },
     },
     {
       content:
-        "I’m trying to get a hold of someone in support, I’m in a lot of trouble right now and they are saying it has something to do with my books. Please get back to me right away.",
+        "For first release it may seem bare bones compared to others.. but don’t let that fool you, this is robust and offers everything WITHOUT ads!!!",
       author: {
-        name: "Amy Hahn",
-      },
-    },
-  ],
-  [
-    {
-      content:
-        "The best part about TaxPal is every time I pay my employees, my bank balance doesn’t go down like it used to. Looking forward to spending this extra cash when I figure out why my card is being declined.",
-      author: {
-        name: "Leland Kiehn",
-      },
-    },
-    {
-      content:
-        "There are so many things I had to do with my old software that I just don’t do at all with TaxPal. Suspicious but I can’t say I don’t love it.",
-      author: {
-        name: "Erin Powlowski",
+        name: " sajjz",
       },
     },
   ],
   [
     {
       content:
-        "I used to have to remit tax to the EU and with TaxPal I somehow don’t have to do that anymore. Nervous to travel there now though.",
+        "This was an amazing app and beautifully made MashAllah! The design and UI of the app is very elegant and the Quran with the translations and Hadiths are an amazing addition as well considering it’s all ad-free.",
       author: {
-        name: "Peter Renolds",
+        name: "FahmiK78",
       },
     },
     {
       content:
-        "This is the fourth email I’ve sent to your support team. I am literally being held in jail for tax fraud. Please answer your damn emails, this is important.",
+        "This actually really helps me study Quran and it even has an interactive tool to point you in the direction of Mecca! All without advertisements it’s super great, bless your hearts Salam team!",
       author: {
-        name: "Amy Hahn",
+        name: "Cowboy7657",
+      },
+    },
+  ],
+  [
+    {
+      content:
+        "Phenomenal. It really is ad-free and the features are really cool. It have qibla direction, Quran, and even salah tracker. I am quite impressed at what one can do for free.",
+      author: {
+        name: "Firdaus Safari",
+      },
+    },
+    {
+      content:
+        "Alhamdulillah, Amazing App. Have all the basic and important information. Looking forward to all the future improvements. May Allah ease.",
+      author: {
+        name: "Muhammad Faiz",
       },
     },
   ],
@@ -62,12 +62,11 @@ export function Testimonials() {
             id="testimonials-title"
             className="font-display font-bold text-3xl tracking-tight text-white sm:text-4xl"
           >
-            Loved by businesses worldwide.
+            Loved by Muslims Worldwide.
           </h2>
           <p className="mt-4 text-white text-lg tracking-tight text-slate-700">
-            Our software is so simple that people can’t help but fall in love
-            with it. Simplicity is easy when you just skip tons of
-            mission-critical features.
+            Our app is simple, focused on prayer, and helps users deepen their
+            spiritual practice. It is easy to use and free of distractions.
           </p>
         </div>
 

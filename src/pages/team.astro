@@ -1,10 +1,7 @@
 ---
-import { Image } from "@astrojs/image/components";
 import Layout from "@layouts/Layout.astro";
-import CiLinkedin from "~icons/ci/linkedin";
-import SparkImage from "../../public/profiles/spark.png";
-
-import CiTwitter from "~icons/ci/twitter";
+import CiDiscord from "~icons/ci/discord";
+import CiGithub from "~icons/ci/github";
 ---
 
 <Layout title="Welcome to Salam App.">
@@ -24,28 +21,33 @@ import CiTwitter from "~icons/ci/twitter";
       <div class="flex flex-wrap -m-4">
         <div class="p-4 lg:w-1/4 md:w-1/2">
           <div class="h-full flex flex-col items-center text-center">
-            <Image
+            <img
+              src="saad.png"
               class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-              src={SparkImage}
-              alt=""
-              width={200}
-              height={200}
+              alt="developers profile picture"
             />
             <div class="w-full mt-10">
               <h2 class="title-font font-medium text-lg text-white">
-                Alper Kamu
+                Saad&nbsp
               </h2>
-              <h3 class="text-gray-400 mb-3">UI Developer</h3>
+
+              <img
+                src="canada.svg"
+                class="h-[25px] w-[35px] mx-auto m-2"
+                alt="canada flag"
+              />
+
+              <h3 class="text-gray-400 mb-3">Head App Developer</h3>
               <p class="mb-4">
-                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
-                vaporware.
+                Computer Science graduate trying to serve the Ummah with his
+                knowledge and skills. Also loves RuneScape (Oldschool).
               </p>
               <span class="inline-flex">
                 <a class="text-white">
-                  <CiTwitter />
+                  <CiGithub />
                 </a>
                 <a class="ml-2 text-white">
-                  <CiLinkedin />
+                  <CiDiscord />
                 </a>
               </span>
             </div>
@@ -53,28 +55,31 @@ import CiTwitter from "~icons/ci/twitter";
         </div>
         <div class="p-4 lg:w-1/4 md:w-1/2">
           <div class="h-full flex flex-col items-center text-center">
-            <Image
+            <img
+              src="quran1.png"
               class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-              src={SparkImage}
-              alt=""
-              width={200}
-              height={200}
+              alt="developers profile picture"
             />
             <div class="w-full mt-10">
               <h2 class="title-font font-medium text-lg text-white">
-                Holden Caulfield
+                Ismail Fateen
               </h2>
-              <h3 class="text-gray-400 mb-3">UI Developer</h3>
+              <img
+                src="egypt.svg"
+                class="h-[25px] w-[35px] mx-auto m-2"
+                alt="egypt flag"
+              />
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
               <p class="mb-4">
-                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
-                vaporware.
+                I'm 15 years old―new to the programming world and always
+                learning!
               </p>
               <span class="inline-flex">
                 <a class="text-white">
-                  <CiTwitter />
+                  <CiGithub />
                 </a>
                 <a class="ml-2 text-white">
-                  <CiLinkedin />
+                  <CiDiscord />
                 </a>
               </span>
             </div>
@@ -82,28 +87,31 @@ import CiTwitter from "~icons/ci/twitter";
         </div>
         <div class="p-4 lg:w-1/4 md:w-1/2">
           <div class="h-full flex flex-col items-center text-center">
-            <Image
+            <img
+              src="razer.png"
               class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-              src={SparkImage}
-              alt=""
-              width={200}
-              height={200}
+              alt="developers profile picture"
             />
             <div class="w-full mt-10">
               <h2 class="title-font font-medium text-lg text-white">
-                Atticus Finch
+                Deadly Razer
               </h2>
-              <h3 class="text-gray-400 mb-3">UI Developer</h3>
+              <img
+                src="pakistan.svg"
+                class="h-[25px] w-[35px] mx-auto m-2"
+                alt="flag of pakistan"
+              />
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
               <p class="mb-4">
-                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
-                vaporware.
+                Full-time faqih, part-time muhadith and junior dev at
+                salamlabs.io
               </p>
               <span class="inline-flex">
                 <a class="text-white">
-                  <CiTwitter />
+                  <CiGithub />
                 </a>
                 <a class="ml-2 text-white">
-                  <CiLinkedin />
+                  <CiDiscord />
                 </a>
               </span>
             </div>
@@ -111,169 +119,355 @@ import CiTwitter from "~icons/ci/twitter";
         </div>
         <div class="p-4 lg:w-1/4 md:w-1/2">
           <div class="h-full flex flex-col items-center text-center">
-            <Image
+            <img
+              src="edster.png"
               class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
-              src={SparkImage}
-              alt=""
-              width={200}
-              height={200}
+              alt="developers profile picture"
             />
             <div class="w-full mt-10">
-              <h2 class="title-font font-medium text-lg text-white">
-                Henry Letham
-              </h2>
-              <h3 class="text-gray-500 mb-3">UI Developer</h3>
+              <h2 class="title-font font-medium text-lg text-white">Edster</h2>
+              <div class="flex items-center mx-auto">
+                <img
+                  src="turkey.svg"
+                  class="h-[25px] w-[35px] "
+                  alt="turkey flag"
+                />
+                <img
+                  src="netherlands.svg"
+                  class="h-[25px] w-[35px] "
+                  alt="netherlands flag"
+                />
+              </div>
+              <h3 class="text-gray-500 mb-3">App Developer, UI Developer</h3>
               <p class="mb-4">
-                DIY tote bag drinking vinegar cronut adaptogen squid fanny pack
-                vaporware.
+                They have greater joy in affliction than one of you has in
+                gifts.
               </p>
               <span class="inline-flex">
-                <a class="text-white">
-                  <CiTwitter />
-                </a>
-                <a class="ml-2 text-white">
-                  <CiLinkedin />
-                </a>
+                <!-- <a class="text-white">
+                  <CiGithub />
+                </a> -->
+                <!-- <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a> -->
               </span>
-            </div>
-          </div>
-        </div>
-        <div class="flex flex-wrap -m-4 mt-40">
-          <div class="p-4 lg:w-1/2">
-            <div
-              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
-            >
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-40 xl:h-40"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="flex-g mt-10row sm:pl-8">
-                <h2 class="title-font font-medium text-lg text-white">
-                  Holden Caulfield
-                </h2>
-                <h3 class="text-gray-400 mb-3">UI Developer</h3>
-                <p class="mb-4">
-                  DIY tote bag drinking vinegar cronut adaptogen squid fanny
-                  pack vaporware.
-                </p>
-                <span class="inline-flex">
-                  <a class="text-white">
-                    <CiTwitter />
-                  </a>
-                  <a class="ml-2 text-white">
-                    <CiLinkedin />
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 lg:w-1/2">
-            <div
-              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
-            >
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-40 xl:h-40"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="flex-g mt-10row sm:pl-8">
-                <h2 class="title-font font-medium text-lg text-white">
-                  Alper Kamu
-                </h2>
-                <h3 class="text-gray-400 mb-3">Designer</h3>
-                <p class="mb-4">
-                  DIY tote bag drinking vinegar cronut adaptogen squid fanny
-                  pack vaporware.
-                </p>
-                <span class="inline-flex">
-                  <a class="text-white">
-                    <CiTwitter />
-                  </a>
-                  <a class="ml-2 text-white">
-                    <CiLinkedin />
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 lg:w-1/2">
-            <div
-              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
-            >
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-40 xl:h-40"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="flex-g mt-10row sm:pl-8">
-                <h2 class="title-font font-medium text-lg text-white">
-                  Atticus Finch
-                </h2>
-                <h3 class="text-gray-400 mb-3">UI Developer</h3>
-                <p class="mb-4">
-                  DIY tote bag drinking vinegar cronut adaptogen squid fanny
-                  pack vaporware.
-                </p>
-                <span class="inline-flex">
-                  <a class="text-white">
-                    <CiTwitter />
-                  </a>
-                  <a class="ml-2 text-white">
-                    <CiLinkedin />
-                  </a>
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="p-4 lg:w-1/2">
-            <div
-              class="h-full flex sm:flex-row flex-col items-center sm:justify-start justify-center text-center sm:text-left"
-            >
-              <Image
-                class="mx-auto h-40 w-40 rounded-full xl:w-40 xl:h-40"
-                src={SparkImage}
-                alt=""
-                width={200}
-                height={200}
-              />
-              <div class="flex-g mt-10row sm:pl-8">
-                <h2 class="title-font font-medium text-lg text-white">
-                  Henry Letham
-                </h2>
-                <h3 class="text-gray-400 mb-3">Designer</h3>
-                <p class="mb-4">
-                  DIY tote bag drinking vinegar cronut adaptogen squid fanny
-                  pack vaporware.
-                </p>
-                <span class="inline-flex">
-                  <a class="text-white">
-                    <CiTwitter />
-                  </a>
-                  <a class="ml-2 text-white">
-                    <CiLinkedin />
-                  </a>
-                </span>
-              </div>
             </div>
           </div>
         </div>
       </div>
+      <!--thsu-->
+
+      <!-- the first row is upper stuff now begins the second row -->
+
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="saud.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <!-- <div class="flex justify-center items-center"> -->
+              <h2 class="title-font font-medium text-lg text-white">
+                Sauood al-Mashreqi&nbsp&nbsp
+              </h2>
+              <!-- <img src="saudflag.svg" class="h-[20px] w-[30px]" alt=""> 
+         <p>&nbsp&nbsp</p>
+         <img src="saudflag.svg" class="h-[20px] w-[30px]" alt=""> -->
+              <!-- </div> -->
+
+              <img
+                src="kashmir.svg"
+                class="h-[25px] w-[35px] mx-auto m-2"
+                alt="kashmir flag"
+              />
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
+              <p class="mb-4">
+                Part-time Faqih, full-time muhadith and senior dev at
+                almashreqi.tech
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="muntasir.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                Muntasir Enam
+              </h2>
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
+              <p class="mb-4">
+                Developer, Gamer, Moderator at MGL and Junior Dev at Salam Labs
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="quran1.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                Deadly Razer
+              </h2>
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
+              <p class="mb-4">
+                Full-time faqih, part-time muhadith and junior dev at
+                salamlabs.io
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="quran1.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                Edster khan
+              </h2>
+              <h3 class="text-gray-500 mb-3">App Developer, UI Developer</h3>
+              <p class="mb-4">
+                They have greater joy in affliction than one of you has in
+                gifts.
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- the second row ends here and the third row starts here
+ -->
+
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="quran1.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                Saad khan
+              </h2>
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
+              <p class="mb-4">I play RuneScape.</p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="quran1.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                Ismail Fateen
+              </h2>
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
+              <p class="mb-4">
+                I'm 15 years old―new to the programming world and always
+                learning!
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="razer.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                deadlyrazer
+              </h2>
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
+              <p class="mb-4">average</p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="quran1.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                Edster khan
+              </h2>
+              <h3 class="text-gray-500 mb-3">App Developer, UI Developer</h3>
+              <p class="mb-4">
+                They have greater joy in affliction than one of you has in
+                gifts.
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- the third row ends here and the 4th row starts here
+ -->
+      <div class="flex flex-wrap -m-4">
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="spark.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">Spark</h2>
+              <h3 class="text-gray-400 mb-3">Web Developer</h3>
+              <p class="mb-4">I am Daddy Spark</p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="golam.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">Golam</h2>
+
+              <h3 class="text-gray-400 mb-3">Web Developer</h3>
+              <p class="mb-4">
+                I write code and want to make opensource islamic softwere
+              </p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+        <div class="p-4 lg:w-1/4 md:w-1/2">
+          <div class="h-full flex flex-col items-center text-center">
+            <img
+              src="quran1.png"
+              class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+              alt="developers profile picture"
+            />
+            <div class="w-full mt-10">
+              <h2 class="title-font font-medium text-lg text-white">
+                deadlyrazer
+              </h2>
+              <h3 class="text-gray-400 mb-3">App Developer</h3>
+              <p class="mb-4">average</p>
+              <span class="inline-flex">
+                <a class="text-white">
+                  <CiGithub />
+                </a>
+                <a class="ml-2 text-white">
+                  <CiDiscord />
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- the fourth row ends here -->
     </div>
   </section>
 
   <style>
-    @tailwind base; /* Preflight will be injected here */
-
-    @tailwind components;
-
-    @tailwind utilities;
     html {
       scroll-behavior: smooth;
     }

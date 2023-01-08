@@ -26,16 +26,17 @@ export const NavBar = (props) => {
             <div class="hidden sm:block sm:ml-6">
               <div class="flex space-x-4 justify-end items-center">
                 <a
-                  href="#"
+                  href="https://salam-app.canny.io/"
+                  target="_blank" 
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
                 >
                   FEATURE REQUEST
                 </a>
                 <a
-                  href="#"
+                  href="/gallery"
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
                 >
-                  CONTACT
+                  GALLERY
                 </a>
                 <a
                   href="/team"
@@ -60,7 +61,7 @@ export const NavBar = (props) => {
         <div class="sm:hidden z-20 relative" id="mobile-menu">
           <div class="px-2 pt-2 pb-3 space-y-1 absolute w-full bg-smoke-400">
             <a
-              href="#"
+              href="https://salam-app.canny.io/"
               class="text-gray-300  hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
               aria-current="page"
             >
@@ -68,21 +69,21 @@ export const NavBar = (props) => {
             </a>
 
             <a
-              href="#"
+              href="/gallery"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Contact
+              Gallery
             </a>
 
             <a
-              href="#"
+              href="/team"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Team
             </a>
 
             <a
-              href="#"
+              href="/career"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Career 
