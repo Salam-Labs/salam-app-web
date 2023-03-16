@@ -257,20 +257,17 @@ const developers = [
 
     flags: [
       {
-        src: "india.svg",
-        alt: "india flag",
+        src: "blue.svg",
+        alt: "blue flag",
       },
     ],
 
-    bio: "A backend developer interested in things.",
+    bio: "Interested in things.",
 
     links: [
       {
-        github: "https://github.com/spa5k/",
-      },
-      {
-        discord: "https://discord.com/users/184024387282927616",
-      },
+        github: "https://github.com/",
+      }
     ],
   },
   {
@@ -416,10 +413,13 @@ const array = ["All", "App", "Web", "UI", "Writer"];
 function underline(position) {
   array.forEach((element) => {
     const selectedElement = document.getElementById(element);
+
     selectedElement.classList.remove("underline");
     selectedElement.classList.remove("text-aquamarine");
   });
+
   const selectedElement = document.getElementById(position);
+
   selectedElement.classList.add("underline");
   selectedElement.classList.add("text-aquamarine");
 }

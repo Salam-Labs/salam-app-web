@@ -40,9 +40,8 @@ export const NavBar = (props) => {
                   <p className="mb-1 ml-2">menu</p>
                 </>
               ) : (
-                <>       
+                <>
                   {
-                    
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
                       width="1em"
@@ -55,7 +54,6 @@ export const NavBar = (props) => {
                       ></path>
                     </svg>
                   }
-           
                 </>
               )}
             </button>
