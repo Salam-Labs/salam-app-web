@@ -267,7 +267,7 @@ const developers = [
     links: [
       {
         github: "https://github.com/",
-      }
+      },
     ],
   },
   {
@@ -304,32 +304,37 @@ const developers = [
         <button
           id="All"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('All')">ALL </button
-        >
+          onclick="showDevelopers('All')"
+          >ALL
+        </button>
         <div>/</div>
         <button
           id="App"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('App')">APP </button
-        >
+          onclick="showDevelopers('App')"
+          >APP
+        </button>
         <div>/</div>
         <button
           id="Web"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('Web')">WEB </button
-        > 
-        <div>/</div>
-        <button 
-          id="UI"
-          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('UI')">DESIGN </button
-        >
+          onclick="showDevelopers('Web')"
+          >WEB
+        </button>
         <div>/</div>
         <button
-        id="Writer"
+          id="UI"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('Writer')">TEXT </button
-        >
+          onclick="showDevelopers('UI')"
+          >DESIGN
+        </button>
+        <div>/</div>
+        <button
+          id="Writer"
+          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          onclick="showDevelopers('Writer')"
+          >TEXT
+        </button>
         <div>/</div>
       </div>
     </div>
@@ -337,11 +342,7 @@ const developers = [
     <div class="flex flex-wrap justify-center m-4 p-5">
       {
         developers.map((developer) => (
-          <div
-            position={developer.position}
-            id="developer-card"
-            class="p-4 lg:w-1/4 md:w-1/2"
-          >
+          <div id="developer-card" class="p-4 lg:w-1/4 md:w-1/2">
             <div class="h-full flex flex-col items-center text-center">
               <img
                 src={developer.image}
@@ -374,7 +375,6 @@ const developers = [
                 <span class="inline-flex">
                   {developer.links.map((link) => (
                     <a
-                      key={Object.values(link)[0]}
                       class="text-white m-1"
                       target="_blank"
                       href={Object.values(link)[0]}
@@ -385,7 +385,7 @@ const developers = [
                         <CiDiscord />
                       ) : Object.keys(link)[0] === "website" ? (
                         <CiWebsite />
-                      ) : null}
+                      ) : undefined}
                     </a>
                   ))}
                 </span>
@@ -405,42 +405,38 @@ const developers = [
   </style>
 
   <script is:inline>
+    const array = ["All", "App", "Web", "UI", "Writer"];
 
+    function underline(position) {
+      array.forEach((element) => {
+        const selectedElement = document.getElementById(element);
 
+        selectedElement.classList.remove("underline");
+        selectedElement.classList.remove("text-aquamarine");
+      });
 
-const array = ["All", "App", "Web", "UI", "Writer"];
+      const selectedElement = document.getElementById(position);
 
-function underline(position) {
-  array.forEach((element) => {
-    const selectedElement = document.getElementById(element);
+      selectedElement.classList.add("underline");
+      selectedElement.classList.add("text-aquamarine");
+    }
 
-    selectedElement.classList.remove("underline");
-    selectedElement.classList.remove("text-aquamarine");
-  });
+    function showDevelopers(position) {
+      underline(position);
 
-  const selectedElement = document.getElementById(position);
+      const cards = document.querySelectorAll("#developer-card");
 
-  selectedElement.classList.add("underline");
-  selectedElement.classList.add("text-aquamarine");
-}
+      cards.forEach((card) => {
+        const cardPosition = card.getAttribute("position");
 
-function showDevelopers(position) {
-  underline(position);
+        card.style.display =
+          position === "All" ||
+          (cardPosition && cardPosition.includes(position))
+            ? "block"
+            : "none";
+      });
+    }
 
-  const cards = document.querySelectorAll("#developer-card");
-
-  cards.forEach((card) => {
-    const cardPosition = card.getAttribute("position");
-
-    card.style.display =
-      position === "All" ||
-      (cardPosition && cardPosition.includes(position))
-        ? "block"
-        : "none";
-  });
-}
-
-showDevelopers("All")
-
+    showDevelopers("All");
   </script>
 </Layout>

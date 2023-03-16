@@ -48,6 +48,11 @@
     "max-len": "off",
     "max-lines": "off",
     "no-shadow": "off",
-    "import/extensions": "off"
+    "import/extensions": "off",
+    "no-nested-ternary": "off",
+    "no-magic-numbers": "off",
+    "unicorn/prefer-query-selector": "off",
+    "fp/no-mutation": "off",
+    "no-param-reassign": "off"
   }
 }
