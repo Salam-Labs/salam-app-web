@@ -150,7 +150,7 @@ const developers = [
 
     links: [
       {
-        website: "",
+        website: "https://noobdev54.com/",
       },
       {
         github: "https://github.com/Muntasir2001",
@@ -337,12 +337,16 @@ const developers = [
     </div>
 
     <div class="flex flex-wrap justify-center m-4 p-5">
+
+
+
       {
         developers.map((developer) => (
           <div
             position={developer.position}
             id="developer-card"
             class="p-4 lg:w-1/4 md:w-1/2"
+            aria-label={developer.name}
           >
             <div class="h-full flex flex-col items-center text-center">
               <img
@@ -354,13 +358,14 @@ const developers = [
                 <h2 class="title-font font-medium text-lg text-white">
                   {developer.name}
                 </h2>
-
+      
                 <div
                   class={`flex w-${
                     developer.flags.length === 2
                       ? "[70px] flex justify-center"
                       : "[35px]"
                   } mx-auto `}
+                  aria-label="Developer's flags"
                 >
                   {developer.flags.map((flag) => (
                     <img
@@ -370,24 +375,25 @@ const developers = [
                     />
                   ))}
                 </div>
-
+      
                 <h3 class="text-gray-400 mb-3">{developer.position}</h3>
                 <p class="mb-4">{developer.bio}</p>
                 <span class="inline-flex">
                   {developer.links.map((link) => (
                     <a
                       key={Object.values(link)[0]}
-                      class="text-white m-1"
+                      class="text-white p-3"
                       target="_blank"
                       href={Object.values(link)[0]}
+                      aria-label={`Link to ${Object.keys(link)[0]}`}
                     >
-                      {Object.keys(link)[0] === "github" ? (
-                        <CiGithub />
-                      ) : Object.keys(link)[0] === "discord" ? (
-                        <CiDiscord />
-                      ) : Object.keys(link)[0] === "website" ? (
-                        <CiWebsite />
-                      ) : null}
+                    {Object.keys(link)[0] === "github" ? (
+    <CiGithub alt="GitHub logo" class="w-6 h-6" />
+  ) : Object.keys(link)[0] === "discord" ? (
+    <CiDiscord alt="Discord logo" class="w-6 h-6" />
+  ) : Object.keys(link)[0] === "website" ? (
+    <CiWebsite alt="Website logo" class="w-6 h-6" />
+  ) : null}
                     </a>
                   ))}
                 </span>
@@ -396,6 +402,7 @@ const developers = [
           </div>
         ))
       }
+      
     </div>
   </section>
 
