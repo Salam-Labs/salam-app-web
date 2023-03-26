@@ -9,7 +9,7 @@ export const NavBar = (props) => {
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <a href="/" aria-label="Link to homepage">
-                <img class="h-[45px]" src="/favicon.svg" alt="salam app logo" />
+                <img class="h-[45px] w-[45]" src="/favicon.svg" width="45" height="45" alt="salam app logo" />
               </a>
             </div>
           </div>
