@@ -80,12 +80,7 @@ export const NavBar = (props) => {
                 >
                   TEAM
                 </a>
-                <a
-                  href="/careers"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
-                >
-                  CAREERS
-                </a>
+
                 <a class="px-3" href="#download">
                   {props.get_app_btn}
                   <button
@@ -149,12 +144,7 @@ export const NavBar = (props) => {
               Team
             </a>
 
-            <a
-              href="/careers"
-              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Careers
-            </a>
+
             <a
               href="#download"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
