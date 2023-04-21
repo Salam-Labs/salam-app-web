@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import CiDiscord from "~icons/ci/discord";
 import CiGithub from "~icons/ci/github";
 import CiWebsite from "~icons/mdi/world-wide-web";
+import CiMail from "~icons/ic/round-mail-outline";
 
 const developers = [
   {
@@ -257,8 +258,8 @@ const developers = [
 
     flags: [
       {
-        src: "india.svg",
-        alt: "india flag",
+        src: "blue.svg",
+        alt: "flag",
       },
     ],
 
@@ -266,10 +267,7 @@ const developers = [
 
     links: [
       {
-        github: "https://github.com/spa5k/",
-      },
-      {
-        discord: "https://discord.com/users/184024387282927616",
+        mail: "mailto:sparklytical@protonmail.com",
       },
     ],
   },
@@ -310,39 +308,41 @@ const developers = [
         <button
           id="All"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('All')">ALL </button
-        >
+          onclick="showDevelopers('All')"
+          >ALL
+        </button>
         <div>/</div>
         <button
           id="App"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('App')">APP </button
-        >
+          onclick="showDevelopers('App')"
+          >APP
+        </button>
         <div>/</div>
         <button
           id="Web"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('Web')">WEB </button
-        > 
-        <div>/</div>
-        <button 
-          id="UI"
-          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('UI')">DESIGN </button
-        >
+          onclick="showDevelopers('Web')"
+          >WEB
+        </button>
         <div>/</div>
         <button
-        id="Writer"
+          id="UI"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('Writer')">TEXT </button
-        >
+          onclick="showDevelopers('UI')"
+          >DESIGN
+        </button>
+        <div>/</div>
+        <button
+          id="Writer"
+          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          onclick="showDevelopers('Writer')"
+          >TEXT
+        </button>
       </div>
     </div>
 
     <div class="flex flex-wrap justify-center m-4 p-5">
-
-
-
       {
         developers.map((developer) => (
           <div
@@ -361,7 +361,7 @@ const developers = [
                 <h2 class="title-font font-medium text-lg text-white">
                   {developer.name}
                 </h2>
-      
+
                 <div
                   class={`flex w-${
                     developer.flags.length === 2
@@ -378,7 +378,7 @@ const developers = [
                     />
                   ))}
                 </div>
-      
+
                 <h3 class="text-gray-400 mb-3">{developer.position}</h3>
                 <p class="mb-4">{developer.bio}</p>
                 <span class="inline-flex">
@@ -390,13 +390,15 @@ const developers = [
                       href={Object.values(link)[0]}
                       aria-label={`Link to ${Object.keys(link)[0]}`}
                     >
-                    {Object.keys(link)[0] === "github" ? (
-    <CiGithub alt="GitHub logo" class="w-6 h-6" />
-  ) : Object.keys(link)[0] === "discord" ? (
-    <CiDiscord alt="Discord logo" class="w-6 h-6" />
-  ) : Object.keys(link)[0] === "website" ? (
-    <CiWebsite alt="Website logo" class="w-6 h-6" />
-  ) : null}
+                      {Object.keys(link)[0] === "github" ? (
+                        <CiGithub alt="GitHub logo" class="w-6 h-6" />
+                      ) : Object.keys(link)[0] === "discord" ? (
+                        <CiDiscord alt="Discord logo" class="w-6 h-6" />
+                      ) : Object.keys(link)[0] === "website" ? (
+                        <CiWebsite alt="Website logo" class="w-6 h-6" />
+                        ) : Object.keys(link)[0] === "mail" ? (
+                        <CiMail alt="Website logo" class="w-6 h-6" />
+                      ) : null}
                     </a>
                   ))}
                 </span>
@@ -405,7 +407,6 @@ const developers = [
           </div>
         ))
       }
-      
     </div>
   </section>
 
@@ -417,39 +418,35 @@ const developers = [
   </style>
 
   <script is:inline>
+    const array = ["All", "App", "Web", "UI", "Writer"];
 
+    function underline(position) {
+      array.forEach((element) => {
+        const selectedElement = document.getElementById(element);
+        selectedElement.classList.remove("underline");
+        selectedElement.classList.remove("text-aquamarine");
+      });
+      const selectedElement = document.getElementById(position);
+      selectedElement.classList.add("underline");
+      selectedElement.classList.add("text-aquamarine");
+    }
 
+    function showDevelopers(position) {
+      underline(position);
 
-const array = ["All", "App", "Web", "UI", "Writer"];
+      const cards = document.querySelectorAll("#developer-card");
 
-function underline(position) {
-  array.forEach((element) => {
-    const selectedElement = document.getElementById(element);
-    selectedElement.classList.remove("underline");
-    selectedElement.classList.remove("text-aquamarine");
-  });
-  const selectedElement = document.getElementById(position);
-  selectedElement.classList.add("underline");
-  selectedElement.classList.add("text-aquamarine");
-}
+      cards.forEach((card) => {
+        const cardPosition = card.getAttribute("position");
 
-function showDevelopers(position) {
-  underline(position);
+        card.style.display =
+          position === "All" ||
+          (cardPosition && cardPosition.includes(position))
+            ? "block"
+            : "none";
+      });
+    }
 
-  const cards = document.querySelectorAll("#developer-card");
-
-  cards.forEach((card) => {
-    const cardPosition = card.getAttribute("position");
-
-    card.style.display =
-      position === "All" ||
-      (cardPosition && cardPosition.includes(position))
-        ? "block"
-        : "none";
-  });
-}
-
-showDevelopers("All")
-
+    showDevelopers("All");
   </script>
 </Layout>
