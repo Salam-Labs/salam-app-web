@@ -9,7 +9,7 @@ export const NavBar = (props) => {
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <a href="/" aria-label="Link to homepage">
-                <img class="h-[45px]" src="/favicon.svg" alt="salam app logo" />
+                <img class="h-[45px] w-[45]" src="/favicon.svg" width="45" height="45" alt="salam app logo" />
               </a>
             </div>
           </div>
@@ -80,12 +80,7 @@ export const NavBar = (props) => {
                 >
                   TEAM
                 </a>
-                <a
-                  href="/careers"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
-                >
-                  CAREERS
-                </a>
+
                 <a class="px-3" href="#download">
                   {props.get_app_btn}
                   <button
@@ -149,12 +144,7 @@ export const NavBar = (props) => {
               Team
             </a>
 
-            <a
-              href="/careers"
-              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Careers
-            </a>
+
             <a
               href="#download"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
