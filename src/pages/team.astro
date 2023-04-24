@@ -3,6 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import CiDiscord from "~icons/ci/discord";
 import CiGithub from "~icons/ci/github";
 import CiWebsite from "~icons/mdi/world-wide-web";
+import CiMail from "~icons/ic/round-mail-outline";
 
 const developers = [
   {
@@ -58,7 +59,7 @@ const developers = [
     ],
   },
   {
-    name: "Deadly Razer ",
+    name: "Razer ",
     position: "App Developer",
     image: "razer.png",
 
@@ -69,7 +70,7 @@ const developers = [
       },
     ],
 
-    bio: "Learning app and web development.",
+    bio: "Purger of Artifice, Weaver of code, Seeker of the Path, Possessor of ornaments.",
 
     links: [
       {
@@ -96,7 +97,7 @@ const developers = [
       },
     ],
 
-    bio: "Apparently the artist for Salam app.",
+    bio: "UI and GFX artist for Salam App.",
 
     links: [
       {
@@ -116,7 +117,7 @@ const developers = [
       },
     ],
 
-    bio: "I love Kashmir.",
+    bio: "Student of Knowledge in the fields of Cyber Security & Theology, and a Khulafa Rashideen fan.",
 
     links: [
       {
@@ -150,7 +151,7 @@ const developers = [
 
     links: [
       {
-        website: "",
+        website: "https://noobdev54.com/",
       },
       {
         github: "https://github.com/Muntasir2001",
@@ -172,7 +173,7 @@ const developers = [
       },
     ],
 
-    bio: "Hi, I am a gamer.",
+    bio: "I contributed to the app's development.",
 
     links: [
       {
@@ -218,7 +219,7 @@ const developers = [
       },
     ],
 
-    bio: "History text writer for Salam App Themes, Salam app tester.",
+    bio: "History text writer for Salam App Themes, Salam App tester.",
 
     links: [
       {
@@ -258,15 +259,15 @@ const developers = [
     flags: [
       {
         src: "blue.svg",
-        alt: "blue flag",
+        alt: "flag",
       },
     ],
 
-    bio: "Interested in things.",
+    bio: "A backend developer interested in things.",
 
     links: [
       {
-        github: "https://github.com/",
+        mail: "mailto:sparklytical@protonmail.com",
       },
     ],
   },
@@ -297,7 +298,12 @@ const developers = [
 ---
 
 <meta name="description" content="Team behind salam app" />
-<Layout title="Welcome to Salam App.">
+<meta property="og:title" content="Salam App Team" />
+<meta property="og:image" content="https://salam.app/favicon.svg" /> 
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://salam.app/team" />
+<meta property="og:description" content="People who developed Salam App" />
+<Layout title="Salam App">
   <section class="text-white body-font sm:px-10">
     <div class="flex justify-center">
       <div class="my-2 flex justify-around space-x-2 p-2 w-full sm:w-4/6">
@@ -335,14 +341,18 @@ const developers = [
           onclick="showDevelopers('Writer')"
           >TEXT
         </button>
-        <div>/</div>
       </div>
     </div>
 
     <div class="flex flex-wrap justify-center m-4 p-5">
       {
         developers.map((developer) => (
-          <div id="developer-card" class="p-4 lg:w-1/4 md:w-1/2">
+          <div
+            position={developer.position}
+            id="developer-card"
+            class="p-4 lg:w-1/4 md:w-1/2"
+            aria-label={developer.name}
+          >
             <div class="h-full flex flex-col items-center text-center">
               <img
                 src={developer.image}
@@ -360,6 +370,7 @@ const developers = [
                       ? "[70px] flex justify-center"
                       : "[35px]"
                   } mx-auto `}
+                  aria-label="Developer's flags"
                 >
                   {developer.flags.map((flag) => (
                     <img
@@ -375,17 +386,21 @@ const developers = [
                 <span class="inline-flex">
                   {developer.links.map((link) => (
                     <a
-                      class="text-white m-1"
+                      key={Object.values(link)[0]}
+                      class="text-white p-3"
                       target="_blank"
                       href={Object.values(link)[0]}
+                      aria-label={`Link to ${Object.keys(link)[0]}`}
                     >
                       {Object.keys(link)[0] === "github" ? (
-                        <CiGithub />
+                        <CiGithub alt="GitHub logo" class="w-6 h-6" />
                       ) : Object.keys(link)[0] === "discord" ? (
-                        <CiDiscord />
+                        <CiDiscord alt="Discord logo" class="w-6 h-6" />
                       ) : Object.keys(link)[0] === "website" ? (
-                        <CiWebsite />
-                      ) : undefined}
+                        <CiWebsite alt="Website logo" class="w-6 h-6" />
+                        ) : Object.keys(link)[0] === "mail" ? (
+                        <CiMail alt="Website logo" class="w-6 h-6" />
+                      ) : null}
                     </a>
                   ))}
                 </span>
@@ -410,13 +425,10 @@ const developers = [
     function underline(position) {
       array.forEach((element) => {
         const selectedElement = document.getElementById(element);
-
         selectedElement.classList.remove("underline");
         selectedElement.classList.remove("text-aquamarine");
       });
-
       const selectedElement = document.getElementById(position);
-
       selectedElement.classList.add("underline");
       selectedElement.classList.add("text-aquamarine");
     }

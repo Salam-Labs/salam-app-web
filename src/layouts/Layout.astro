@@ -18,8 +18,10 @@ const { title } = Astro.props as Props;
       rel="icon"
       type="image/svg+xml"
     /><meta content={Astro.generator} name="generator" /><title>{title}</title>
-    <meta property="og:image" content="/favicon.svg">
 
+
+    <meta property="og:image" content="https://salam.app/favicon.svg" /> 
+    <meta property="og:type" content="website" />
   </head>
   <body class="bg-smoke-400">
     <NavBar client:load />
