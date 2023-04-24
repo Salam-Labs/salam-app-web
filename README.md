@@ -1,2 +1,1 @@
-Salam App websie 
-https://salam.app
+Salam App Website
