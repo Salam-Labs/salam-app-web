@@ -16,9 +16,9 @@ import Layout from "@layouts/Layout.astro";
 <meta property="og:image:alt" content="Salam App">
 
 <Layout title="Salam App photos">
-  <div class="2xl:flex-col 2xl:justify-evenly 2xl:w-6/12 mx-auto">
+  <div class="2xl:flex-col 2xl:justify-evenly 2xl:w-3/4 mx-auto">
     <!-- quran part starts here  -->
-    <div class="sm:flex sm:justify-around sm:m-6">
+    <div class="sm:flex sm:justify-around sm:m-6 lg:ml-52 2xl:ml-60">
       <div>
         <div
           class="text-center text-7xl font-bold mt-16 text-aquamarine"
@@ -47,7 +47,7 @@ import Layout from "@layouts/Layout.astro";
           <li class="text-white text-2xl font-medium list-disc">Translation</li>
         </ul>
       </div>
-      <div class="swiper mySwiper flex justify-center  sm:mx-0 mt-12 flex-shrink-0">
+      <div class="swiper mySwiper mx-auto  sm:mx-0 mt-12 flex-shrink-0">
         <div class="swiper-wrapper">
           <img
             src="/quran1.png"
@@ -113,8 +113,8 @@ import Layout from "@layouts/Layout.astro";
         <div class="swiper-pagination m-[-10px]"></div>
       </div>
     </div>
-    <!--this part is quran only below is themes -->
-    <div class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6">
+    <!--this part is quran only below is hadith -->
+    <div class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6 lg:mr-12 2xl:mr-40">
       <div>
         <div
           class="text-center text-7xl text-aquamarine font-bold mt-16"
@@ -167,7 +167,7 @@ import Layout from "@layouts/Layout.astro";
           </li>
         </ul>
       </div>
-      <div class="swiper mySwiper flex justify-center sm:mx-0 mt-12 flex-shrink-0">
+      <div class="swiper mySwiper mx-auto sm:mx-0 mt-12 flex-shrink-0">
         <div class="swiper-wrapper">
           <img
             src="/hadith1.png"
@@ -198,7 +198,7 @@ import Layout from "@layouts/Layout.astro";
       </div>
     </div>
     <!-- this part is themes only below is prqyer times-->
-    <div class="sm:flex sm:flex-row sm:justify-around sm:m-6">
+    <div class="sm:flex sm:flex-row sm:justify-around sm:m-6 lg:ml-52 2xl:ml-44">
       <div>
         <div
           class="text-center text-5xl sm:text-6xl text-aquamarine font-bold mt-20"
@@ -235,7 +235,7 @@ import Layout from "@layouts/Layout.astro";
           <li class="text-white text-2xl font-medium list-disc">Ayyubid</li>
         </ul>
       </div>
-      <div class="swiper mySwiper flex justify-center sm:mx-0 mt-12 flex-shrink-0">
+      <div class="swiper mySwiper mx-auto sm:mx-0 mt-12 flex-shrink-0">
         <div class="swiper-wrapper">
           <img
             src="/prayerTime1.png"
@@ -304,7 +304,7 @@ import Layout from "@layouts/Layout.astro";
     </div>
     <!-- above is prayer times below is  the other cool stuff like tafsir , dua ,calender-->
 
-    <div class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6">
+    <div class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6 lg:mr-48 2xl:mr-72">
       <div>
         <div
           class="text-center text-7xl text-aquamarine font-bold mt-16"
@@ -330,7 +330,7 @@ import Layout from "@layouts/Layout.astro";
           </li>
         </ul>
       </div>
-      <div class="swiper mySwiper flex justify-center sm:mx-0 mt-12 flex-shrink-0">
+      <div class="swiper mySwiper mx-auto sm:mx-0 mt-12 flex-shrink-0">
         <div class="swiper-wrapper min-w-full">
           <img
             src="/99names1.png"
@@ -389,6 +389,11 @@ import Layout from "@layouts/Layout.astro";
   .sm\:mx-0 {
     margin-left: 0px;
     margin-right: 0px;
+  }
+
+  .mx-auto{
+    margin-right: auto;
+    margin-left: auto;
   }
 </style>
 
