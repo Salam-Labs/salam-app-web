@@ -4,7 +4,7 @@ export const NavBar = (props) => {
   const [show, setShow] = createSignal(false);
   return (
     <nav class="bg-smoke-400">
-      <div class="2xl:max-w-[75%] mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="2xl:max-w-[90%] mx-auto px-2 sm:px-6 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
             <div class="flex-shrink-0">
