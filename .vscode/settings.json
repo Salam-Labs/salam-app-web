@@ -21,5 +21,6 @@
     "team",
     "footer",
     "ci"
-  ]
+  ],
+  "workbench.colorCustomizations": {}
 }

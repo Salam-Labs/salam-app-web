@@ -71,8 +71,9 @@ export function Testimonials() {
             Loved by Muslims Worldwide.
           </h2>
           <p className="mt-4 text-white text-lg tracking-tight text-slate-700">
-          Our app is simple and focused on the features you need and free of distracting ads so you can concentrate on your spirituality. 
-          </p> 
+            Our app is simple and focused on the features you need and free of
+            distracting ads so you can concentrate on your spirituality.
+          </p>
         </div>
 
         <ul className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">

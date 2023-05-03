@@ -2,13 +2,15 @@ import image from "@astrojs/image";
 import sitemap from "@astrojs/sitemap";
 import solidJs from "@astrojs/solid-js";
 import tailwind from "@astrojs/tailwind";
+import compress from "astro-compress"; // https://astro.build/config
 import { defineConfig } from "astro/config";
 import Icons from "unplugin-icons/vite";
 
-import compress from "astro-compress";
+import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://salam.app",
   integrations: [tailwind(), image(), sitemap(), solidJs(), compress()],
   vite: {
     ssr: {
@@ -21,4 +23,8 @@ export default defineConfig({
       }),
     ],
   },
+  output: "static",
+  adapter: vercel({
+    analytics: true,
+  }),
 });
