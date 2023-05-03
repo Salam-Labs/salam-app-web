@@ -2,13 +2,7 @@
   "env": {
     "browser": true
   },
-  "extends": [
-    "hardcore",
-    "hardcore/jest",
-    "hardcore/fp",
-    "hardcore/ts",
-    "plugin:astro/recommended"
-  ],
+  "extends": ["eslint:recommended", "plugin:astro/recommended"],
   "ignorePatterns": [
     "*.config.mjs",
     "*.prettierrc.js",
