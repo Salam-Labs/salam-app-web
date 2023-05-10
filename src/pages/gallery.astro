@@ -2,30 +2,7 @@
 import Layout from "@layouts/Layout.astro";
 ---
 
-
-
-
-
-
-
-
-
-
 <Layout title="Salam App photos">
-
-  <meta name="description" content="A islamic prayer app with many features developed by volunteers">
-  <meta property="og:title" content="Salam App: Salah, Quran & more" />
-  <meta property="og:url" content="https://salam.app/" />
-  <meta property="og:description" content="Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim needs without compromises, for free! " />
-  
-  
-  <meta name="twitter:card" content="Salam App: Salah, Quran & more">
-    <meta property="twitter:domain" content="salam.app">
-    <meta property="twitter:url" content="https://salam.app">
-    <meta name="twitter:title" content="Salam App: Salah, Quran & more">
-    <meta name="twitter:description" content="Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim needs without compromises, for free! ">
-    <meta name="twitter:image" content="https://salam.app/image.png">
-  
   <div class="2xl:flex-col 2xl:justify-evenly 2xl:w-3/4 mx-auto">
     <!-- quran part starts here  -->
     <div class="sm:flex sm:justify-around sm:m-6 lg:ml-52 2xl:ml-60">
@@ -36,9 +13,7 @@ import Layout from "@layouts/Layout.astro";
         >
           QURAN
         </div>
-        <p class="text-white text-4xl font-semibold mt-10 ml-16">
-         3 Modes
-        </p>
+        <p class="text-white text-4xl font-semibold mt-10 ml-16">3 Modes</p>
         <ul class="mt-7 ml-28">
           <li class="text-white text-2xl font-medium list-disc">
             Verse by Verse
@@ -57,14 +32,14 @@ import Layout from "@layouts/Layout.astro";
           <li class="text-white text-2xl font-medium list-disc">Translation</li>
         </ul>
       </div>
-      <div class="swiper mySwiper mx-auto  sm:mx-0 mt-12 flex-shrink-0">
+      <div class="swiper mySwiper mx-auto sm:mx-0 mt-12 flex-shrink-0">
         <div class="swiper-wrapper">
           <img
-          src="/quran7.png"
-          alt="quran image"
-          class="swiper-slide min-w-full"
-          class="h-[665px] w-[356px]"
-        />
+            src="/quran7.png"
+            alt="quran image"
+            class="swiper-slide min-w-full"
+            class="h-[665px] w-[356px]"
+          />
           <img
             src="/quran1.png"
             alt="quran image"
@@ -130,7 +105,9 @@ import Layout from "@layouts/Layout.astro";
       </div>
     </div>
     <!--this part is quran only below is hadith -->
-    <div class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6 lg:mr-12 2xl:mr-40">
+    <div
+      class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6 lg:mr-12 2xl:mr-40"
+    >
       <div>
         <div
           class="text-center text-7xl text-aquamarine font-bold mt-16"
@@ -214,7 +191,9 @@ import Layout from "@layouts/Layout.astro";
       </div>
     </div>
     <!-- this part is themes only below is prqyer times-->
-    <div class="sm:flex sm:flex-row sm:justify-around sm:m-6 lg:ml-52 2xl:ml-44">
+    <div
+      class="sm:flex sm:flex-row sm:justify-around sm:m-6 lg:ml-52 2xl:ml-44"
+    >
       <div>
         <div
           class="text-center text-5xl sm:text-6xl text-aquamarine font-bold mt-20"
@@ -222,9 +201,7 @@ import Layout from "@layouts/Layout.astro";
         >
           Prayer Times
         </div>
-        <p class="text-white text-4xl font-semibold mt-10 ml-16">
-          Home Page
-        </p>
+        <p class="text-white text-4xl font-semibold mt-10 ml-16">Home Page</p>
         <ul class="mt-7 ml-28">
           <li class="text-white text-2xl font-medium list-disc">
             Accurate Prayer Times
@@ -239,9 +216,7 @@ import Layout from "@layouts/Layout.astro";
             Hijri Date and Timer
           </li>
         </ul>
-        <p class="text-white text-4xl font-semibold mt-8 ml-16">
-          5 Themes
-        </p>
+        <p class="text-white text-4xl font-semibold mt-8 ml-16">5 Themes</p>
 
         <ul class="mt-7 ml-28">
           <li class="text-white text-2xl font-medium list-disc">Default</li>
@@ -313,14 +288,15 @@ import Layout from "@layouts/Layout.astro";
             class="swiper-slide min-w-full"
             class="h-[665px] w-[341px]"
           />
-
         </div>
         <div class="swiper-pagination m-[-10px]"></div>
       </div>
     </div>
     <!-- above is prayer times below is  the other cool stuff like tafsir , dua ,calender-->
 
-    <div class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6 lg:mr-48 2xl:mr-72">
+    <div
+      class="sm:flex sm:flex-row-reverse sm:justify-around sm:m-6 lg:mr-48 2xl:mr-72"
+    >
       <div>
         <div
           class="text-center text-7xl text-aquamarine font-bold mt-16"
@@ -375,11 +351,11 @@ import Layout from "@layouts/Layout.astro";
             class="h-[665px] w-[356px]"
           />
           <img
-          src="/calender1.png"
-          alt="Islamic Calender"
-          class="swiper-slide min-w-full"
-          class="h-[665px] w-[356px]"
-        />
+            src="/calender1.png"
+            alt="Islamic Calender"
+            class="swiper-slide min-w-full"
+            class="h-[665px] w-[356px]"
+          />
           <img
             src="/dua1.png"
             alt="picture of dua"
@@ -393,11 +369,11 @@ import Layout from "@layouts/Layout.astro";
             class="h-[665px] w-[356px]"
           />
           <img
-          src="/prayerTracker.png"
-          alt="picture of prayer tracker"
-          class="swiper-slide min-w-full"
-          class="h-[665px] w-[356px]"
-        />
+            src="/prayerTracker.png"
+            alt="picture of prayer tracker"
+            class="swiper-slide min-w-full"
+            class="h-[665px] w-[356px]"
+          />
         </div>
         <div class="swiper-pagination m-[-10px]"></div>
       </div>
@@ -419,7 +395,7 @@ import Layout from "@layouts/Layout.astro";
     margin-right: 0px;
   }
 
-  .mx-auto{
+  .mx-auto {
     margin-right: auto;
     margin-left: auto;
   }
