@@ -1,51 +1,36 @@
- 
+---
+import Features from "@components/Features.astro";
+import Hero from "@components/Hero.astro";
+import Stats from "@components/Stats.astro";
+import Layout from "@layouts/Layout.astro";
+import WordBubble from "src/components/WordBubble.astro";
+import { Testimonials } from "src/solid/Testimonials";
+---
 
- ---
- import Features from "@components/Features.astro";
- import Hero from "@components/Hero.astro";
- import Stats from "@components/Stats.astro";
- import Layout from "@layouts/Layout.astro";
- import WordBubble from "src/components/WordBubble.astro";
- import { Testimonials } from "src/solid/Testimonials";
- ---
- 
- <meta name="description" content="A islamic prayer app with many features developed by volunteers">
- <meta property="og:title" content="Salam App: Salah, Quran & more" />
- <meta property="og:url" content="https://salam.app/" />
- <meta property="og:description" content="Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim needs without compromises, for free! " />
- 
- 
- <meta name="twitter:card" content="Salam App: Salah, Quran & more">
-   <meta property="twitter:domain" content="salam.app">
-   <meta property="twitter:url" content="https://salam.app">
-   <meta name="twitter:title" content="Salam App: Salah, Quran & more">
-   <meta name="twitter:description" content="Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim needs without compromises, for free! ">
-   <meta name="twitter:image" content="https://salam.app/image.png">
- 
+<meta name="description" content="A islamic prayer app with many features developed by volunteers">
+<meta property="og:title" content="Salam App: Salah, Quran & more" />
+<meta property="og:url" content="https://salam.app/" />
+<meta property="og:description" content="Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim needs without compromises, for free! " />
 
- <Layout title="Salam App">
-  <meta name="description" content="A islamic prayer app with many features developed by volunteers">
-  <meta property="og:title" content="Salam App: Salah, Quran & more" />
-  <meta property="og:url" content="https://salam.app/" />
-  <meta property="og:description" content="Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim needs without compromises, for free! " />
-  
-  
-  <meta name="twitter:card" content="Salam App: Salah, Quran & more">
-    <meta property="twitter:domain" content="salam.app">
-    <meta property="twitter:url" content="https://salam.app">
-    <meta name="twitter:title" content="Salam App: Salah, Quran & more">
-    <meta name="twitter:description" content="Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim needs without compromises, for free! ">
-    <meta name="twitter:image" content="https://salam.app/image.png">
-  
-   <Hero />
-   <WordBubble />
-   <Features />
-   <Stats />
-   <Testimonials client:idle />
- </Layout>
- 
- <style>
-   html {
-     scroll-behavior: smooth;
-   }
- </style>
+
+<meta name="twitter:card" content="Salam App: Salah, Quran & more">
+  <meta property="twitter:domain" content="salam.app">
+  <meta property="twitter:url" content="https://salam.app">
+  <meta name="twitter:title" content="Salam App: Salah, Quran & more">
+  <meta name="twitter:description" content="Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim needs without compromises, for free! ">
+  <meta name="twitter:image" content="https://salam.app/image.png">
+
+
+<Layout title="Salam App">
+  <Hero />
+  <WordBubble />
+  <Features />
+  <Stats />
+  <Testimonials client:idle />
+</Layout>
+
+<style>
+  html {
+    scroll-behavior: smooth;
+  }
+</style>
