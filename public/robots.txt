@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://salam.app/sitemap.xml
+Sitemap: https://salam.app/site-map.xml
