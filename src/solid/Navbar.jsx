@@ -11,7 +11,7 @@ export const NavBar = (props) => {
               <a href="/" aria-label="Link to homepage">
                 <img
                   class="h-[45px] w-[45]"
-                  src="/favicon.svg"
+                  src="/icon.svg"
                   width="45"
                   height="45"
                   alt="salam app logo"
