@@ -5,7 +5,6 @@ import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress"; // https://astro.build/config
 import { defineConfig } from "astro/config";
 import Icons from "unplugin-icons/vite";
-
 import vercel from "@astrojs/vercel/static";
 
 // https://astro.build/config
