@@ -86,6 +86,12 @@ export const NavBar = (props) => {
                 >
                   TEAM
                 </a>
+                <a
+                  href="/policy"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                >
+                  PRIVACY POLICY
+                </a>
 
                 <a class="px-3" href="#download">
                   {props.get_app_btn}
@@ -147,14 +153,21 @@ export const NavBar = (props) => {
               href="/team"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Team
+              Team  
             </a>
+
 
             <a
               href="#download"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Download
+            </a>
+            <a
+              href="/policy"
+              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Privacy Policy
             </a>
           </div>
         </div>
