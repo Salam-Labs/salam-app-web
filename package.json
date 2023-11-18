@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^5.2.0",
+    "@vercel/analytics": "^1.1.1",
     "animejs": "^3.2.1",
     "astro-icon": "^0.8.1",
     "solid-dismiss": "^1.7.121",
