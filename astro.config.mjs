@@ -11,7 +11,6 @@ export default defineConfig({
   integrations: [tailwind(), sitemap(), solidJs(), compress()],
   vite: {
     ssr: {
-      external: ["svgo"],
       noExternal: ["solid-dismiss"],
     },
     plugins: [
@@ -25,7 +24,9 @@ export default defineConfig({
     speedInsights: {
       enabled: true,
     },
-    webAnalytics: true,
+    webAnalytics: {
+      enabled: true,
+    },
   }),
 });
 
