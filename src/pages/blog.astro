@@ -67,7 +67,7 @@ const suggestionsData = [];
 
 // Function to fetch JSON data and populate suggestionsData.
 function fetchDataAndPopulateSuggestions() {
-  fetch("/data.json")
+  fetch("/searchData.json")
     .then((response) => response.json())
     .then((data) => {
       const dataArray = Array.isArray(data) ? data : Object.values(data);
@@ -142,7 +142,7 @@ function handleInput() {
       <div class="flex justify-center relative">
         <input
           placeholder="eg : Who is Allah?"
-          class="px-5 w-5/6 sm:w-2/4 p-2 rounded-lg text-2xl text-gray-200 bg-grey-500 border border-aquamarine-600 absolute "
+          class="px-5 w-5/6 sm:w-2/4 p-2 rounded-lg text-2xl text-gray-200 bg-grey-500 border border-aquamarine-600 absolute"
           type="text"
           oninput="handleInput()"
         />
@@ -190,7 +190,7 @@ function handleInput() {
       <div class="flex justify-center">
         <button
           id="load-more-button"
-          class="px-5 py-2 mt-5 bg-aquamarine-600 text-black rounded-lg hover:bg-aquamarine-700 "
+          class="px-5 py-2 mt-5 bg-aquamarine-600 text-black rounded-lg hover:bg-aquamarine-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
         >
           Load More
         </button>
