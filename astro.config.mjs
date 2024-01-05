@@ -4,7 +4,6 @@ import tailwind from "@astrojs/tailwind";
 import compress from "astro-compress";
 import { defineConfig } from "astro/config";
 import Icons from "unplugin-icons/vite";
-import vercel from "@astrojs/vercel/serverless"; // Updated import
 
 export default defineConfig({
   site: "https://salam.app",
@@ -19,13 +18,4 @@ export default defineConfig({
       }),
     ],
   },
-  output: 'server', // Adjusted output
-  adapter: vercel({
-    speedInsights: {
-      enabled: true,
-    },
-    webAnalytics: {
-      enabled: true,
-    },
-  }),
-});
+  })
