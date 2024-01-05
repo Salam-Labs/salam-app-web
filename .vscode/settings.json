@@ -1,0 +1,26 @@
+{
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "astro", // Enable .astro
+    "typescript", // Enable .ts
+    "typescriptreact" // Enable .tsx
+  ],
+  "prettier.documentSelectors": ["**/*.astro"],
+  "[astro]": {
+    "editor.defaultFormatter": "astro-build.astro-vscode"
+  },
+  "conventionalCommits.scopes": [
+    "main",
+    "styles",
+    "components",
+    "hero",
+    "deps",
+    "assets",
+    "compass",
+    "team",
+    "footer",
+    "ci"
+  ],
+  "workbench.colorCustomizations": {}
+}
