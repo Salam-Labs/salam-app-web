@@ -19,7 +19,7 @@ export default defineConfig({
       }),
     ],
   },
-  output: 'server', // Adjusted output
+  output: "server", // Adjusted output
   adapter: vercel({
     speedInsights: {
       enabled: true,
@@ -29,4 +29,3 @@ export default defineConfig({
     },
   }),
 });
-
