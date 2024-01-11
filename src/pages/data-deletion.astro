@@ -69,8 +69,8 @@ import { Icon } from "astro-icon";
       document.getElementById("main").innerHTML = "";
       document.getElementById("main").innerHTML =
         '<h1 class="text-center text-5xl text-aquamarine font-bold mb-16">Please check your mail</h1>' +
-        '<p class="mb-10 text-lg text-center text-white">A confirmation link has been sent to your e-mail. Please click  the link to confirm your data deletion request. The link expires in 10 minutes.</p>' +
-        '<a class="flex justify-center text-aquamarine underline" href="https://gmail.com">check gmail</a>';
+        '<p class="mb-10 text-lg text-center text-white">A confirmation link has been sent to your e-mail. Please click the link to in your mail account to confirm your data deletion request. The link expires in 10 minutes.</p>' +
+        '<a class="flex justify-center text-aquamarine underline" href="https://gmail.com">go to gmail</a>';
       ('<h1 class="text-center text-aquamarine font-bold mb-16">Check spam folder too.</h1>');
     }
     // Get the current URL
@@ -91,7 +91,7 @@ import { Icon } from "astro-icon";
       var button = document.getElementById("button");
 
       // Check if the email contains "@gmail.com"
-      if (email.includes("@gmail.com")) {
+      if (email.includes("@") && email.includes(".")) {
         // If it does, enable the button and add the class bg-aquamarine-500
         button.disabled = false;
         button.classList.add("bg-aquamarine-500");
