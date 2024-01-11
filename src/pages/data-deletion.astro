@@ -69,8 +69,9 @@ import { Icon } from "astro-icon";
       document.getElementById("main").innerHTML = "";
       document.getElementById("main").innerHTML =
         '<h1 class="text-center text-5xl text-aquamarine font-bold mb-16">Please check your mail</h1>' +
-        '<p class="mb-10 text-lg text-center text-white">A confirmation link has been sent to your e-mail. Please click  the link to confirm your data deletion request.</p>' +
-        '<h1 class="text-center text-aquamarine font-bold mb-16">Check spam folder too.</h1>';
+        '<p class="mb-10 text-lg text-center text-white">A confirmation link has been sent to your e-mail. Please click  the link to confirm your data deletion request. The link expires in 10 minutes.</p>' +
+        '<a class="flex justify-center text-aquamarine underline" href="https://gmail.com">check gmail</a>';
+      ('<h1 class="text-center text-aquamarine font-bold mb-16">Check spam folder too.</h1>');
     }
     // Get the current URL
     var currentUrl = window.location.href;
@@ -83,26 +84,25 @@ import { Icon } from "astro-icon";
         '<p class="text-center mb-10 text-lg text-white">Your data deletion request has been submitted; all your user data will be removed within the next few days. You can re-enable the sync feature by logging into Salam App, but old data will be irretrievable.</p>' +
         '<h1 class="text-center text-aquamarine font-bold mb-16">You may close this window.</h1> ';
     }
-    
-        //check for gmail.com
-        document.getElementById("email").addEventListener("input", function () {
-          var email = this.value;
-          var button = document.getElementById("button");
 
-          // Check if the email contains "@gmail.com"
-          if (email.includes("@gmail.com")) {
-            // If it does, enable the button and add the class bg-aquamarine-500
-            button.disabled = false;
-            button.classList.add("bg-aquamarine-500");
-            button.classList.remove("bg-grey-300");
-          } else {
-            // If it does not, disable the button and add the class bg-grey-300
-            button.disabled = true;
-            button.classList.add("bg-grey-300");
-            button.classList.remove("bg-aquamarine-500");
-          }
-        });
-      
+    //check for gmail.com
+    document.getElementById("email").addEventListener("input", function () {
+      var email = this.value;
+      var button = document.getElementById("button");
+
+      // Check if the email contains "@gmail.com"
+      if (email.includes("@gmail.com")) {
+        // If it does, enable the button and add the class bg-aquamarine-500
+        button.disabled = false;
+        button.classList.add("bg-aquamarine-500");
+        button.classList.remove("bg-grey-200");
+      } else {
+        // If it does not, disable the button and add the class bg-grey-300
+        button.disabled = true;
+        button.classList.add("bg-grey-200");
+        button.classList.remove("bg-aquamarine-500");
+      }
+    });
   </script>
 </Layout>
 
