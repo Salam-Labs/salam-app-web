@@ -43,8 +43,10 @@ const BlogLayout = ({ title, metaImage, metaData, link, children }) => {
 
         {/* Custom content here */}
         <div className="w-full flex justify-center">
-          <div className="prose lg:prose-base xl:prose-2xl prose-img:rounded-2xl prose-headings:text-aquamarine-500 prose-blockquote:font-serif  prose-a:text-indigo-300 prose-a:underline align-middle prose-invert p-10 pt-16  sm:p-20  ">
-            {children}
+          <div className="prose lg:prose-base sm:prose-xl xl:prose-2xl prose-blockquote:font-serif  prose-a:text-indigo-300 prose-a:underline align-middle prose-invert p-5 pt-16  sm:p-20  ">
+            <div class="prose-img:rounded-2xl sm:prose-img:w-1/2 sm:prose-img:mx-auto  prose-h1:text-aquamarine-500 ">
+              {children}
+            </div>
           </div>
         </div>
         {/* Custom content ends here */}
