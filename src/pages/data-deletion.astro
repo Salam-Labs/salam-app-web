@@ -60,7 +60,7 @@ import CiTrash from "~icons/ph/trash-bold";
     function remove() {
       var email = document.getElementById("email").value;
       var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://salam-app-backend.onrender.com/delete", true);
+      xhr.open("POST", "https://76bac981-a7ce-4568-90be-d942824b834d-00-efjhrap6x2w1.riker.replit.dev/delete", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
       xhr.onreadystatechange = function () {
         if (xhr.readyState === 4 && xhr.status === 200) {
