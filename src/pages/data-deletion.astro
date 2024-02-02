@@ -23,8 +23,7 @@ import CiTrash from "~icons/ph/trash-bold";
     </div>
     <label
       for="helper-text"
-      class="block mt-10 text-sm font-medium dark:text-white"
-      >Your email :</label
+      class="block mt-5 text-sm font-medium dark:text-white">Your email :</label
     >
     <div class="flex mt-1">
       <input
@@ -58,6 +57,16 @@ import CiTrash from "~icons/ph/trash-bold";
   </div>
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script is:inline>
+    function handleRecaptcha() {
+      grecaptcha.ready(function () {
+        grecaptcha
+          .execute("your_site_key", { action: "your_action" })
+          .then(function (responseToken) {
+            // Use the responseToken as needed
+            console.log("Response Token:", responseToken);
+          });
+      });
+    }
     button.disabled = true;
     function remove() {
       var email = document.getElementById("email").value;
