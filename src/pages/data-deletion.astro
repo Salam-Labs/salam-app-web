@@ -17,8 +17,9 @@ import CiTrash from "~icons/ph/trash-bold";
     </p>
     <b class="text-white mt-20">This cannot be undone.</b>
     <div
-      class="g-recaptcha mt-5"
+      class="g-recaptcha"
       data-sitekey="6Ldm02QpAAAAAL0_vVUB7nesbM4Yn8QT8OxBfa1E"
+      data-callback="onRecaptchaCallback"
     >
     </div>
     <label
@@ -60,12 +61,19 @@ import CiTrash from "~icons/ph/trash-bold";
     function handleRecaptcha() {
       grecaptcha.ready(function () {
         grecaptcha
-          .execute("your_site_key", { action: "your_action" })
+          .execute("6Ldm02QpAAAAAL0_vVUB7nesbM4Yn8QT8OxBfa1E")
           .then(function (responseToken) {
-            // Use the responseToken as needed
             console.log("Response Token:", responseToken);
           });
       });
+    }
+    handleRecaptcha();
+    // Callback function to handle reCAPTCHA completion
+    function onRecaptchaCallback(response) {
+      console.log("User solved reCAPTCHA. Response:", response);
+
+      // Execute your custom function or code here after the user solves reCAPTCHA
+      handleRecaptcha();
     }
     button.disabled = true;
     function remove() {
