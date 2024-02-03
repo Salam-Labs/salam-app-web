@@ -36,7 +36,7 @@ import CiTrash from "~icons/ph/trash-bold";
       />
 
       <button
-        class="bg-grey-200 rounded-md px-4 mx-5"
+        class="bg-grey-200 rounded-md px-4 mx-5 hidden"
         id="button"
         onclick="remove()"
       >
@@ -70,6 +70,7 @@ import CiTrash from "~icons/ph/trash-bold";
     // Callback function to handle reCAPTCHA completion
     function onRecaptchaCallback(response) {
       console.log("User solved reCAPTCHA. Response:", response);
+      document.getElementById("button").classList.remove("hidden")
     }
     button.disabled = true;
     function remove() {
