@@ -60,12 +60,14 @@ import CiTrash from "~icons/ph/trash-bold";
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script is:inline>
       let solvedCaptcha = 0;
+      var token = "";
       function handleRecaptcha() {
         grecaptcha.ready(function () {
           grecaptcha
             .execute("6Ldm02QpAAAAAL0_vVUB7nesbM4Yn8QT8OxBfa1E")
             .then(function (responseToken) {
-              console.log("Response Token:", responseToken);
+              token = responseToken;
+              console.log(token);
             });
         });
       }
@@ -88,6 +90,9 @@ import CiTrash from "~icons/ph/trash-bold";
             console.log(xhr.responseText);
           }
         };
+        var params = "email=" + email + "&token=" + token;
+        console.log(params);
+        // xhr.send(params)
         xhr.send("email=" + email); // Change 'name' to 'email'
 
         //
