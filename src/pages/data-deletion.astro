@@ -60,13 +60,12 @@ import CiTrash from "~icons/ph/trash-bold";
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script is:inline>
       let solvedCaptcha = 0;
-      var token = "";
       function handleRecaptcha() {
         grecaptcha.ready(function () {
           grecaptcha
             .execute("6Ldm02QpAAAAAL0_vVUB7nesbM4Yn8QT8OxBfa1E")
             .then(function (responseToken) {
-              token = responseToken;
+              var token = responseToken;
               console.log(token);
             });
         });
