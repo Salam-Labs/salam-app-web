@@ -1,6 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
-import { Icon } from "astro-icon";
+import CiTrash from "~icons/ph/trash-bold";
 ---
 
 <Layout title="Data Deleteion Request">
@@ -10,104 +10,134 @@ import { Icon } from "astro-icon";
     >
       Data Deletion
     </h1>
-    <p class="mb-10 text-lg text-white">
+    <p class="mb-5 text-lg text-white">
       User data is only stored if Salam App Cloud is used to create a backup; if
-      you wish for all user data to be deleted, enter the e-mail linked to your
-      account in the field below.
-    </p>
-    <b class="text-white mt-20">This cannot be undone.</b>
-    <label
-      for="helper-text"
-      class="block mt-10 text-sm font-medium dark:text-white"
-      >Your email :</label
-    >
-    <div class="flex mt-1">
-      <input
-        type="email"
-        id="email"
-        aria-describedby="helper-text-explanation"
-        class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 text-white"
-        placeholder="example@gmail.com"
-      />
-
-      <button
-        class="bg-grey-200 rounded-md px-4 mx-5"
-        id="button"
-        onclick="remove()"
-      >
-        <Icon name="ph:trash-bold" alt="delete icom" class="w-5 h-5" />
-      </button>
-    </div>
-
-    <div class="flex">
-      <p class="mt-2 text-sm text-gray-400">
-        We’ll never share your details. Please read our
-        <a
-          href="/policy"
-          class="text-aquamarine-500 mt-2 ml-1 hover:underline text-sm"
-        >
-          Privacy Policy.</a
-        >
+      you wish for all user data to be deleted, Please solve the reCAPTCHA and
+      then enter the e-mail linked to your account in the field below. When you
+      see the trash icon press it.
       </p>
-    </div>
+      <b class="text-white ">This cannot be undone.</b>
+      <div
+        class="g-recaptcha mt-5"
+        data-sitekey="6Ldm02QpAAAAAL0_vVUB7nesbM4Yn8QT8OxBfa1E"
+        data-callback="onRecaptchaCallback"
+      >
+      </div>
+      <label
+        for="helper-text"
+        class="block mt-5 text-sm font-medium dark:text-white"
+        >Your email :</label
+      >
+      <div class="flex mt-1">
+        <input
+          type="email"
+          id="email"
+          aria-describedby="helper-text-explanation"
+          class="border text-sm rounded-lg block w-full p-2.5 bg-gray-700 border-gray-600 text-white"
+          placeholder="example@gmail.com"
+        />
+
+        <button
+          class="bg-aquamarine-500 rounded-md px-4 mx-5 hidden"
+          id="button"
+          onclick="remove()"
+        >
+          <CiTrash name="ph:trash-bold" class="w-5 h-5" />
+        </button>
+      </div>
+
+      <div class="flex">
+        <p class="mt-2 text-sm text-gray-400">
+          We’ll never share your details. Please read our
+          <a
+            href="/policy"
+            class="text-aquamarine-500 mt-2 ml-1 hover:underline text-sm"
+          >
+            Privacy Policy.</a
+          >
+        </p>
+      </div>
+    </p>
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script is:inline>
+
+      //wake up the server 
+      
+
+
+
+      let solvedCaptcha = 0;
+      var token;
+      function handleRecaptcha() {
+        grecaptcha.ready(function () {
+          grecaptcha
+            .execute("6Ldm02QpAAAAAL0_vVUB7nesbM4Yn8QT8OxBfa1E")
+            .then(function (responseToken) {
+              console.log("Response Token:", responseToken);
+            });// i dont know why but this does not show output
+        });
+      }
+      // Callback function to handle reCAPTCHA completion
+      function onRecaptchaCallback(response) {
+        token = response
+        console.log("User solved reCAPTCHA. Response:", token);
+        solvedCaptcha = 1;
+      }
+
+     
+      function remove() {
+        var email = document.getElementById("email").value;
+        var xhr = new XMLHttpRequest();
+        xhr.open("POST", "https://salam-app-backend.onrender.com/delete", true);
+        xhr.setRequestHeader(
+          "Content-Type",
+          "application/x-www-form-urlencoded",
+        );
+        xhr.onreadystatechange = function () {
+          if (xhr.readyState === 4 && xhr.status === 200) {
+            console.log(xhr.responseText);
+          } 
+        };
+        console.log(token)
+        // xhr.send("email=" + email); 
+        xhr.send("email=" + email + "&token=" + token);
+        //
+        document.getElementById("main").innerHTML = "";
+        document.getElementById("main").innerHTML =
+          '<h1 class="text-center text-5xl text-aquamarine font-bold mb-16">Please check your mail</h1>' +
+          '<p class="mb-10 text-lg text-center text-white">A confirmation link has been sent to your e-mail. Please click the link to in your mail account to confirm your data deletion request. The link expires in 10 minutes.</p>' +
+          '<h1 class="text-center text-aquamarine font-bold mb-16">Check spam folder too.</h1>';
+      }
+      // Get the current URL
+      var currentUrl = window.location.href;
+
+      // Check if the URL contains '#success'
+      if (currentUrl.includes("#success")) {
+        document.getElementById("main").innerHTML = "";
+        document.getElementById("main").innerHTML =
+          '<h1 class="text-center text-5xl text-aquamarine font-bold mb-16">SUCCESS</h1>' +
+          '<p class="text-center mb-10 text-lg text-white">Your data deletion request has been submitted; all your user data will be removed within the next few days. You can re-enable the sync feature by logging into Salam App, but old data will be irretrievable.</p>' +
+          '<h1 class="text-center text-aquamarine font-bold mb-16">You may close this window.</h1> ';
+      }
+
+      //check for gmail.com
+      document.getElementById("email").addEventListener("input", function () {
+        var email = this.value;
+        var button = document.getElementById("button");
+
+        if (email.includes("@") && email.includes(".")) {
+          if (solvedCaptcha == 1) {
+            document.getElementById("button").classList.remove("hidden");
+          }
+
+        } 
+      });
+    </script>
   </div>
 
-  <script is:inline>
-     button.disabled = true;
-    function remove() {
-      var email = document.getElementById("email").value;
-      var xhr = new XMLHttpRequest();
-      xhr.open("POST", "https://salam-app-backend.onrender.com/delete", true);
-      xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-      xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-          console.log(xhr.responseText);
-        }
-      };
-      xhr.send("email=" + email); // Change 'name' to 'email'
-
-      //
-      document.getElementById("main").innerHTML = "";
-      document.getElementById("main").innerHTML =
-        '<h1 class="text-center text-5xl text-aquamarine font-bold mb-16">Please check your mail</h1>' +
-        '<p class="mb-10 text-lg text-center text-white">A confirmation link has been sent to your e-mail. Please click the link to in your mail account to confirm your data deletion request. The link expires in 10 minutes.</p>' +
-      ('<h1 class="text-center text-aquamarine font-bold mb-16">Check spam folder too.</h1>');
+  <style>
+    html {
+      scroll-behavior: smooth;
     }
-    // Get the current URL
-    var currentUrl = window.location.href;
-
-    // Check if the URL contains '#success'
-    if (currentUrl.includes("#success")) {
-      document.getElementById("main").innerHTML = "";
-      document.getElementById("main").innerHTML =
-        '<h1 class="text-center text-5xl text-aquamarine font-bold mb-16">SUCCESS</h1>' +
-        '<p class="text-center mb-10 text-lg text-white">Your data deletion request has been submitted; all your user data will be removed within the next few days. You can re-enable the sync feature by logging into Salam App, but old data will be irretrievable.</p>' +
-        '<h1 class="text-center text-aquamarine font-bold mb-16">You may close this window.</h1> ';
-    }
-
-    //check for gmail.com
-    document.getElementById("email").addEventListener("input", function () {
-      var email = this.value;
-      var button = document.getElementById("button");
-
-      // Check if the email contains "@gmail.com"
-      if (email.includes("@") && email.includes(".")) {
-        // If it does, enable the button and add the class bg-aquamarine-500
-        button.disabled = false;
-        button.classList.add("bg-aquamarine-500");
-        button.classList.remove("bg-grey-200");
-      } else {
-        // If it does not, disable the button and add the class bg-grey-300
-        button.disabled = true;
-        button.classList.add("bg-grey-200");
-        button.classList.remove("bg-aquamarine-500");
-      }
-    });
-  </script>
+  </style>
 </Layout>
-
-<style>
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
