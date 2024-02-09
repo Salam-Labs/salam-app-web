@@ -37,7 +37,7 @@ import CiTrash from "~icons/ph/trash-bold";
         />
 
         <button
-          class="bg-grey-200 rounded-md px-4 mx-5 hidden"
+          class="bg-aquamarine-500 rounded-md px-4 mx-5 hidden"
           id="button"
           onclick="remove()"
         >
@@ -72,9 +72,12 @@ import CiTrash from "~icons/ph/trash-bold";
       // Callback function to handle reCAPTCHA completion
       function onRecaptchaCallback(response) {
         console.log("User solved reCAPTCHA. Response:", response);
+        var token = response;
         solvedCaptcha = 1;
       }
-      button.disabled = true;
+      console.log("token is");
+      console.log(token);
+
       function remove() {
         var email = document.getElementById("email").value;
         var xhr = new XMLHttpRequest();
@@ -116,18 +119,9 @@ import CiTrash from "~icons/ph/trash-bold";
 
         // Check if the email contains "@gmail.com"
         if (email.includes("@") && email.includes(".")) {
-          // If it does, enable the button and add the class bg-aquamarine-500
-          button.disabled = false;
           if (solvedCaptcha == 1) {
             document.getElementById("button").classList.remove("hidden");
           }
-          button.classList.add("bg-aquamarine-500");
-          button.classList.remove("bg-grey-200");
-        } else {
-          // If it does not, disable the button and add the class bg-grey-300
-          button.disabled = true;
-          button.classList.add("bg-grey-200");
-          button.classList.remove("bg-aquamarine-500");
         }
       });
     </script>
