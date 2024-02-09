@@ -71,11 +71,10 @@ import CiTrash from "~icons/ph/trash-bold";
             });
         });
       }
-
+      
       // Callback function to handle reCAPTCHA completion
       function onRecaptchaCallback(response) {
         console.log("User solved reCAPTCHA. Response:", response);
-        token = response
         solvedCaptcha = 1;
       }
       button.disabled = true;
