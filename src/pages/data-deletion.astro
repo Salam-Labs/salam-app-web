@@ -60,48 +60,51 @@ import CiTrash from "~icons/ph/trash-bold";
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <script is:inline>
       let solvedCaptcha = 0;
+      var token = "";
       function handleRecaptcha() {
         grecaptcha.ready(function () {
           grecaptcha
             .execute("6Ldm02QpAAAAAL0_vVUB7nesbM4Yn8QT8OxBfa1E")
             .then(function (responseToken) {
-              var token = responseToken;
-              console.log(token);
+              token = responseToken;
+              console.log("Response Token:", responseToken);
             });
         });
       }
-      console.log("token" + token);
+
       // Callback function to handle reCAPTCHA completion
       function onRecaptchaCallback(response) {
         console.log("User solved reCAPTCHA. Response:", response);
+        token = response
         solvedCaptcha = 1;
       }
       button.disabled = true;
       function remove() {
         var email = document.getElementById("email").value;
+        var token = /* provide the token value here */;
         var xhr = new XMLHttpRequest();
         xhr.open("POST", "https://salam-app-backend.onrender.com/delete", true);
         xhr.setRequestHeader(
-          "Content-Type",
-          "application/x-www-form-urlencoded",
+            "Content-Type",
+            "application/x-www-form-urlencoded",
         );
         xhr.onreadystatechange = function () {
-          if (xhr.readyState === 4 && xhr.status === 200) {
-            console.log(xhr.responseText);
-          }
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                console.log(xhr.responseText);
+            }
         };
-        var params = "email=" + email + "&token=" + token;
-        console.log(params);
-        // xhr.send(params)
-        xhr.send("email=" + email); // Change 'name' to 'email'
+    // Combine email and token into a single payload
+    var params = "email=" + email + "&token=" + token;
+    xhr.send(params);
 
-        //
-        document.getElementById("main").innerHTML = "";
-        document.getElementById("main").innerHTML =
-          '<h1 class="text-center text-5xl text-aquamarine font-bold mb-16">Please check your mail</h1>' +
-          '<p class="mb-10 text-lg text-center text-white">A confirmation link has been sent to your e-mail. Please click the link to in your mail account to confirm your data deletion request. The link expires in 10 minutes.</p>' +
-          '<h1 class="text-center text-aquamarine font-bold mb-16">Check spam folder too.</h1>';
-      }
+    // Update UI after sending the request
+    document.getElementById("main").innerHTML = "";
+    document.getElementById("main").innerHTML =
+        '<h1 class="text-center text-5xl text-aquamarine font-bold mb-16">Please check your mail</h1>' +
+        '<p class="mb-10 text-lg text-center text-white">A confirmation link has been sent to your e-mail. Please click the link to in your mail account to confirm your data deletion request. The link expires in 10 minutes.</p>' +
+        '<h1 class="text-center text-aquamarine font-bold mb-16">Check spam folder too.</h1>';
+}
+
       // Get the current URL
       var currentUrl = window.location.href;
 
