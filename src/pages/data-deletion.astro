@@ -79,13 +79,10 @@ import CiTrash from "~icons/ph/trash-bold";
       solvedCaptcha = 1;
     }
 
-    function htmlEncode(str) {
-      return String(str).replace(/[^\w. ]/gi, function (c) {
-        return "&#" + c.charCodeAt(0) + ";";
-      });
-    }
     function remove() {
-      var email = htmlEncode(document.getElementById("email").value);
+      var email =document.getElementById("email").value;
+      console.log("email  is")
+      console.log(email)
       var xhr = new XMLHttpRequest();
       xhr.open("POST", "https://salam-app-backend.onrender.com/delete", true);
       xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
