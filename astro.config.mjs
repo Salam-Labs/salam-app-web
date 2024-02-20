@@ -19,14 +19,15 @@ export default defineConfig({
       compiler: "astro"
     })]
   },
-  output: 'server',
-  // Adjusted output
+  output: "server", // Adjusted output
   adapter: vercel({
     speedInsights: {
       enabled: true
     },
     webAnalytics: {
-      enabled: true
-    }
-  })
+
+      enabled: true,
+    },
+  }),
 });
+
