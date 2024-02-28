@@ -60,6 +60,12 @@ import CiTrash from "~icons/ph/trash-bold";
   <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   <script is:inline>
     //wake up the server
+var awake = new XMLHttpRequest();
+awake.open('POST', 'https://salam-app-backend.onrender.com/heartbeat', true);
+awake.setRequestHeader('Content-Type', 'text/plain');
+awake.send('awake');
+
+    //server woken 
 
     let solvedCaptcha = 0;
     var token;
