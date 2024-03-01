@@ -1,23 +1,22 @@
 ---
 import Card from "@components/Card.astro";
 import Layout from "@layouts/Layout.astro";
-import CiHelp from "~icons/tabler/help";
+import CiSearch from "~icons/mingcute/search-3-line";
 //data here dont delete because if load more is not clicked then these are shown
 const blogData = [
   {
     title: "99 Names Modules",
-    image: "https://articles.salam.app/99_Names/Cover.png",
+    image: "https://salam.app/image.png",
     brief:
       "Introduction to Salam App's 99 names modules and instructions to use it.",
     link: "/help-center/99-names",
   },
   {
     title: "Calendar",
-    image: "https://articles.salam.app/99_Names/Cover.png",
+    image: "https://salam.app/image.png",
     brief:
       "Introduction to Salam App's 99 names modules and instructions to use it.",
     link: "/help-center/calendar",
-
   },
   // Add more suggestions here if needed.
 ];
@@ -104,56 +103,59 @@ const blogData = [
     }
   </script>
   <!-- js and css part 1 closes -->
-  <section id="section" class="text-white body-font ">
-    <div class="overflow-hidden">
-      <div class="flex justify-center my-10">
-    <CiHelp class="h-16 w-16  mx-5" />
-        <h1
-        class="text-2xl sm:text-5xl font-bold text-center m-1"
-        id="texteffect"
-      >Help Center
-      </h1>
-
-      </div>
-     
-      <div class="flex justify-center">
+  <!-- html starts from here  suggestion container and card has 10 mt -->
+  <section id="section" class="text-white body-font">
+    <h1
+      class="text-2xl mt-16 sm:text-4xl font-bold text-center"
+      id="texteffect"
+    >
+      Help Center
+    </h1>
+    <div class="flex justify-center items-center mt-10">
+      <div class="relative w-11/12 sm:w-8/12 lg:w-[610px]">
         <input
-          placeholder="eg : Who is Allah?"
-          class="px-5 w-5/6 sm:w-7/12 p-2 rounded-lg m-5 text-2xl text-gray-200 bg-grey-500 border border-aquamarine-600 absolute"
+          placeholder="eg: Calendar Module"
+          class="w-full p-1 focus:outline-none rounded-lg text-2xl text-gray-200 bg-grey-500 border border-aquamarine-600"
           type="text"
           oninput="handleInput()"
         />
-
-        <div
-          id="suggestion-list-container"
-          class="hidden absolute z-10 top-25 mt-28 w-5/6 max-w-[5/6] sm:w-7/12 rounded-lg text-2xl text-gray-200 border bg-smoke-400 border-aquamarine-600"
-        >
-        </div>
-        <!-- auto complete and input tag above   -->
-        <!-- cards here  -->
-        <div id="cards" class="flex flex-wrap justify-center mt-28">
-          <!-- Loop through the blogData array and create a card for each suggestion -->
-          {
-            blogData.map((data) => (
-              // card here
-              <Card
-                title={data.title}
-                image={data.image}
-                brief={data.brief}
-                link={data.link}
-              />
-            ))
-          }
-        </div>
+        <CiSearch
+          class="absolute right-0 bottom-0 mr-0 text-[35px] rounded-r-lg bg-aquamarine-500 text-black"
+        />
       </div>
-      <!-- <div class="flex justify-center">
+    </div>
+    <div class="flex justify-center w-full">
+      <div
+        id="suggestion-list-container"
+        class="hidden absolute z-10 mt-10 w-11/12 sm:w-8/12 lg:w-[610px] rounded-lg text-2xl text-gray-200 border bg-smoke-400 border-aquamarine-600"
+      >
+      </div>
+    </div>
+
+    <!-- auto complete and input tag above   -->
+    <!-- cards here  -->
+    <div id="cards" class="flex flex-wrap justify-center mt-10">
+      <!-- Loop through the blogData array and create a card for each suggestion -->
+      {
+        blogData.map((data) => (
+          // card here
+          <Card
+            title={data.title}
+            image={data.image}
+            brief={data.brief}
+            link={data.link}
+          />
+        ))
+      }
+    </div>
+
+    <!-- <div class="flex justify-center">
         <button
           id="load-more-button"
           class="px-5 py-2 mt-5 bg-aquamarine-600 text-black rounded-lg hover:bg-aquamarine-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
         >
           Load More
         </button> -->
-    </div>
   </section>
 </Layout>
 <!-- This is for text effect -->
