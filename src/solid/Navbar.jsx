@@ -90,7 +90,7 @@ export const NavBar = (props) => {
                   href="/help-center"
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
                 >
-                  GET HELP
+                  HELP CENTER
                 </a>
                 <a
                   href="/policy"
@@ -165,7 +165,7 @@ export const NavBar = (props) => {
               href="/help-center"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
-              Get Help
+              Help Center
             </a>
             <a
               href="#download"
