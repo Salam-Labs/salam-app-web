@@ -83,7 +83,7 @@ const blogData = [
         <a href="${suggestion.link}" class="block text-white focus:bg-smoke-500 focus:outline-none focus:rounded-lg">
   <div class="hover:rounded-lg flex hover:bg-smoke-500 transition-all duration-300">
     <div class="hidden sm:block flex justify-center items-center sm:min-w-5/6"> 
-      <img class="p-2 rounded-xl align-middle" src="${suggestion.image}" height="250px" width="500px">
+      <img class=" rounded-l-xl align-middle" src="${suggestion.image}" height="250px" width="500px">
     </div>
     <div class="sm:w-full">
       <p class="p-2 text-white text-xl font-bold tracking-tight sm:min-w-200">${suggestion.title}</p>
@@ -104,14 +104,21 @@ const blogData = [
   </script>
   <!-- js and css part 1 closes -->
   <!-- html starts from here  suggestion container and card has 10 mt -->
-  <section id="section" class="text-white body-font">
+  <section id="section" class="text-white body-font mb-36">
     <h1
       class="text-2xl mt-16 sm:text-4xl font-bold text-center"
       id="texteffect"
     >
       Help Center
     </h1>
-    <div class="flex justify-center items-center mt-10">
+    <p class="text-center mt-16 text-lg px-44">
+      Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum
+      sint consectetur cupidatat.Lorem ipsum dolor sit amet, qui minim labore
+      adipisicing minim sint cillum sint consectetur cupidatat. Lorem ipsum
+      dolor sit amet, qui minim labore adipisicing minim sint cillum sint
+      consectetur cupidatat.
+    </p>
+    <div class="flex justify-center items-center mt-16">
       <div class="relative w-11/12 sm:w-8/12 lg:w-[610px]">
         <input
           placeholder="eg: Calendar Module"
@@ -131,10 +138,16 @@ const blogData = [
       >
       </div>
     </div>
-
+    <p class="mt-16 text-center text-lg px-44">
+      Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum
+      sint consectetur cupidatat. Lorem ipsum dolor sit amet, qui minim labore
+      adipisicing minim sint cillum sint consectetur cupidatat. Lorem ipsum
+      dolor sit amet, qui minim labore adipisicing minim sint cillum sint
+      consectetur cupidatat.
+    </p>
     <!-- auto complete and input tag above   -->
     <!-- cards here  -->
-    <div id="cards" class="flex flex-wrap justify-center mt-10">
+    <div id="cards" class="flex flex-wrap justify-center my-16">
       <!-- Loop through the blogData array and create a card for each suggestion -->
       {
         blogData.map((data) => (
