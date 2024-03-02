@@ -2,6 +2,7 @@
 import Card from "@components/Card.astro";
 import Layout from "@layouts/Layout.astro";
 import CiSearch from "~icons/mingcute/search-3-line";
+import CiDiscord from "~icons/ic/baseline-discord";
 //data here dont delete because if load more is not clicked then these are shown
 const blogData = [
   {
@@ -106,23 +107,16 @@ const blogData = [
   <!-- html starts from here  suggestion container and card has 10 mt -->
   <section id="section" class="text-white body-font mb-36">
     <h1
-      class="text-2xl mt-16 sm:text-4xl font-bold text-center"
+      class="text-2xl mt-16 sm:text-5xl font-bold text-center text-aquamarine"
       id="texteffect"
     >
       Help Center
     </h1>
-    <p class="text-center mt-16 text-lg px-44">
-      Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum
-      sint consectetur cupidatat.Lorem ipsum dolor sit amet, qui minim labore
-      adipisicing minim sint cillum sint consectetur cupidatat. Lorem ipsum
-      dolor sit amet, qui minim labore adipisicing minim sint cillum sint
-      consectetur cupidatat.
-    </p>
     <div class="flex justify-center items-center mt-16">
       <div class="relative w-11/12 sm:w-8/12 lg:w-[610px]">
         <input
-          placeholder="eg: Calendar Module"
-          class="w-full p-1 focus:outline-none rounded-lg text-2xl text-gray-200 bg-grey-500 border border-aquamarine-600"
+          placeholder="Search"
+          class="w-full p-1 px-2 focus:outline-none rounded-lg text-2xl text-gray-200 bg-grey-500 border border-aquamarine-600"
           type="text"
           oninput="handleInput()"
         />
@@ -138,7 +132,10 @@ const blogData = [
       >
       </div>
     </div>
-    <p class="mt-16 text-center text-lg px-44">
+    <h2 class="text-2xl text-center font-bold mt-16">
+      Got any problem we got your back!
+    </h2>
+    <p class="mt-8 text-center text-lg px-44">
       Lorem ipsum dolor sit amet, qui minim labore adipisicing minim sint cillum
       sint consectetur cupidatat. Lorem ipsum dolor sit amet, qui minim labore
       adipisicing minim sint cillum sint consectetur cupidatat. Lorem ipsum
@@ -169,6 +166,16 @@ const blogData = [
         >
           Load More
         </button> -->
+
+    <div class="fixed bottom-0 right-0 m-4">
+      <a
+        href="https://discord.com/invite/bKqvBtD"
+        class="flex items-center p-3 bg-black border-4 border-aquamarine-700 text-xl rounded-full text-aquamarine-500"
+      >
+        <CiDiscord class="text-2xl" />
+        <p>Help</p>
+      </a>
+    </div>
   </section>
 </Layout>
 <!-- This is for text effect -->
