@@ -3,24 +3,9 @@ import Card from "@components/Card.astro";
 import Layout from "@layouts/Layout.astro";
 import CiSearch from "~icons/mingcute/search-3-line";
 import CiDiscord from "~icons/ic/baseline-discord";
+import { data as blogData } from "../../public/searchData.json";
+
 //data here dont delete because if load more is not clicked then these are shown
-const blogData = [
-  {
-    title: "99 Names Modules",
-    image: "https://salam.app/image.png",
-    brief:
-      "Introduction to Salam App's 99 names modules and instructions to use it.",
-    link: "/help-center/99-names",
-  },
-  {
-    title: "Calendar",
-    image: "https://salam.app/image.png",
-    brief:
-      "Introduction to Salam App's 99 names modules and instructions to use it.",
-    link: "/help-center/calendar",
-  },
-  // Add more suggestions here if needed.
-];
 ---
 
 <Layout title="Salam App Blog">
@@ -34,7 +19,10 @@ const blogData = [
       fetch("/searchData.json")
         .then((response) => response.json())
         .then((data) => {
-          const dataArray = Array.isArray(data) ? data : Object.values(data);
+          // Access the 'data' property of the JSON object
+          const dataArray = Array.isArray(data.data)
+            ? data.data
+            : Object.values(data.data);
           blogData.push(...dataArray);
         })
         .catch((error) => {
@@ -135,7 +123,10 @@ const blogData = [
     <h2 class="text-2xl text-center font-bold mt-16">
       Got any problem we got your back!
     </h2>
-    <p class="mt-8 text-center text-lg px-3 lg:px-44">
+    <p
+      class="mt-8 text-center text-lg px-3 lg:px-44 whitespace-pre"
+      id="normal"
+    >
       From account settings to permissions, find help for everything Salam App
       If you're new to Salam App and looking for tips, check out our articles.
     </p>
@@ -167,7 +158,7 @@ const blogData = [
     <div class="fixed bottom-0 right-0 m-4">
       <a
         href="https://discord.com/invite/bKqvBtD"
-        class="flex items-center p-2 border-4 border-aquamarine-500 text-lg rounded-full text-aquamarine-500 hover:shadow bg-gray-800 hover:bg-smoke-500 m-4 transform translate-y-0 hover:-translate-y-5 transition-transform duration-300"
+        class="flex items-center p-2 border-4 border-aquamarine-500 text-lg rounded-full text-aquamarine-500 hover:shadow bg-gray-800 hover:bg-smoke-500 m-4 transform duration-300"
       >
         <CiDiscord class="text-xl m-1" />
         <p>Get Support</p>
@@ -177,21 +168,6 @@ const blogData = [
 </Layout>
 <!-- This is for text effect -->
 <script is:inline>
-  //this is load more
-  // Text stuff
-  var i = 0;
-  var txt = "Help Center";
-  var speed = 50;
-
-  function typeWriter() {
-    if (i < txt.length) {
-      let x = document.getElementById("texteffect");
-      x.innerText += txt.charAt(i);
-      i++;
-      setTimeout(typeWriter, speed);
-    }
-  }
-  //typeWriter();
   const suggestionList = document.getElementById("suggestion-list-container");
 
   // Hide suggestion list container on click outside
