@@ -10,10 +10,10 @@ const testimonials = [
     },
     {
       content:
-        "For first release it may seem bare bones compared to others.. but don’t let that fool you, this is robust and offers everything WITHOUT ads!!!",
+        "I love it. It has everything I need and I wish the best for the developers behind this app. May Allah keep them safe and steadfast on the religion and bless them with the best of this life and the next ameen.",
       author: {
-        name: " sajjz",
-        image: "person2.png",
+        name: "Fellin34",
+        image: "person3.png",
       },
     },
   ],
@@ -46,9 +46,9 @@ const testimonials = [
     },
     {
       content:
-        "Alhamdulillah, Amazing App. Have all the basic and important information. Looking forward to all the future improvements. May Allah ease.",
+        "Never found a app without ads and this good. Widgets are amazing, I recommended this to my classmate and she has been using it a lot. Salam App should have more reviews and more people. Thank you for this app!",
       author: {
-        name: "Muhammad Faiz",
+        name: "ABDULLAH MUAJ",
         image: "person6.png",
       },
     },
