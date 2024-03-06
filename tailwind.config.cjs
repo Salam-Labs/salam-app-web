@@ -82,6 +82,10 @@ module.exports = {
       textUnderlineOffset: {
         10: "20px",
       },
+      colors: {
+        //just add this below and your all other tailwind colors willwork
+        ...colors,
+      },
     },
   },
   plugins: [require("@tailwindcss/typography")],

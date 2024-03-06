@@ -87,13 +87,15 @@ export const NavBar = (props) => {
                   TEAM
                 </a>
                 <a
+
                   href="/help-center"
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
                 >
                   HELP CENTER
                 </a>
                 <a
-                  href="/policy"
+                  href="/policy-policy"
+
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
                 >
                   PRIVACY POLICY
@@ -160,6 +162,7 @@ export const NavBar = (props) => {
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Team
+
             </a>
             <a
               href="/help-center"
@@ -167,6 +170,7 @@ export const NavBar = (props) => {
             >
               Help Center
             </a>
+
             <a
               href="#download"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
@@ -174,7 +178,7 @@ export const NavBar = (props) => {
               Download
             </a>
             <a
-              href="/policy"
+              href="/privacy-policy"
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Privacy Policy
