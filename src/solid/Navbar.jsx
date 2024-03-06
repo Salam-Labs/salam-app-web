@@ -4,13 +4,13 @@ export const NavBar = (props) => {
   const [show, setShow] = createSignal(false);
   return (
     <nav class="bg-smoke-400">
-      <div class="2xl:max-w-[90%] mx-auto px-2 sm:px-6 lg:px-8">
+      <div class="2xl:max-w-[90%] mx-auto px-2  lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <a href="/" aria-label="Link to homepage">
                 <img
-                  class="h-[45px] w-[45] mr-5"
+                  class="h-[45px] w-[45] mr-3"
                   src="/icon.svg"
                   width="45"
                   height="45"
@@ -70,37 +70,37 @@ export const NavBar = (props) => {
                 <a
                   href="https://salam-app.canny.io/"
                   target="_blank"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
                 >
                   FEATURE REQUEST
                 </a>
                 <a
                   href="/gallery"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
                 >
                   GALLERY
                 </a>
                 <a
                   href="/team"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
                 >
                   TEAM
                 </a>
                 <a
                   href="/help-center"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
                 >
                   HELP CENTER
                 </a>
                 <a
                   href="/version-history"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
                 >
                   VERSION HISTORY
                 </a>
                 <a
                   href="/privacy-policy"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
                 >
                   PRIVACY POLICY
                 </a>
