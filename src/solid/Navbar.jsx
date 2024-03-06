@@ -10,7 +10,7 @@ export const NavBar = (props) => {
             <div class="flex-shrink-0">
               <a href="/" aria-label="Link to homepage">
                 <img
-                  class="h-[45px] w-[45]"
+                  class="h-[45px] w-[45] mr-5"
                   src="/icon.svg"
                   width="45"
                   height="45"
@@ -93,6 +93,12 @@ export const NavBar = (props) => {
                   HELP CENTER
                 </a>
                 <a
+                  href="/version-history"
+                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
+                >
+                  VERSION HISTORY
+                </a>
+                <a
                   href="/privacy-policy"
                   class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-3 py-2 rounded-md text-sm font-bold"
                 >
@@ -166,6 +172,12 @@ export const NavBar = (props) => {
               class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
             >
               Help Center
+            </a>
+            <a
+              href="/version-history"
+              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            >
+              Version History
             </a>
 
             <a
