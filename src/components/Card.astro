@@ -1,21 +1,24 @@
 ---
-export interface Props {
-  title: string;
-  body: string;
-  href: string;
-}
-
-const { href, title, body } = Astro.props as Props;
+const { title, image, brief, link } = Astro.props;
 ---
 
-<li class="link-card bg-green-600">
-  <a href={href}>
-    <h2>
-      {title}
-      <span>&rarr;</span>
-    </h2>
-    <p>
-      {body}
-    </p>
+<div
+  class="max-w-[320px] border-2 border-aquamarine-500 rounded-lg shadow-sm shadow-aquamarine-500 hover:shadow-md hover:shadow-aquamarine-600 bg-gray-800 hover:bg-smoke-500 m-4 transform translate-y-0 hover:-translate-y-5 transition-all duration-300"
+>
+  <a href={link}>
+    <div class="">
+      <img
+        class="rounded-t-lg h-[180px] w-[320px]"
+        src={image}
+        alt={title}
+        loading="lazy"
+      />
+    </div>
+    <div class="px-3 py-2 text-center">
+      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
+        {title}
+      </h5>
+      <p class="mb-3 font-normal text-gray-400">{brief}</p>
+    </div>
   </a>
-</li>
+</div>
