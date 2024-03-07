@@ -45,12 +45,28 @@ const BlogLayout = ({ title, metaImage, metaData, link, children }) => {
         <div className="w-full flex justify-center">
           <div className="prose lg:prose-base sm:prose-xl xl:prose-2xl prose-blockquote:font-serif  prose-a:text-lime-300 prose-a:underline align-middle prose-invert p-5 pt-16  sm:p-20  ">
             <div class="prose-img:rounded-2xl sm:prose-img:w-1/2 sm:prose-img:mx-auto  prose-h1:text-aquamarine-500 prose-h2:text-aquamarine-300">
+              <div
+                class="bg-aquamarine-600 rounded-full h-1 left-0 w-0 fixed top-0 z-50"
+                id="progressBar"
+              ></div>
+
               {children}
             </div>
           </div>
         </div>
         {/* Custom content ends here */}
       </body>
+      <script>
+        {`
+          window.addEventListener('scroll', function() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;  
+            var scrolled = (winScroll / height) * 100;
+          
+            document.getElementById("progressBar").style.width = scrolled + "%";
+          });
+        `}
+      </script>
     </html>
   );
 };
