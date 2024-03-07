@@ -26,42 +26,24 @@ export const NavBar = (props) => {
               aria-controls="mobile-menu"
               aria-expanded="false"
               aria-label="mobile-menu"
-              onClick={() => setShow(!show())}
+              onClick={
+                "document.getElementById('mobile-menu').classList.toggle('hidden');"
+              }
             >
-              {!show() ? (
-                <>
-                  {
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"
-                      ></path>
-                    </svg>
-                  }
-                  <p className="mb-1 ml-2">menu</p>
-                </>
-              ) : (
-                <>
-                  {
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="1em"
-                      height="1em"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        fill="currentColor"
-                        d="M6.4 19L5 17.6l5.6-5.6L5 6.4L6.4 5l5.6 5.6L17.6 5L19 6.4L13.4 12l5.6 5.6l-1.4 1.4l-5.6-5.6Z"
-                      ></path>
-                    </svg>
-                  }
-                </>
-              )}
+              <svg
+                data-hk="s10-0-0-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 24 24"
+                class="mx-1"
+              >
+                <path
+                  fill="currentColor"
+                  d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"
+                ></path>
+              </svg>
+              Menu
             </button>
           </div>
           <div class="flex-1 items-center justify-center sm:items-stretch sm:justify-start hidden sm:block ">
@@ -143,58 +125,56 @@ export const NavBar = (props) => {
         </div>
       </div>
 
-      <Show when={show() === true}>
-        <div class="sm:hidden z-20 relative" id="mobile-menu">
-          <div class="px-2 pt-2 pb-3 space-y-1 absolute w-full bg-smoke-400">
-            <a
-              href="https://salam-app.canny.io/"
-              class="text-gray-300  hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
-              aria-current="page"
-            >
-              Feature Request
-            </a>
+      <div class="hidden sm:hidden z-20 relative" id="mobile-menu">
+        <div class="px-2 pt-2 pb-3 space-y-1 absolute w-full bg-smoke-400">
+          <a
+            href="https://salam-app.canny.io/"
+            class="text-gray-300  hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+            aria-current="page"
+          >
+            Feature Request
+          </a>
 
-            <a
-              href="/gallery"
-              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Gallery
-            </a>
+          <a
+            href="/gallery"
+            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Gallery
+          </a>
 
-            <a
-              href="/team"
-              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Team
-            </a>
-            <a
-              href="/help-center"
-              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Help Center
-            </a>
-            <a
-              href="/version-history"
-              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Version History
-            </a>
+          <a
+            href="/team"
+            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Team
+          </a>
+          <a
+            href="/help-center"
+            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Help Center
+          </a>
+          <a
+            href="/version-history"
+            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Version History
+          </a>
 
-            <a
-              href="#download"
-              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Download
-            </a>
-            <a
-              href="/privacy-policy"
-              class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-            >
-              Privacy Policy
-            </a>
-          </div>
+          <a
+            href="#download"
+            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Download
+          </a>
+          <a
+            href="/privacy-policy"
+            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+          >
+            Privacy Policy
+          </a>
         </div>
-      </Show>
+      </div>
     </nav>
   );
 };
