@@ -50,7 +50,6 @@ const developers = [
     bio: "I'm 15 years old―new to the programming world and always learning! ",
 
     links: [
-      
       {
         github: "https://github.com/ismailfateen",
       },
@@ -295,6 +294,46 @@ const developers = [
       },
     ],
   },
+  {
+    name: "Real Granny",
+    position: "Quality Assurance",
+    image: "gran.png",
+
+    flags: [
+      {
+        src: "bangladesh.svg",
+        alt: "bangladesh flag",
+      },
+    ],
+
+    bio: "I assure quality in the most sickest way possible 👓.",
+
+    links: [
+      {
+        discord: "https://discord.com/users/1190719716944265287",
+      },
+    ],
+  },
+  {
+    name: "Mohsmoo",
+    position: "Quality Assurance",
+    image: "moshmoo.png",
+
+    flags: [
+      {
+        src: "india.svg",
+        alt: "india flag",
+      },
+    ],
+
+    bio: "I test Salam App.",
+
+    links: [
+      {
+        discord: "https://discord.com/users/474633185058095108",
+      },
+    ],
+  },
 ];
 ---
 
@@ -306,35 +345,42 @@ const developers = [
           id="All"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
           onclick="showDevelopers('All')"
-                    >ALL
+          >ALL
         </button>
         <div>/</div>
         <button
           id="App"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
           onclick="showDevelopers('App')"
-                    >APP
+          >APP
         </button>
         <div>/</div>
         <button
           id="Web"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
           onclick="showDevelopers('Web')"
-                    >WEB
+          >WEB
         </button>
         <div>/</div>
         <button
           id="UI"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
           onclick="showDevelopers('UI')"
-                    >DESIGN
+          >DESIGN
         </button>
         <div>/</div>
         <button
           id="Writer"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
           onclick="showDevelopers('Writer')"
-                    >TEXT
+          >TEXT
+        </button>
+        <div>/</div>
+        <button
+          id="Quality"
+          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          onclick="showDevelopers('Quality')"
+          >QUALITY
         </button>
       </div>
     </div>
@@ -415,7 +461,7 @@ const developers = [
   </style>
 
   <script is:inline>
-    const array = ["All", "App", "Web", "UI", "Writer"];
+    const array = ["All", "App", "Web", "UI", "Writer", "Quality"];
 
     function underline(position) {
       array.forEach((element) => {

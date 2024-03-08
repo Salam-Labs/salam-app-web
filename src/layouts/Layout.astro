@@ -9,16 +9,16 @@ export interface Props {
 const { title } = Astro.props as Props;
 ---
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />   
-     <meta content="width=device-width" name="viewport" />   
-     <meta content={Astro.generator} name="generator" />
+    <meta charset="utf-8" />
+    <meta content="width=device-width" name="viewport" />
+    <meta content={Astro.generator} name="generator" />
     <!-- <link rel="icon" href="/favicon.ico" /> -->
     <link href="/favicon.ico" rel="icon" type="image/svg+xml" />
     <!-- <link href="/favicon.png" rel="icon" type="image/svg+xml" /> -->
- 
+
     <title>{title}</title>
 
     <!-- HTML Meta Tags -->
