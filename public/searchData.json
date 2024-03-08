@@ -1,10 +1,52 @@
 {
   "data": [
     {
-      "title": "99 Names Modules",
+      "title": "99-names module",
       "image": "https://articles.salam.app/99_Names/Cover.png",
-      "brief": "Introduction to Salam App's 99 names modules and instructions to use it.Leard about the names of Allah almighty.",
+      "brief": "Introduction to Salam App's 99 names module and tips to use it. Learn about the names of Allah almighty.",
       "link": "/help-center/99-names"
+    },
+    {
+      "title": "hadith module",
+      "image": "https://articles.salam.app/Hadith/cover.png",
+      "brief": "Introduction to Salam App's hadith module and tips to use it.",
+      "link": "/help-center/hadith"
+    },
+    {
+      "title": "prayer-times module",
+      "image": "https://articles.salam.app/General/generic_cover.png",
+      "brief": "Introduction to Salam App's prayer times module and tips to use it.",
+      "link": "/help-center/prayer-times"
+    },
+    {
+      "title": "quran-player module",
+      "image": "https://articles.salam.app/Quran_Player/cover.png",
+      "brief": "Introduction to Salam App's quran-player module and tips to use it.",
+      "link": "/help-center/quran-player"
+    },
+    {
+      "title": "dhikr-and-dua module",
+      "image": "https://articles.salam.app/Dhikr_and_Dua/cover.png",
+      "brief": "Introduction to Salam App's dhikr-and-dua module and tips to use it.",
+      "link": "/help-center/dhikr-and-dua"
+    },
+    {
+      "title": "islamic-calendar module",
+      "image": "https://articles.salam.app/Islamic_Calendar/cover.png",
+      "brief": "Introduction to Salam App's islamic-calendar module and tips to use it.",
+      "link": "/help-center/islamic-calendar"
+    },
+    {
+      "title": "prayer-tracker module",
+      "image": "https://articles.salam.app/General/generic_cover.png",
+      "brief": "Introduction to Salam App's prayer-tracker module and tips to use it.",
+      "link": "/help-center/prayer-tracker"
+    },
+    {
+      "title": "tafsir module",
+      "image": "https://articles.salam.app/Tafsir/cover.png",
+      "brief": "Introduction to Salam App's tafsir module and tips to use it.",
+      "link": "/help-center/tafsir"
     }
   ]
 }
