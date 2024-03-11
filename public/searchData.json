@@ -47,6 +47,12 @@
       "image": "https://articles.salam.app/Tafsir/cover.png",
       "brief": "Introduction to Salam App's tafsir module and tips to use it.",
       "link": "/help-center/tafsir"
+    },
+    {
+      "title": "Quran Module",
+      "image": "https://articles.salam.app/Quran/cover.png",
+      "brief": "Introduction to Salam App's Quran module and tips to use it.",
+      "link": "/help-center/quran"
     }
   ]
 }
