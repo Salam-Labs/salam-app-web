@@ -1,7 +1,6 @@
 // BlogLayout.jsx
 
 import { NavBar } from "../solid/Navbar.jsx";
-import SpeedInsights from "@vercel/speed-insights/astro";
 
 const BlogLayout = ({ title, metaImage, metaData, link, children }) => {
   const imageUrl = metaImage || "https://salam.app/image.png";
@@ -38,7 +37,6 @@ const BlogLayout = ({ title, metaImage, metaData, link, children }) => {
           content={metaData || "Default description"}
         />
         <meta name="twitter:image" content={imageUrl} />
-        <SpeedInsights />
       </head>
       <body className="bg-smoke-400">
         <NavBar client:load />
