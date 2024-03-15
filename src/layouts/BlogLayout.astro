@@ -1,0 +1,89 @@
+---
+// Import the NavBar component
+import { NavBar } from "../solid/Navbar.jsx";
+import Likes from "@components/Likes.astro";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width" name="viewport" />
+    <link href="/favicon.ico" rel="icon" type="image/svg+xml" />
+
+    <title>{Astro.props.title}</title>
+
+    <!-- HTML Meta Tags -->
+    <meta
+      name="description"
+      content={Astro.props.metaData || "Default description"}
+    />
+
+    <!-- Normal Meta Tags -->
+    <meta property="og:url" content={Astro.props.link || "https://salam.app"} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={Astro.props.title} />
+    <meta
+      property="og:description"
+      content={Astro.props.metaData || "Default description"}
+    />
+    <meta
+      property="og:image"
+      content={Astro.props.metaImage || "https://salam.app/image.png"}
+    />
+
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta property="twitter:domain" content="salam.app" />
+    <meta
+      property="twitter:url"
+      content={Astro.props.link || "https://salam.app"}
+    />
+    <meta name="twitter:title" content={Astro.props.title} />
+    <meta
+      name="twitter:description"
+      content={Astro.props.metaData || "Default description"}
+    />
+    <meta
+      name="twitter:image"
+      content={Astro.props.metaImage || "https://salam.app/image.png"}
+    />
+    <meta name="keywords" content={Astro.props.words || "salam,app"} />
+  </head>
+  <body class="bg-smoke-400">
+    <NavBar client:load />
+
+    <!-- Custom content here -->
+    <div class="w-full flex justify-center">
+      <div
+        class="prose lg:prose-base sm:prose-xl xl:prose-2xl prose-blockquote:font-serif prose-a:text-lime-300 prose-a:underline align-middle prose-invert p-5 pt-16 sm:p-20"
+      >
+        <div
+          class="prose-img:rounded-2xl sm:prose-img:w-1/2 sm:prose-img:mx-auto prose-h1:text-aquamarine-500 prose-h2:text-aquamarine-300"
+        >
+          <div
+            class="bg-aquamarine-600 rounded-r-full h-1 left-0 w-0 fixed top-0 z-50"
+            id="progressBar"
+          >
+          </div>
+
+          <!-- Children content -->
+          <slot />
+          <Likes />
+        </div>
+      </div>
+    </div>
+    <!-- Custom content ends here -->
+  </body>
+  <script>
+    window.addEventListener("scroll", function () {
+      var winScroll =
+        document.body.scrollTop || document.documentElement.scrollTop;
+      var height =
+        document.documentElement.scrollHeight -
+        document.documentElement.clientHeight;
+      var scrolled = (winScroll / height) * 100;
+
+      document.getElementById("progressBar").style.width = scrolled + "%";
+    });
+  </script>
+</html>

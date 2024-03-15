@@ -20,7 +20,7 @@ export default defineConfig({
       }),
     ],
   },
-  output: "server", // Adjusted output
+  output: "hybrid", // Adjusted output
   adapter: vercel({
     speedInsights: {
       enabled: true,

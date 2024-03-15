@@ -1,0 +1,165 @@
+---
+import CiLike from "~icons/mdi/like";
+import CiDislike from "~icons/mdi/dislike";
+---
+
+<div class="flex justify-center m-10 p-10">
+  <div
+    class="shadow-lg shadow-aquamarine-500 w-8/12 flex rounded-2xl justify-center border-2 border-aquamarine-500"
+  >
+    <div class="">
+      <h6 id="feedback-message" class="p-4 text-center">
+        Did you find this article helpful?
+      </h6>
+      <div class="flex justify-around items-center" id="buttons">
+        <!-- inside this is the buttons -->
+        <CiLike id="like-button" class="hover:text-aquamarine-500 text-4xl" />
+        <CiDislike
+          id="dislike-button"
+          class="hover:text-aquamarine-500 text-4xl"
+        />
+      </div>
+      <h6 id="votes" class="text-sm p-4 text-center">
+        <span id="people-liked">0</span> People found this useful.
+      </h6>
+    </div>
+    <!--this is the w-2/3 inside this is p and a div  -->
+  </div>
+</div>
+
+<script is:inline src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+></script>
+
+<script is:inline>
+  // Initialize liked and disliked values
+  let liked = 0;
+  let disliked = 0;
+
+  window.onload = async function () {
+    // Fetch data on page load
+    const urlToCheck = window.location.pathname
+      .split("/")
+      .filter((segment) => segment !== "")
+      .pop();
+    await updateLikesDislikesAndViewForURL(urlToCheck);
+
+    // Replace the content of <span> tags with the retrieved data
+    const { data: likedislike, error } = await _supabase
+      .from("likedislike")
+      .select("likes, dislikes, views")
+      .eq("link", urlToCheck);
+
+    if (error) {
+      console.error(
+        "Error occurred while fetching likes, dislikes, and views:",
+        error.message
+      );
+      return;
+    }
+
+    if (likedislike && likedislike.length > 0) {
+      const { likes, dislikes, views } = likedislike[0];
+      liked = likes;
+      disliked = dislikes;
+      document.getElementById("people-liked").textContent = liked;
+    }
+  };
+
+  const likeButton = document.getElementById("like-button");
+  const dislikeButton = document.getElementById("dislike-button");
+  const feedbackMessage = document.getElementById("feedback-message");
+
+  likeButton.addEventListener("click", async () => {
+    document.getElementById("buttons").classList.add("hidden");
+    document.getElementById("votes").classList.add("hidden");
+    feedbackMessage.textContent = "Thank you for your response!";
+
+    const urlToCheck = window.location.pathname
+      .split("/")
+      .filter((segment) => segment !== "")
+      .pop();
+    await updateLikesDislikesAndViewForURL(urlToCheck, 1, 0); // Pass 1 for like, 0 for dislike
+  });
+
+  dislikeButton.addEventListener("click", async () => {
+    document.getElementById("buttons").classList.add("hidden");
+    document.getElementById("votes").classList.add("hidden");
+    feedbackMessage.textContent = "Thank you for your response!";
+    const urlToCheck = window.location.pathname
+      .split("/")
+      .filter((segment) => segment !== "")
+      .pop();
+    await updateLikesDislikesAndViewForURL(urlToCheck, 0, 1); // Pass 0 for like, 1 for dislike
+  });
+
+  const { createClient } = supabase;
+  const _supabase = createClient(
+    "https://foruwzyknqdgqzzddwmu.supabase.co",
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvcnV3enlrbnFkZ3F6emRkd211Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk4MDA0OTMsImV4cCI6MjAyNTM3NjQ5M30.4QAmue1s5gMUJR88iDcfmtP6SZUgFk4fDkNnJ3RFsBc"
+  );
+
+  async function updateLikesDislikesAndViewForURL(url, like, dislike) {
+    try {
+      let { data: likedislike, error } = await _supabase
+        .from("likedislike")
+        .select("likes, dislikes, views")
+        .eq("link", url);
+
+      if (error) {
+        console.error(
+          "Error occurred while fetching likes, dislikes, and views:",
+          error.message
+        );
+        return;
+      }
+
+      if (!likedislike || likedislike.length === 0) {
+        // If no record found, insert a new row with likes, dislikes, and views set to 0
+        const { data, error } = await _supabase
+          .from("likedislike")
+          .insert([{ link: url, likes: 0, dislikes: 0, views: 1 }]); // Initialize views to 0
+
+        if (error) {
+          console.error(
+            "Error occurred while inserting new record:",
+            error.message
+          );
+          return;
+        }
+      } else {
+        // Update the existing record, incrementing the view count if no vote is cast
+        const { likes, dislikes, views } = likedislike[0];
+        const newLikes = like === 1 ? likes + 1 : likes;
+        const newDislikes = dislike === 1 ? dislikes + 1 : dislikes;
+
+        const { data, error } = await _supabase
+          .from("likedislike")
+          .update({
+            likes: newLikes,
+            dislikes: newDislikes,
+            views: like === 0 && dislike === 0 ? views + 1 : views, // Increment views only if no vote is cast
+          })
+          .eq("link", url);
+
+        if (error) {
+          console.error(
+            "Error occurred while updating likes, dislikes, and views:",
+            error.message
+          );
+          return;
+        }
+      }
+    } catch (error) {
+      console.error("Error occurred:", error.message);
+    }
+  }
+
+  // Get the last segment of the URL path
+  const urlToCheck = window.location.pathname
+    .split("/")
+    .filter((segment) => segment !== "")
+    .pop();
+  const like = liked; // Use the previously initialized liked value
+  const dislike = disliked; // Use the previously initialized disliked value
+  updateLikesDislikesAndViewForURL(urlToCheck, like, dislike);
+</script>
