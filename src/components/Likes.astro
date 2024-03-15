@@ -3,9 +3,9 @@ import CiLike from "~icons/mdi/like";
 import CiDislike from "~icons/mdi/dislike";
 ---
 
-<div class="flex justify-center m-10 p-10">
+<div class="flex justify-center my-16 sm:p-10">
   <div
-    class="shadow-lg shadow-aquamarine-500 w-8/12 flex rounded-2xl justify-center border-2 border-aquamarine-500"
+    class="shadow-lg shadow-aquamarine-500 sm:w-8/12 flex rounded-2xl justify-center border-2 border-aquamarine-500"
   >
     <div class="">
       <h6 id="feedback-message" class="p-4 text-center">
@@ -72,7 +72,8 @@ import CiDislike from "~icons/mdi/dislike";
   likeButton.addEventListener("click", async () => {
     document.getElementById("buttons").classList.add("hidden");
     document.getElementById("votes").classList.add("hidden");
-    feedbackMessage.textContent = "Thank you for your response!";
+    feedbackMessage.textContent =
+      "Jazakallah Khairan! (May Allah reward you abundantly with goodness.)";
 
     const urlToCheck = window.location.pathname
       .split("/")
@@ -84,7 +85,8 @@ import CiDislike from "~icons/mdi/dislike";
   dislikeButton.addEventListener("click", async () => {
     document.getElementById("buttons").classList.add("hidden");
     document.getElementById("votes").classList.add("hidden");
-    feedbackMessage.textContent = "Thank you for your response!";
+    feedbackMessage.textContent =
+      "Jazakallah Khairan! (May Allah reward you abundantly with goodness.)";
     const urlToCheck = window.location.pathname
       .split("/")
       .filter((segment) => segment !== "")
