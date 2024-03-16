@@ -27,57 +27,66 @@ import CiDislike from "~icons/mdi/dislike";
   </div>
 </div>
 
-
 <script is:inline>
-
   async function likeDislike(url, action) {
     try {
-      if (action !== 'like' && action !== 'dislike') {
+      if (action !== "like" && action !== "dislike") {
         throw new Error('Action must be either "like" or "dislike"');
       }
 
-      // Extracting the part of the URL after the last '/'
-      const urlParts = url.split('/');
-      const urlPath = urlParts[urlParts.length - 1];
-
-      const response = await fetch('https://salam-app-backend-397370f119cb.herokuapp.com/like-dislike', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-           'x-api-key': 'ioiojweroo23io23oikl'
+      const response = await fetch(
+        "https://salam-app-backend-397370f119cb.herokuapp.com/like-dislike",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "x-api-key": "ioiojweroo23io23oikl",
+          },
+          body: JSON.stringify({ url: url, number: 1, type: action }),
         },
-        body: JSON.stringify({ url: urlPath, number: 1, type: action })
-      });
+      );
 
       if (!response.ok) {
-        throw new Error('Failed to perform the action');
+        throw new Error("Failed to perform the action");
       }
 
       const data = await response.json();
-      console.log(data); // You can handle the response data here
-      updatePeopleLiked(data.likes);
+      console.log(data);
+      updatePeopleLiked();
     } catch (error) {
-      console.error('Error:', error.message);
+      console.error("Error:", error.message);
     }
   }
 
-  async function updatePeopleLiked(likes) {
+  async function updatePeopleLiked() {
     try {
-      const response = await fetch('https://salam-app-backend-397370f119cb.herokuapp.com/likes-dislikes');
+      const response = await fetch(
+        "https://salam-app-backend-397370f119cb.herokuapp.com/likes-dislikes",
+      );
       if (!response.ok) {
-        throw new Error('Failed to fetch likes-dislikes data');
+        throw new Error("Failed to fetch likes-dislikes data");
       }
 
       const data = await response.json();
-      console.log(data); // Assuming the JSON response is an array of objects
+      console.log(data);
 
-      // Sum up the likes from all articles
-      const totalLikes = data.reduce((acc, obj) => acc + obj.likes, 0);
+      const currentPageURL = window.location.pathname
+        .split("/")
+        .filter((segment) => segment !== "")
+        .pop();
 
-      // Update the number of people who liked the article
-      document.getElementById("people-liked").textContent = totalLikes;
+      const currentPageData = data.find(
+        (entry) => entry.url === currentPageURL,
+      );
+
+      if (!currentPageData) {
+        throw new Error("Data for current page not found");
+      }
+
+      document.getElementById("people-liked").textContent =
+        currentPageData.likes;
     } catch (error) {
-      console.error('Error:', error.message);
+      console.error("Error:", error.message);
     }
   }
 
@@ -86,8 +95,8 @@ import CiDislike from "~icons/mdi/dislike";
   const feedbackMessage = document.getElementById("feedback-message");
 
   likeButton.addEventListener("click", async () => {
-    document.getElementById("buttons").classList.add("hidden");
-    document.getElementById("votes").classList.add("hidden");
+    document.getElementById("like-button").classList.add("hidden");
+    document.getElementById("dislike-button").classList.add("hidden");
     feedbackMessage.textContent =
       "Jazakallah Khairan! (May Allah reward you abundantly with goodness.)";
 
@@ -95,23 +104,22 @@ import CiDislike from "~icons/mdi/dislike";
       .split("/")
       .filter((segment) => segment !== "")
       .pop();
-    await likeDislike(urlToCheck, 'like');
+    await likeDislike(urlToCheck, "like");
   });
 
   dislikeButton.addEventListener("click", async () => {
-    document.getElementById("buttons").classList.add("hidden");
-    document.getElementById("votes").classList.add("hidden");
+    document.getElementById("like-button").classList.add("hidden");
+    document.getElementById("dislike-button").classList.add("hidden");
     feedbackMessage.textContent =
       "Jazakallah Khairan! (May Allah reward you abundantly with goodness.)";
     const urlToCheck = window.location.pathname
       .split("/")
       .filter((segment) => segment !== "")
       .pop();
-    await likeDislike(urlToCheck, 'dislike');
+    await likeDislike(urlToCheck, "dislike");
   });
 
-  // Fetch initial likes count when the page loads
-  window.onload = async function() {
+  window.onload = async function () {
     await updatePeopleLiked();
   };
 </script>
