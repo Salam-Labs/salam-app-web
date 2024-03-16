@@ -27,43 +27,59 @@ import CiDislike from "~icons/mdi/dislike";
   </div>
 </div>
 
-<script is:inline src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
-></script>
 
 <script is:inline>
-  // Initialize liked and disliked values
-  let liked = 0;
-  let disliked = 0;
 
-  window.onload = async function () {
-    // Fetch data on page load
-    const urlToCheck = window.location.pathname
-      .split("/")
-      .filter((segment) => segment !== "")
-      .pop();
-    await updateLikesDislikesAndViewForURL(urlToCheck);
+  async function likeDislike(url, action) {
+    try {
+      if (action !== 'like' && action !== 'dislike') {
+        throw new Error('Action must be either "like" or "dislike"');
+      }
 
-    // Replace the content of <span> tags with the retrieved data
-    const { data: likedislike, error } = await _supabase
-      .from("likedislike")
-      .select("likes, dislikes, views")
-      .eq("link", urlToCheck);
+      // Extracting the part of the URL after the last '/'
+      const urlParts = url.split('/');
+      const urlPath = urlParts[urlParts.length - 1];
 
-    if (error) {
-      console.error(
-        "Error occurred while fetching likes, dislikes, and views:",
-        error.message
-      );
-      return;
+      const response = await fetch('https://salam-app-backend-397370f119cb.herokuapp.com/like-dislike', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+           'x-api-key': 'ioiojweroo23io23oikl'
+        },
+        body: JSON.stringify({ url: urlPath, number: 1, type: action })
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to perform the action');
+      }
+
+      const data = await response.json();
+      console.log(data); // You can handle the response data here
+      updatePeopleLiked(data.likes);
+    } catch (error) {
+      console.error('Error:', error.message);
     }
+  }
 
-    if (likedislike && likedislike.length > 0) {
-      const { likes, dislikes, views } = likedislike[0];
-      liked = likes;
-      disliked = dislikes;
-      document.getElementById("people-liked").textContent = liked;
+  async function updatePeopleLiked(likes) {
+    try {
+      const response = await fetch('https://salam-app-backend-397370f119cb.herokuapp.com/likes-dislikes');
+      if (!response.ok) {
+        throw new Error('Failed to fetch likes-dislikes data');
+      }
+
+      const data = await response.json();
+      console.log(data); // Assuming the JSON response is an array of objects
+
+      // Sum up the likes from all articles
+      const totalLikes = data.reduce((acc, obj) => acc + obj.likes, 0);
+
+      // Update the number of people who liked the article
+      document.getElementById("people-liked").textContent = totalLikes;
+    } catch (error) {
+      console.error('Error:', error.message);
     }
-  };
+  }
 
   const likeButton = document.getElementById("like-button");
   const dislikeButton = document.getElementById("dislike-button");
@@ -79,7 +95,7 @@ import CiDislike from "~icons/mdi/dislike";
       .split("/")
       .filter((segment) => segment !== "")
       .pop();
-    await updateLikesDislikesAndViewForURL(urlToCheck, 1, 0); // Pass 1 for like, 0 for dislike
+    await likeDislike(urlToCheck, 'like');
   });
 
   dislikeButton.addEventListener("click", async () => {
@@ -91,77 +107,11 @@ import CiDislike from "~icons/mdi/dislike";
       .split("/")
       .filter((segment) => segment !== "")
       .pop();
-    await updateLikesDislikesAndViewForURL(urlToCheck, 0, 1); // Pass 0 for like, 1 for dislike
+    await likeDislike(urlToCheck, 'dislike');
   });
 
-  const { createClient } = supabase;
-  const _supabase = createClient(
-    "https://foruwzyknqdgqzzddwmu.supabase.co",
-    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZvcnV3enlrbnFkZ3F6emRkd211Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDk4MDA0OTMsImV4cCI6MjAyNTM3NjQ5M30.4QAmue1s5gMUJR88iDcfmtP6SZUgFk4fDkNnJ3RFsBc"
-  );
-
-  async function updateLikesDislikesAndViewForURL(url, like, dislike) {
-    try {
-      let { data: likedislike, error } = await _supabase
-        .from("likedislike")
-        .select("likes, dislikes, views")
-        .eq("link", url);
-
-      if (error) {
-        console.error(
-          "Error occurred while fetching likes, dislikes, and views:",
-          error.message
-        );
-        return;
-      }
-
-      if (!likedislike || likedislike.length === 0) {
-        // If no record found, insert a new row with likes, dislikes, and views set to 0
-        const { data, error } = await _supabase
-          .from("likedislike")
-          .insert([{ link: url, likes: 0, dislikes: 0, views: 1 }]); // Initialize views to 0
-
-        if (error) {
-          console.error(
-            "Error occurred while inserting new record:",
-            error.message
-          );
-          return;
-        }
-      } else {
-        // Update the existing record, incrementing the view count if no vote is cast
-        const { likes, dislikes, views } = likedislike[0];
-        const newLikes = like === 1 ? likes + 1 : likes;
-        const newDislikes = dislike === 1 ? dislikes + 1 : dislikes;
-
-        const { data, error } = await _supabase
-          .from("likedislike")
-          .update({
-            likes: newLikes,
-            dislikes: newDislikes,
-            views: like === 0 && dislike === 0 ? views + 1 : views, // Increment views only if no vote is cast
-          })
-          .eq("link", url);
-
-        if (error) {
-          console.error(
-            "Error occurred while updating likes, dislikes, and views:",
-            error.message
-          );
-          return;
-        }
-      }
-    } catch (error) {
-      console.error("Error occurred:", error.message);
-    }
-  }
-
-  // Get the last segment of the URL path
-  const urlToCheck = window.location.pathname
-    .split("/")
-    .filter((segment) => segment !== "")
-    .pop();
-  const like = liked; // Use the previously initialized liked value
-  const dislike = disliked; // Use the previously initialized disliked value
-  updateLikesDislikesAndViewForURL(urlToCheck, like, dislike);
+  // Fetch initial likes count when the page loads
+  window.onload = async function() {
+    await updatePeopleLiked();
+  };
 </script>
