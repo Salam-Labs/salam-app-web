@@ -59,9 +59,9 @@ const developers = [
     ],
   },
   {
-    name: "Razer ",
+    name: "Abdullah ",
     position: "App Developer",
-    image: "razer.png",
+    image: "abdullah.png",
 
     flags: [
       {
@@ -74,16 +74,16 @@ const developers = [
 
     links: [
       {
-        github: "https://github.com/deadlyrazer",
+        github: "https://github.com/github-worst-company",
       },
       {
-        discord: "https://discord.com/users/362484698292813825jhdjwh",
+        discord: "https://discord.com/users/1211231152908804147",
       },
     ],
   },
   {
     name: "Edster",
-    position: "App Developer, UI Developer",
+    position: "App Developer, GFX Developer",
     image: "edster.png",
 
     flags: [
@@ -378,6 +378,26 @@ const developers = [
       },
     ],
   },
+  {
+    name: "Dash",
+    position: "Quality Assurance",
+    image: "dash.png",
+
+    flags: [
+      {
+        src: "indonesia.svg",
+        alt: "indonesia flag",
+      },
+    ],
+
+    bio: "I help with content-related stuff. I contributed to Daily Reminders and Reminder Swipe",
+
+    links: [
+      {
+        discord: "https://discord.com/users/782468629312307200",
+      },
+    ],
+  },
 ];
 ---
 
@@ -409,10 +429,10 @@ const developers = [
         </button>
         <div>/</div>
         <button
-          id="UI"
+          id="GFX"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
-          onclick="showDevelopers('UI')"
-          >UX
+          onclick="showDevelopers('GFX')"
+          >GFX
         </button>
         <div>/</div>
         <button
@@ -507,7 +527,7 @@ const developers = [
   </style>
 
   <script is:inline>
-    const array = ["All", "App", "Web", "UI", "Writer", "Quality"];
+    const array = ["All", "App", "Web", "GFX", "Writer", "Quality"];
 
     function underline(position) {
       array.forEach((element) => {
