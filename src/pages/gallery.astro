@@ -2,7 +2,12 @@
 import Layout from "@layouts/Layout.astro";
 ---
 
-<Layout title="Salam App photos">
+<Layout
+  title="Salam App Gallery"
+  brief="Images of Salam Apps modules and features."
+  url="https://salam.app/gallery"
+  words="salam,app,help,gallery,photos,images"
+>
   <div class="2xl:flex-col 2xl:justify-evenly 2xl:w-3/4 mx-auto">
     <!-- quran part starts here  -->
     <div class="sm:flex sm:justify-around sm:m-6 lg:ml-52 2xl:ml-60">
@@ -406,12 +411,11 @@ import Layout from "@layouts/Layout.astro";
   // i really hate swiper js
   // edit i dont anymore
 
-
-  import Swiper from 'swiper';
-  import {Navigation, Pagination, Autoplay}  from 'swiper/modules';
+  import Swiper from "swiper";
+  import { Navigation, Pagination, Autoplay } from "swiper/modules";
   import "swiper/css";
   import "swiper/css/pagination";
-  import "swiper/css/navigation"
+  import "swiper/css/navigation";
   import "swiper/css/autoplay";
 
   // eslint-disable-next-line no-unused-vars

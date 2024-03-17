@@ -1,3 +1,4 @@
+
 ---
 import Layout from "@layouts/Layout.astro";
 import CiDiscord from "~icons/ci/discord";
@@ -401,7 +402,12 @@ const developers = [
 ];
 ---
 
-<Layout title="Salam App Team">
+<Layout
+  title="Salam App Team"
+  brief="People behind Salam App. Developers, Designers, Testers and many more."
+  url="https://salam.app/team"
+  words="salam,app,team"
+>
   <section class="text-white body-font sm:px-10">
     <div class="flex justify-center">
       <div
@@ -431,8 +437,10 @@ const developers = [
         <button
           id="GFX"
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+
           onclick="showDevelopers('GFX')"
           >GFX
+
         </button>
         <div>/</div>
         <button
@@ -447,6 +455,7 @@ const developers = [
           class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
           onclick="showDevelopers('Quality')"
           >QA
+
         </button>
       </div>
     </div>

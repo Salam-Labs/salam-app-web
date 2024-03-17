@@ -1,6 +1,30 @@
 {
   "data": [
     {
+      "title": "Prayer Times",
+      "image": "https://articles.salam.app/General/generic_cover.png",
+      "brief": "Introduction to Salam App's prayer times module and tips to use it.",
+      "link": "/help-center/prayer-times"
+    },
+    {
+      "title": "Quran Module",
+      "image": "https://articles.salam.app/Quran/cover.png",
+      "brief": "Introduction to Salam App's Quran module and tips to use it.",
+      "link": "/help-center/quran"
+    },
+    {
+      "title": "Prayer Tracker",
+      "image": "https://articles.salam.app/General/generic_cover.png",
+      "brief": "Introduction to Salam App's prayer-tracker module and tips to use it.",
+      "link": "/help-center/prayer-tracker"
+    },
+    {
+      "title": "Dhikr & Dua Module",
+      "image": "https://articles.salam.app/Dhikr_and_Dua/cover.png",
+      "brief": "Introduction to Salam App's dhikr-and-dua module and tips to use it.",
+      "link": "/help-center/dhikr-and-dua"
+    },
+    {
       "title": "Asma Al-Husna Module",
       "image": "https://articles.salam.app/99_Names/Cover.png",
       "brief": "Introduction to Salam App's 99 names module and tips to use it. Learn about the names of Allah almighty.",
@@ -13,34 +37,16 @@
       "link": "/help-center/hadith"
     },
     {
-      "title": "Prayer Times",
-      "image": "https://articles.salam.app/General/generic_cover.png",
-      "brief": "Introduction to Salam App's prayer times module and tips to use it.",
-      "link": "/help-center/prayer-times"
-    },
-    {
       "title": "Quran Player Module",
       "image": "https://articles.salam.app/Quran_Player/cover.png",
       "brief": "Introduction to Salam App's quran-player module and tips to use it.",
       "link": "/help-center/quran-player"
     },
     {
-      "title": "Dhikr & Dua Module",
-      "image": "https://articles.salam.app/Dhikr_and_Dua/cover.png",
-      "brief": "Introduction to Salam App's dhikr-and-dua module and tips to use it.",
-      "link": "/help-center/dhikr-and-dua"
-    },
-    {
       "title": "Islamic Calendar Module",
       "image": "https://articles.salam.app/Islamic_Calendar/cover.png",
       "brief": "Introduction to Salam App's islamic-calendar module and tips to use it.",
       "link": "/help-center/islamic-calendar"
-    },
-    {
-      "title": "Prayer Tracker",
-      "image": "https://articles.salam.app/General/generic_cover.png",
-      "brief": "Introduction to Salam App's prayer-tracker module and tips to use it.",
-      "link": "/help-center/prayer-tracker"
     },
     {
       "title": "Tafsir Module",
