@@ -423,7 +423,7 @@ and later used to map and generate on page build
 </details>
 
 <details>
- <summary>Version-History</summary>
+ <summary>Data Deletion Request</summary>
  
 # Data Deletion Request
 - Let user solve capctha
@@ -444,7 +444,7 @@ The Data Deletion Request page includes inline JavaScript scripts to handle the 
 
 The page utilizes reCAPTCHA for user verification. When the reCAPTCHA is solved, the `onRecaptchaCallback` function is triggered, storing the response token. This token is then used to verify the user's authenticity during the data deletion process.
 
-## Preventin Abuse
+## Preventing Abuse
 
 The page utilizes reCAPTCHA for user verification even in the backend for extra security.
 
@@ -807,6 +807,7 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 
 ## Contribution Guidelines
 
+- Follow [gitmoji convention](https://gitmoji.dev/)
 - Follow the coding style and conventions used in the project.
 - Write clear and concise commit messages.
 - Test your changes thoroughly before submitting a pull request.
