@@ -19,7 +19,7 @@ export const Modal = () => {
     <div>
       <button
         type="submit"
-        class="w-52 rounded-md flex justify-center   border border-transparent px-5 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 sm:px-6"
+        class="w-52 rounded-md flex justify-center   border border-transparent px-5 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
         ref={btnEl}
       >
         <svg
@@ -41,20 +41,46 @@ export const Modal = () => {
       </button>
       {/* repeated here  */}
       <a
-        href="#download"
+        href="/r/download"
         class="lg:hidden mt-5 w-52 rounded-md flex justify-center items-center  border border-transparent pl-4 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
       >
         <svg
-          class="mt-1 mx-2"
           xmlns="http://www.w3.org/2000/svg"
-          width="1em"
-          height="1em"
-          viewBox="0 0 24 24"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          width="25px"
+          height="25px"
+          viewBox="0 0 1080 1080"
+          xml:space="preserve"
         >
-          <path
-            fill="currentColor"
-            d="M8 17h8q.425 0 .713-.288T17 16t-.288-.712T16 15H8q-.425 0-.712.288T7 16t.288.713T8 17m3-6.85l-.9-.875Q9.825 9 9.413 9t-.713.3q-.275.275-.275.7t.275.7l2.6 2.6q.3.3.7.3t.7-.3l2.6-2.6q.275-.275.287-.687T15.3 9.3q-.275-.275-.687-.288t-.713.263l-.9.875V7q0-.425-.288-.712T12 6t-.712.288T11 7zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
-          />
+          <defs></defs>
+          <g
+            transform="matrix(1 0 0 1 540 540)"
+            id="f5bea70d-2f2d-48c6-8097-9b7bd8b52a2a"
+          >
+            <rect
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;"
+              vector-effect="non-scaling-stroke"
+              x="-540"
+              y="-540"
+              rx="0"
+              ry="0"
+              width="1080"
+              height="1080"
+            />
+          </g>
+          <g
+            transform="matrix(1 0 0 1 540 540)"
+            id="405146e5-4966-4e0a-bcd2-de99452e6b94"
+          ></g>
+          <g transform="matrix(45 0 0 45 517.5 517.5)">
+            <path
+              style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+              transform=" translate(-12, -12)"
+              d="M 11 4 L 11 16.175 L 5.4 10.575000000000001 L 4 12 L 12 20 L 20 12 L 18.6 10.575 L 13.000000000000002 16.174999999999997 L 13.000000000000002 4 z"
+              stroke-linecap="round"
+            />
+          </g>
         </svg>
         Download App
       </a>
