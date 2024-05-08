@@ -6,15 +6,14 @@
 
     if (/android/i.test(userAgent)) {
       window.location.replace(
-        "https://play.google.com/store/apps/details?id=com.salamlabs.salamapp"
+        "https://play.google.com/store/apps/details?id=com.salamlabs.salamapp",
       );
     }
 
     // iOS detection from: http://stackoverflow.com/a/9039885/177710
     if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
-      alert("iphone");
       window.location.replace(
-        "https://apps.apple.com/app/id1629159763?platform=iphone"
+        "https://apps.apple.com/app/id1629159763?platform=iphone",
       );
     } else {
       alert("The App is only available in Android and IOS");
