@@ -22,7 +22,8 @@ export const NavBar = (props) => {
           <div class=" flex items-center sm:hidden">
             <button
               type="button"
-              class="inline-flex items-center px-6 py-2 border border-transparent shadow-sm text-base font-bold rounded-md text-black bg-aquamarine hover:bg-aquamarine-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aquamarine-300"
+              class="inline-flex items-center px-6 py-2 border border-transparent shadow-sm text-base font-bold rounded-md text-black bg-aquamarine hover:bg-aquamarine-400 "
+              // focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aquamarine-300
               aria-controls="mobile-menu"
               aria-expanded="false"
               aria-label="mobile-menu"
@@ -31,19 +32,19 @@ export const NavBar = (props) => {
               }
             >
               <svg
-                data-hk="s10-0-0-1"
                 xmlns="http://www.w3.org/2000/svg"
-                width="1em"
-                height="1em"
+                width="23"
+                height="23"
                 viewBox="0 0 24 24"
-                class="mx-1"
               >
                 <path
+                  class="font-bold p-5"
                   fill="currentColor"
-                  d="M3 18v-2h18v2Zm0-5v-2h18v2Zm0-5V6h18v2Z"
-                ></path>
+                  d="M3 18v-2h18v2zm0-5v-2h18v2zm0-5V6h18v2z"
+                />
               </svg>
-              Menu
+              {/* <p class="mx-1">Menu</p> */}
+              {/* Menu*/}
             </button>
           </div>
           <div class="flex-1 items-center justify-center sm:items-stretch sm:justify-start hidden sm:block ">
@@ -162,7 +163,7 @@ export const NavBar = (props) => {
           </a>
 
           <a
-            href="#download"
+            href="/r/download"
             class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Download

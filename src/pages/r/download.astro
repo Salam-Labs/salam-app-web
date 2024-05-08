@@ -1,0 +1,25 @@
+<div class="h-screen w-screen bg-smoke-400"></div>
+
+<script is:inline>
+  function getMobileOperatingSystem() {
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+
+    if (/android/i.test(userAgent)) {
+      window.location.replace(
+        "https://play.google.com/store/apps/details?id=com.salamlabs.salamapp"
+      );
+    }
+
+    // iOS detection from: http://stackoverflow.com/a/9039885/177710
+    if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+      alert("iphone");
+      window.location.replace(
+        "https://apps.apple.com/app/id1629159763?platform=iphone"
+      );
+    } else {
+      alert("The App is only available in Android and IOS");
+      document.location.href = "/";
+    }
+  }
+  getMobileOperatingSystem();
+</script>
