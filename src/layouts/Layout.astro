@@ -50,10 +50,7 @@ const { title, brief, url, words } = Astro.props;
   <body class="bg-smoke-400">
     <NavBar client:load />
     <div class="">
-      <img
-        class="fixed z-[-100] h-[500px] w-[500px] opacity-25"
-        src="/icon.svg"
-      />
+      <img class="fixed z-[-100] h-2/3 opacity-25 left-0" src="/icon.svg" />
     </div>
     <slot />
     <Footer />
