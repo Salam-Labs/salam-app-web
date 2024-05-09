@@ -5,6 +5,9 @@ import SpeedInsights from "@vercel/speed-insights/astro";
 
 export interface Props {
   title: string;
+  brief: string; // Add this lin
+  url: string; // Add this line
+  words: string; // Add this line
 }
 
 const { title, brief, url, words } = Astro.props;
@@ -46,7 +49,12 @@ const { title, brief, url, words } = Astro.props;
   </head>
   <body class="bg-smoke-400">
     <NavBar client:load />
-
+    <div class="">
+      <img
+        class="fixed z-[-100] h-[500px] w-[500px] opacity-25"
+        src="/icon.svg"
+      />
+    </div>
     <slot />
     <Footer />
   </body>
