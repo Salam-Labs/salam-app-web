@@ -163,7 +163,7 @@ export const NavBar = (props) => {
           </a>
 
           <a
-            href="/r/download"
+            href="https://salam.app/#download"
             class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Download
