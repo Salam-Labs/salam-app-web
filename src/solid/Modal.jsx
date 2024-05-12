@@ -19,7 +19,7 @@ export const Modal = () => {
     <div>
       <button
         type="submit"
-        class="w-52 rounded-md flex justify-center   border border-transparent px-5 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
+        class=" relative w-52 rounded-md flex justify-center   border border-transparent px-5 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
         ref={btnEl}
       >
         <svg
@@ -42,7 +42,7 @@ export const Modal = () => {
       {/* repeated here  */}
       <a
         href="/r/download"
-        class="lg:hidden mt-5 w-52 rounded-md flex justify-center items-center  border border-transparent pl-4 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
+        class="lg:hidden  relative mt-5 w-52 rounded-md flex justify-center items-center  border border-transparent pl-4 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
