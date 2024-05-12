@@ -19,7 +19,7 @@ export const Modal = () => {
     <div>
       <button
         type="submit"
-        class="w-52 rounded-md flex justify-center   border border-transparent px-5 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 sm:px-6"
+        class="w-52 rounded-md flex justify-center   border border-transparent px-5 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
         ref={btnEl}
       >
         <svg
@@ -39,6 +39,51 @@ export const Modal = () => {
         </svg>
         Watch Trailer
       </button>
+      {/* repeated here  */}
+      <a
+        href="/r/download"
+        class="lg:hidden mt-5 w-52 rounded-md flex justify-center items-center  border border-transparent pl-4 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          version="1.1"
+          width="25px"
+          height="25px"
+          viewBox="0 0 1080 1080"
+          xml:space="preserve"
+        >
+          <defs></defs>
+          <g
+            transform="matrix(1 0 0 1 540 540)"
+            id="f5bea70d-2f2d-48c6-8097-9b7bd8b52a2a"
+          >
+            <rect
+              style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(255,255,255); fill-rule: nonzero; opacity: 1; visibility: hidden;"
+              vector-effect="non-scaling-stroke"
+              x="-540"
+              y="-540"
+              rx="0"
+              ry="0"
+              width="1080"
+              height="1080"
+            />
+          </g>
+          <g
+            transform="matrix(1 0 0 1 540 540)"
+            id="405146e5-4966-4e0a-bcd2-de99452e6b94"
+          ></g>
+          <g transform="matrix(45 0 0 45 517.5 517.5)">
+            <path
+              style="stroke: none; stroke-width: 0; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(0,0,0); fill-rule: nonzero; opacity: 1;"
+              transform=" translate(-12, -12)"
+              d="M 11 4 L 11 16.175 L 5.4 10.575000000000001 L 4 12 L 12 20 L 20 12 L 18.6 10.575 L 13.000000000000002 16.174999999999997 L 13.000000000000002 4 z"
+              stroke-linecap="round"
+            />
+          </g>
+        </svg>
+        Download App
+      </a>
 
       <Dismiss
         menuButton={btnEl}
