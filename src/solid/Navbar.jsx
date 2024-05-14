@@ -3,7 +3,7 @@ import { createSignal, Show } from "solid-js";
 export const NavBar = (props) => {
   const [show, setShow] = createSignal(false);
   return (
-    <nav class="bg-smoke-400">
+    <nav class="bg-smoke-400 z-[100] relative">
       <div class="2xl:max-w-[90%] mx-auto px-2  lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
