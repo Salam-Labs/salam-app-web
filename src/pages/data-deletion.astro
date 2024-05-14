@@ -9,7 +9,7 @@ import CiTrash from "~icons/ph/trash-bold";
   url="https://salam.app/data-deletion"
   words="salam,app,data,deletion"
 >
-  <div class="p-10 sm:px-36" id="main">
+  <div class="relative p-10 sm:px-36" id="main">
     <h1
       class="text-left sm:text-center text-3xl sm:text-5xl text-aquamarine font-bold mb-10 sm:mb-16"
     >
@@ -68,7 +68,7 @@ import CiTrash from "~icons/ph/trash-bold";
     awake.open(
       "POST",
       "https://salam-app-backend.onrender.com/heartbeat",
-      true,
+      true
     );
     awake.setRequestHeader("Content-Type", "text/plain");
     awake.send("awake");
