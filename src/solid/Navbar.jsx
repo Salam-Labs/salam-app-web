@@ -88,7 +88,7 @@ export const NavBar = (props) => {
                   PRIVACY POLICY
                 </a>
 
-                <a class="px-3" href="#download">
+                <a class="px-3" href="/#download">
                   {props.get_app_btn}
                   <button
                     type="button"
@@ -163,7 +163,7 @@ export const NavBar = (props) => {
           </a>
 
           <a
-            href="https://salam.app/#download"
+            href="/#download"
             class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
           >
             Download
