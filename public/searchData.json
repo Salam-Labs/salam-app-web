@@ -55,16 +55,16 @@
       "link": "/help-center/tafsir"
     },
     {
-      "title": "Android Widget Module",
+      "title": "Android Widgets",
       "image": "https://articles.salam.app/General/generic_cover.png",
-      "brief": "Introduction to Salam App's android widget module and how to setup.",
-      "link": "/help-center/android-widget"
+      "brief": "Introduction to Android Widgets.",
+      "link": "/help-center/android-widgets"
     },
     {
-      "title": "IOS Widget Module",
+      "title": "iOS Widgets",
       "image": "https://articles.salam.app/General/generic_cover.png",
-      "brief": "Introduction to Salam App's ios widget module and how to setup.",
-      "link": "/help-center/ios-widget"
+      "brief": "Introduction to iOS Widgets.",
+      "link": "/help-center/ios-widgets"
     }
   ]
 }
