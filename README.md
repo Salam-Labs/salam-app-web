@@ -2,7 +2,6 @@
 
 ## Introduction
 
-
 Welcome to the source code repository for Salam App website! Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim may need throughout their day with no compromises, and it's all for free!
 
 ## Technology Stack
