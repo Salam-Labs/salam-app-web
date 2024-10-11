@@ -57,13 +57,13 @@
     {
       "title": "Android Widgets",
       "image": "https://articles.salam.app/General/generic_cover.png",
-      "brief": "Introduction to Android Widgets.",
+      "brief": "Introduction to Salam App's Android Widgets and how to add them.",
       "link": "/help-center/android-widgets"
     },
     {
       "title": "iOS Widgets",
       "image": "https://articles.salam.app/General/generic_cover.png",
-      "brief": "Introduction to iOS Widgets.",
+      "brief": "Introduction to Salam App's iOS Widgets and how to add them.",
       "link": "/help-center/ios-widgets"
     }
   ]
