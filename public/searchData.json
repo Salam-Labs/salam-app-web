@@ -53,6 +53,18 @@
       "image": "https://articles.salam.app/Tafsir/cover.png",
       "brief": "Introduction to Salam App's tafsir module and tips to use it.",
       "link": "/help-center/tafsir"
+    },
+    {
+      "title": "Android Widget Module",
+      "image": "https://articles.salam.app/General/generic_cover.png",
+      "brief": "Introduction to Salam App's android widget module and how to setup.",
+      "link": "/help-center/android-widget"
+    },
+    {
+      "title": "IOS Widget Module",
+      "image": "https://articles.salam.app/General/generic_cover.png",
+      "brief": "Introduction to Salam App's ios widget module and how to setup.",
+      "link": "/help-center/ios-widget"
     }
   ]
 }
