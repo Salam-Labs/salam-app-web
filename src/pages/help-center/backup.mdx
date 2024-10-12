@@ -1,0 +1,115 @@
+﻿import BlogLayout from "../../layouts/BlogLayout.astro";
+
+<BlogLayout 
+  title="Salam App Backup And Restore"
+  metaImage="https://articles.salam.app/General/generic_cover.png"
+  metaData="Introduction to Backup and Restore and how to use it."
+  link="https://salam.app/help-center/backup"
+  words="salam,app,backup,help"
+>
+
+# Introduction to Backup and Restore
+
+Salam App allows you to create backups, either locally or in Salam App Cloud, and restore your important in-app data so you don’t lose anything valuable.
+
+Salam App backups are universally compatible with both Android and iOS!
+
+&nbsp;
+
+![Backups](https://articles.salam.app/Backup/1.png)
+
+## What is Backed Up?
+
+**Currently supported for backup:**
+
+- ✅ Tracker Data
+- ✅ Quran Bookmarks
+- ✅ Hadith Bookmarks
+- ✅ Custom Dhikr List
+
+**Not supported:**
+
+- ❌ Preferences
+- ❌ Saved reminders in Reminder Swipe
+
+Salam App may support backing up other types of data in the future.
+
+## Account Management
+
+Salam App Cloud uses your Google account to sign in and manage backups.
+
+You can sign in and access your profile settings by tapping the profile icon in the top-right corner.
+
+![Backups](https://articles.salam.app/Backup/2.png)
+
+![Backups](https://articles.salam.app/Backup/3.png)
+
+Here, you can sign out or request data deletion.
+
+**Data Deletion Request:**
+
+When you request data deletion, your backup file and email address will be removed from Salam App Cloud. You can sign in again if you wish to use Salam App Cloud services afterward.
+
+## Backup Creation
+
+![Backups](https://articles.salam.app/Backup/4.png)
+
+To create a backup, tap "Create Backup."
+
+You will have two options:
+
+1. **Local Backup**  
+   This option will create a backup on your device. Salam App backups are saved with the extension `.sabackup`.
+
+   - **iOS Users:**  
+     You will be prompted to choose where to save the backup file on your device.
+
+   - **Android Users:**  
+     The backup will automatically be saved to your <ins>Downloads</ins> folder.
+
+2. **Salam App Cloud:**  
+   Once you sign in with your Google account, Salam App will back up your data to Salam App Cloud. <ins>You will be asked whether you want to overwrite any existing backup.</ins>
+
+&nbsp;
+
+## Backup Restore
+
+![Backups](https://articles.salam.app/Backup/5.png)
+
+To restore a backup, tap "Restore Backup."
+
+❗**NOTE:** Once a backup is restored, all existing data in Salam App will be overwritten!
+
+You will have two options:
+
+1. **Local Backup**  
+   This option lets you select the backup file saved on your device. Salam App backups use the `.sabackup` extension.
+
+2. **Salam App Cloud:**  
+   If a backup was created using Salam App Cloud, it will automatically be retrieved.
+
+Once the dialog appears, it means a valid backup file has been found.
+
+![Backups](https://articles.salam.app/Backup/6.png)
+
+Tap "Yes" to restore the backup, which will overwrite all existing data.
+
+&nbsp;
+
+## Backup File
+
+![Backups](https://articles.salam.app/Backup/7.png)
+
+The backup file is in a form of JSON format and contains no sensitive device information, only data generated within the app. You can view the backup file using any JSON viewer. This is the same file uploaded to Salam App Cloud.
+
+&nbsp;
+
+&nbsp;
+
+&nbsp;
+
+*Last updated: October 10, 2024*  
+
+    [Go To Help Center](/help-center)
+
+</BlogLayout>

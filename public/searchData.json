@@ -65,6 +65,12 @@
       "image": "https://articles.salam.app/General/generic_cover.png",
       "brief": "Introduction to Salam App's iOS Widgets and how to add them.",
       "link": "/help-center/ios-widgets"
+    },
+    {
+      "title": "Backup and Restore",
+      "image": "https://articles.salam.app/General/generic_cover.png",
+      "brief": "Introduction to Backup and Restore and how to use it.",
+      "link": "/help-center/backup"
     }
   ]
 }
