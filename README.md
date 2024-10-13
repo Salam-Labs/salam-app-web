@@ -4,7 +4,6 @@
 
 Welcome to the source code repository for Salam App website! Salam App is an advertisement-free and privacy-focused Islamic app that offers all the features a Muslim may need throughout their day with no compromises, and it's all for free!
 
-
 ## Technology Stack
 #### You only need to know a little about most of them but you will need to focus on Astro and Tailwindcss.
 - [**Astrojs**](https://docs.astro.build/en/getting-started/): A modern frontend framework for building fast, modern websites with less code.
