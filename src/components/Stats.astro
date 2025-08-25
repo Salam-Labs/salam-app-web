@@ -18,11 +18,13 @@
       </p>
     </div>
 
-    <!-- grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3 -->
     <div
-      class="mt-4 flex flex-col lg:flex-row lg:justify-between gap-10 px-6 w-full"
+      class="mt-4 grid grid-cols-1 gap-10 px-6 sm:grid-cols-2 lg:grid-cols-3"
     >
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
+      <div
+        class="relative group shadow-sm w-full cursor-pointer select-none"
+        style="min-width: 300px;"
+      >
         <div
           class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
         >
@@ -31,7 +33,7 @@
           class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
         >
           <figure class="relative p-5 h-full w-full">
-            <div class="flex justify-center space-x-2 w-26">
+            <div class="flex justify-center space-x-2 w-full">
               <div
                 class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
               >
@@ -63,7 +65,10 @@
           </figure>
         </div>
       </div>
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
+      <div
+        class="relative group shadow-sm w-full cursor-pointer select-none"
+        style="min-width: 300px;"
+      >
         <div
           class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
         >
@@ -72,7 +77,7 @@
           class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
         >
           <figure class="relative p-5 h-full w-full">
-            <div class="flex justify-center space-x-2 w-26">
+            <div class="flex justify-center space-x-2 w-full">
               <div
                 class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
               >
@@ -103,7 +108,10 @@
           </figure>
         </div>
       </div>
-      <div class="relative group shadow-sm w-64 cursor-pointer select-none">
+      <div
+        class="relative group shadow-sm w-full cursor-pointer select-none"
+        style="min-width: 300px;"
+      >
         <div
           class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
         >
@@ -112,7 +120,7 @@
           class="relative bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9 border-2 border-aquamarine"
         >
           <figure class="relative p-5 h-full w-full">
-            <div class="flex justify-center space-x-2 w-26">
+            <div class="flex justify-center space-x-2 w-full">
               <div
                 class="flex flex-none items-center justify-center h-12 w-12 rounded-full bg-aquamarine text-black mr-2"
               >
@@ -145,46 +153,48 @@
       </div>
     </div>
   </div>
+</div>
 
-  <script>
-    //dont delete
-    import anime from "animejs";
-    // Don't forget to use the polyfill for forEach! :)
-    function startCounter() {
-      document.querySelectorAll(".number-animate").forEach((element) => {
-        const { endValue } = element.dataset;
-        const incrementValue = element.dataset.increment;
-        const durationValue = element.dataset.duration;
+<script>
+  // Migrated to Anime.js v4 - ES Module imports
+  import { animate, utils } from "animejs";
 
-        if (endValue) {
-          numberAnimation(element, endValue, incrementValue, durationValue);
-        }
-      });
+  function startCounter() {
+    document.querySelectorAll(".number-animate").forEach((element) => {
+      const { endValue } = element.dataset;
+      const incrementValue = element.dataset.increment;
+      const durationValue = element.dataset.duration;
 
-      // @ts-ignore
-      function numberAnimation(element, endValue, incrementor, duration) {
-        anime({
-          targets: element,
-          textContent: endValue,
-          round: incrementor ? 1 / incrementor : 1 / 5,
-          easing: "easeInOutQuad",
-          duration: duration || 4000,
-        });
+      if (endValue) {
+        numberAnimation(element, endValue, incrementValue, durationValue);
       }
+    });
+  }
+
+  function numberAnimation(element, endValue, incrementor, duration) {
+    // v4 API: targets are now the first parameter, options are second
+    animate(element, {
+      textContent: endValue,
+      modifier: incrementor
+        ? utils.round(Math.log10(1 / incrementor))
+        : utils.round(1), // v4 uses utils.round with decimal places
+      ease: "outQuad", // v4 renamed easing to ease and removed 'ease' prefix
+      duration: duration || 4000,
+    });
+  }
+
+  // Intersection Observer remains the same - it's native browser API
+  const intersectionObserver = new IntersectionObserver((entries) => {
+    // If intersectionRatio is 0, the target is out of view
+    // and we do not need to do anything.
+    if (entries[0].intersectionRatio <= 0) {
+      return;
     }
 
-    const intersectionObserver = new IntersectionObserver((entries) => {
-      // If intersectionRatio is 0, the target is out of view
-      // and we do not need to do anything.
-      if (entries[0].intersectionRatio <= 0) {
-        return;
-      }
+    startCounter(); // when the div is visible start the stats counter
+    intersectionObserver.unobserve(document.querySelector("#stats"));
+  });
 
-      startCounter(); // when the div is visible start the stats counter
-      intersectionObserver.unobserve(document.querySelector("#stats"));
-    });
-
-    // start observing
-    intersectionObserver.observe(document.querySelector("#stats"));
-  </script>
-</div>
+  // start observing
+  intersectionObserver.observe(document.querySelector("#stats"));
+</script>

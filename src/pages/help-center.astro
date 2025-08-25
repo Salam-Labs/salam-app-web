@@ -4,8 +4,6 @@ import Layout from "@layouts/Layout.astro";
 import CiSearch from "~icons/mingcute/search-3-line";
 import CiDiscord from "~icons/ic/baseline-discord";
 import { data as blogData } from "../../public/searchData.json";
-
-//data here dont delete because if load more is not clicked then these are shown
 ---
 
 <Layout
@@ -14,90 +12,188 @@ import { data as blogData } from "../../public/searchData.json";
   url="https://salam.app/help-center"
   words="salam,app,help,artciles,blog"
 >
-  <!-- js and css part 1 -->
+  <style is:inline>
+    .search-container {
+      background-color: #21252f !important;
+      border: 1px solid #66fcf1;
+      border-radius: 10px;
+      margin: 10px;
+      position: relative;
+    }
+
+    .search-results {
+      position: absolute;
+      left: auto;
+      right: auto;
+      z-index: 10;
+      margin-top: 10px;
+      border: 2px solid #66fcf1;
+      border-radius: 8px;
+      background-color: #1e2939;
+      color: #ccc;
+    }
+    .search-item {
+      padding: 8px;
+      cursor: pointer;
+      display: block;
+      transition: background-color 0.3s ease;
+    }
+
+    .search-item a {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: inherit;
+    }
+
+
+    .search-item-text {
+      flex-grow: 1;
+    }
+
+    .search-item:hover {
+      background-color: #101217 !important;
+    }
+  </style>
 
   <script is:inline>
-    const blogData = [];
+    // This function now handles both search suggestions and displaying full results.
+    function handleInput() {
+      const input = document.querySelector("input");
+      const inputValue = input.value.toLowerCase();
+      const suggestionList = document.querySelector(
+        "#suggestion-list-container"
+      );
+      const cardsContainer = document.querySelector("#cards");
+      const noResultsText = document.querySelector("#no-results-text");
 
-    // Function to fetch JSON data and populate blogData.
-    function fetchDataAndPopulateSuggestions() {
+      // Hide no results text by default.
+      noResultsText.classList.add("hidden");
+
+      if (inputValue.trim() === "") {
+        // If the input is empty, hide suggestion list and show initial cards.
+        suggestionList.classList.add("hidden");
+        cardsContainer.innerHTML = `
+          ${blogData
+            .map(
+              (data) => `
+            <div class="m-2">
+              <Card title="${data.title}" image="${data.image}" brief="${data.brief}" link="${data.link}" />
+            </div>
+          `
+            )
+            .join("")}
+        `;
+        return;
+      }
+
+      // Fetch the search data directly.
       fetch("/searchData.json")
         .then((response) => response.json())
         .then((data) => {
-          // Access the 'data' property of the JSON object
-          const dataArray = Array.isArray(data.data)
+          const searchData = Array.isArray(data.data)
             ? data.data
             : Object.values(data.data);
-          blogData.push(...dataArray);
+
+          const matchingSuggestions = searchData
+            .filter((suggestion) => {
+              return (
+                suggestion.title.toLowerCase().includes(inputValue) ||
+                suggestion.brief.toLowerCase().includes(inputValue)
+              );
+            })
+            .slice(0, 5); // Get up to 5 matching suggestions.
+
+          suggestionList.innerHTML = "";
+          if (matchingSuggestions.length > 0) {
+            // Display suggestions in the dropdown.
+            matchingSuggestions.forEach((suggestion) => {
+              const suggestionItem = document.createElement("div");
+              suggestionItem.classList.add("search-item");
+              suggestionItem.innerHTML = `
+                <a href="${suggestion.link}">
+                  <div class="flex">
+                    <img class="rounded-l-xl align-middle hidden sm:block" src="${suggestion.image}" height="300px" width="300px">
+                    <div class="search-item-text">
+                      <p class="p-2 text-white text-xl font-bold tracking-tight">${suggestion.title}</p>
+                      <p class="p-2 text-base text-gray-400 max-h-20 overflow-hidden">${suggestion.brief}</p>
+                    </div>
+                  </div>
+                </a>
+              `;
+              suggestionList.appendChild(suggestionItem);
+            });
+            suggestionList.classList.remove("hidden");
+          } else {
+            suggestionList.classList.add("hidden");
+          }
         })
         .catch((error) => {
           console.error("Error loading data:", error);
         });
     }
 
-    // Call the function to fetch and populate the blogData array.
-    fetchDataAndPopulateSuggestions();
+    // Function to handle Enter key press for search
+    function handleSearch(event) {
+      if (event.key === "Enter") {
+        const input = document.querySelector("input");
+        const inputValue = input.value.toLowerCase();
+        const cardsContainer = document.querySelector("#cards");
+        const noResultsText = document.querySelector("#no-results-text");
+        const suggestionList = document.querySelector(
+          "#suggestion-list-container"
+        );
 
-    // Function to handle input changes and display suggestions.
-    function handleInput() {
-      const input = document.querySelector("input");
-      const inputValue = input.value.toLowerCase();
-      const suggestionList = document.querySelector(
-        "#suggestion-list-container",
-      );
-
-      // Clear previous suggestions.
-      suggestionList.innerHTML = "";
-
-      if (inputValue.trim() === "") {
-        // If the input is empty or only whitespace, hide the suggestion list and return.
+        // Hide suggestions and clear previous cards
         suggestionList.classList.add("hidden");
-        return;
+        cardsContainer.innerHTML = "";
+        noResultsText.classList.add("hidden");
+
+        if (inputValue.trim() === "") {
+          cardsContainer.innerHTML = `
+            ${blogData
+              .map(
+                (data) => `
+              <div class="m-2">
+                <Card title="${data.title}" image="${data.image}" brief="${data.brief}" link="${data.link}" />
+              </div>
+            `
+              )
+              .join("")}
+          `;
+          return;
+        }
+
+        fetch("/searchData.json")
+          .then((response) => response.json())
+          .then((data) => {
+            const searchData = Array.isArray(data.data)
+              ? data.data
+              : Object.values(data.data);
+            const matchingResults = searchData.filter((item) => {
+              return (
+                item.title.toLowerCase().includes(inputValue) ||
+                item.brief.toLowerCase().includes(inputValue)
+              );
+            });
+
+            if (matchingResults.length === 0) {
+              noResultsText.classList.remove("hidden");
+            } else {
+              noResultsText.classList.add("hidden");
+              matchingResults.forEach((data) => {
+                const card = document.createElement("div");
+                card.innerHTML = `<astro-island component-export="default" renderer-mode="client:load" props='{"title":"${data.title}","image":"${data.image}","brief":"${data.brief}","link":"${data.link}"}' uid="2h8Tq" prerender></astro-island>`;
+                cardsContainer.appendChild(card);
+              });
+            }
+          })
+          .catch((error) => {
+            console.error("Error loading data:", error);
+          });
       }
-
-      // Filter and display up to 5 suggestions that match the input value or brief text.
-      const matchingSuggestions = blogData
-        .filter((suggestion) => {
-          return (
-            suggestion.title.toLowerCase().includes(inputValue) ||
-            suggestion.brief.toLowerCase().includes(inputValue)
-          );
-        })
-        .slice(0, 5); // Get up to 5 matching suggestions.
-
-      if (matchingSuggestions.length === 0) {
-        // If no suggestions match the input, hide the suggestion list.
-        suggestionList.classList.add("hidden");
-        return;
-      }
-
-      matchingSuggestions.forEach((suggestion) => {
-        const suggestionItem = document.createElement("div");
-        suggestionItem.innerHTML = `
-        <a href="${suggestion.link}" class="block text-white focus:bg-smoke-500 focus:outline-none focus:rounded-lg">
-  <div class="hover:rounded-lg flex hover:bg-smoke-500 transition-all duration-300">
-    <div class="hidden sm:block flex justify-center items-center sm:min-w-5/6"> 
-      <img class=" rounded-l-xl align-middle" src="${suggestion.image}" height="250px" width="500px">
-    </div>
-    <div class="sm:w-full">
-      <p class="p-2 text-white text-xl font-bold tracking-tight sm:min-w-200">${suggestion.title}</p>
-      <p class="p-2 text-base text-gray-400 max-h-20 overflow-hidden sm:min-w-200">${suggestion.brief}</p>
-    </div>
-  </div>
-</a>
-
-
-    `;
-
-        suggestionList.appendChild(suggestionItem);
-      });
-
-      // Show the suggestion list.
-      suggestionList.classList.remove("hidden");
     }
   </script>
-  <!-- js and css part 1 closes -->
-  <!-- html starts from here  suggestion container and card has 10 mt -->
   <section id="section" class="text-white body-font mb-36 w-full">
     <h1
       class="text-5xl mt-16 sm:text-5xl font-bold text-center text-aquamarine-500"
@@ -112,6 +208,7 @@ import { data as blogData } from "../../public/searchData.json";
           class="w-full p-1 px-2 focus:outline-none rounded-lg text-2xl text-gray-200 bg-grey-500 border-2 border-aquamarine-500"
           type="text"
           oninput="handleInput()"
+          onkeydown="handleSearch(event)"
         />
         <CiSearch
           class="absolute right-0 bottom-0 mr-0 text-[35px] rounded-r-lg bg-aquamarine-500 text-black"
@@ -121,7 +218,7 @@ import { data as blogData } from "../../public/searchData.json";
     <div class="flex justify-center w-full">
       <div
         id="suggestion-list-container"
-        class="hidden absolute z-10 mt-10 w-11/12 sm:w-8/12 lg:w-[610px] rounded-lg text-2xl text-gray-200 border-2 bg-smoke-400 border-aquamarine-500"
+        class="hidden absolute z-10 w-11/12 sm:w-8/12 lg:w-[610px] search-results"
       >
       </div>
     </div>
@@ -133,13 +230,15 @@ import { data as blogData } from "../../public/searchData.json";
       to Salam App, find helpful tips in our articles. For direct assistance,
       join our Discord support server.
     </p>
-    <!-- auto complete and input tag above   -->
-    <!-- cards here  -->
+    <div
+      id="no-results-text"
+      class="hidden mt-16 text-center text-lg text-gray-400"
+    >
+      No results found. Please try a different search query.
+    </div>
     <div id="cards" class="flex flex-wrap justify-center my-16">
-      <!-- Loop through the blogData array and create a card for each suggestion -->
       {
         blogData.map((data) => (
-          // card here
           <Card
             title={data.title}
             image={data.image}
@@ -149,14 +248,6 @@ import { data as blogData } from "../../public/searchData.json";
         ))
       }
     </div>
-
-    <!-- <div class="flex justify-center">
-        <button
-          id="load-more-button"
-          class="px-5 py-2 mt-5 bg-aquamarine-600 text-black rounded-lg hover:bg-aquamarine-700 focus:ring-4 focus:outline-none focus:ring-blue-300"
-        >
-          Load More
-        </button> -->
 
     <div class="fixed bottom-0 right-0 m-4 z-50">
       <a
@@ -170,13 +261,15 @@ import { data as blogData } from "../../public/searchData.json";
     </div>
   </section>
 </Layout>
-<!-- This is for text effect -->
+
 <script is:inline>
   const suggestionList = document.getElementById("suggestion-list-container");
+  const input = document.querySelector("input");
 
   // Hide suggestion list container on click outside
   document.addEventListener("click", (event) => {
-    const isClickInside = suggestionList.contains(event.target);
+    const isClickInside =
+      suggestionList.contains(event.target) || input.contains(event.target);
     if (!isClickInside) {
       suggestionList.classList.add("hidden");
     }

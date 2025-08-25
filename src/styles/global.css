@@ -1,0 +1,73 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+/* Theme tokens */
+@theme {
+  /* Grey */
+  --color-grey: #262a34;
+  --color-grey-50: #76819b;
+  --color-grey-100: #6b7692;
+  --color-grey-200: #5a637b;
+  --color-grey-300: #485063;
+  --color-grey-400: #373d4c;
+  --color-grey-500: #262a34;
+  --color-grey-600: #0e1014;
+  --color-grey-700: #000000;
+  --color-grey-800: #000000;
+  --color-grey-900: #000000;
+
+  /* Aquamarine */
+  --color-aquamarine: #80ffdb;
+  --color-aquamarine-50: #ffffff;
+  --color-aquamarine-100: #ffffff;
+  --color-aquamarine-200: #fafffe;
+  --color-aquamarine-300: #d2fff2;
+  --color-aquamarine-400: #a9ffe7;
+  --color-aquamarine-500: #80ffdb;
+  --color-aquamarine-600: #48ffcb;
+  --color-aquamarine-700: #10ffbb;
+  --color-aquamarine-800: #00d79a;
+  --color-aquamarine-900: #009f72;
+
+  /* Swans */
+  --color-swans: #e1f1ed;
+  --color-swans-50: #ffffff;
+  --color-swans-100: #ffffff;
+  --color-swans-200: #ffffff;
+  --color-swans-300: #ffffff;
+  --color-swans-400: #fdfefe;
+  --color-swans-500: #e1f1ed;
+  --color-swans-600: #bbdfd6;
+  --color-swans-700: #95cdbf;
+  --color-swans-800: #6ebba8;
+  --color-swans-900: #4da58f;
+
+  /* Smoke */
+  --color-smoke: #101217;
+  --color-smoke-50: #5b6783;
+  --color-smoke-100: #535d77;
+  --color-smoke-200: #424a5f;
+  --color-smoke-300: #313847;
+  --color-smoke-400: #21252f;
+  --color-smoke-500: #101217;
+  --color-smoke-600: #000000;
+  --color-smoke-700: #000000;
+  --color-smoke-800: #000000;
+  --color-smoke-900: #000000;
+
+  /* Green */
+  --color-green: #74ae98;
+  --color-green-50: #e8f2ee;
+  --color-green-100: #dbeae4;
+  --color-green-200: #c1dbd1;
+  --color-green-300: #a8ccbe;
+  --color-green-400: #8ebdab;
+  --color-green-500: #74ae98;
+  --color-green-600: #56947c;
+  --color-green-700: #41705f;
+  --color-green-800: #2d4d41;
+  --color-green-900: #182923;
+
+  /* Optional: extend underline offset (custom utilities) */
+  --text-underline-offset-10: 20px;
+}
