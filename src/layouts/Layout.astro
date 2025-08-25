@@ -1,7 +1,7 @@
 ---
 import Footer from "@components/Footer.astro";
 import { NavBar } from "../solid/Navbar.jsx";
-//import SpeedInsights from "@vercel/speed-insights/astro";
+import SpeedInsights from "@vercel/speed-insights/astro";
 import "../styles/global.css";
 
 export interface Props {
@@ -45,7 +45,7 @@ const { title, brief, url, words } = Astro.props;
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={brief} />
     <meta name="twitter:image" content="https://salam.app/image.png" />
-    <!-- <SpeedInsights /> -->
+    <SpeedInsights />
     <!-- HTML Meta Tags -->
     <style is:global>
       @import "../styles/global.css";
@@ -54,7 +54,7 @@ const { title, brief, url, words } = Astro.props;
       }
     </style>
   </head>
-  <body class=" bg-smoke-400">
+  <body class="bg-smoke-400">
     <NavBar client:load />
     <div class="h-screen flex absolute align-middle">
       <img class="fixed z-[-1000] h-5/6 opacity-5" src="/icon.svg" />
