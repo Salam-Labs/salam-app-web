@@ -817,4 +817,3 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 Feel free to contribute to the Salam App Web project and help make it even better!
 
 If you have any questions or need further assistance, please don't hesitate to reach out to us. We're here to help!
-
