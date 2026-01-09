@@ -17,7 +17,7 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.4",
-    "@astrojs/vercel": "^8.2.6",
+    "@astrojs/vercel": "^8.0.4",
     "@tailwindcss/vite": "^4.1.12",
     "@vercel/analytics": "^1.5.0",
     "@vercel/speed-insights": "^1.2.0",
