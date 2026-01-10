@@ -805,7 +805,6 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 
 </details>
 
-
 ## Contribution Guidelines
 
 - Follow [gitmoji convention](https://gitmoji.dev/)
