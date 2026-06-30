@@ -1,83 +1,65 @@
 ---
-
+const downloadLinks = [
+  {
+    name: "Google Play Store",
+    subText: "Download on",
+    href: "https://play.google.com/store/apps/details?id=com.salamlabs.salamapp",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 md:w-8" viewBox="0 0 512 512"><path fill="currentColor" d="M48 59.49v393a4.33 4.33 0 0 0 7.37 3.07L260 256L55.37 56.42A4.33 4.33 0 0 0 48 59.49ZM345.8 174L89.22 32.64l-.16-.09c-4.42-2.4-8.62 3.58-5 7.06l201.13 192.32ZM84.08 472.39c-3.64 3.48.56 9.46 5 7.06l.16-.09L345.8 338l-60.61-57.95ZM449.38 231l-71.65-39.46L310.36 256l67.37 64.43L449.38 281c19.49-10.77 19.49-39.23 0-50Z"/></svg>`,
+  },
+  {
+    name: "Apple Store",
+    subText: "Download on",
+    href: "https://apps.apple.com/app/id1629159763?platform=iphone",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" class="w-7 md:w-8" viewBox="0 0 24 24"><path fill="currentColor" d="M17.05 20.28c-.98.95-2.05.8-3.08.35c-1.09-.46-2.09-.48-3.24 0c-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8c1.18-.24 2.31-.93 3.57-.84c1.51.12 2.65.72 3.4 1.8c-3.12 1.87-2.38 5.98.48 7.13c-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25c.29 2.58-2.34 4.5-3.74 4.25z"/></svg>`,
+  },
+  {
+    name: "Windows Store",
+    subText: "Get it from",
+    href: "https://apps.microsoft.com/detail/9n1jc7g1j9wp?hl=en-GB&gl=CA",
+    svg: `<svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 md:w-7 md:h-7" viewBox="0 0 24 24"><path fill="currentColor" d="M0 0h11.233v11.233H0zm12.767 0H24v11.233H12.767zM0 12.767h11.233V24H0zm12.767 0H24V24H12.767z"/></svg>`,
+  },
+];
 ---
 
 <div class="relative z-30">
-  <div class="max-w-2xl mx-auto text-white py-10">
+  <div class="max-w-4xl mx-auto text-white py-10">
     <div class="text-center">
       <h3 class="text-3xl mb-3" id="download">Download Salam App</h3>
       <p>
         Enjoy all your favourite features for free with no ads and complete
         privacy!
       </p>
+
       <div
-        class="flex flex-col my-10 sm:space-x-10 sm:flex-row space-x-0 space-y-10 sm:space-y-0 justify-center items-center"
+        class="flex flex-col my-10 lg:space-x-8 lg:flex-row space-x-0 space-y-6 lg:space-y-0 justify-center items-center"
       >
-        <div class="relative group shadow-xl shadow-slate-900 w-72">
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
-          >
-          </div>
-          <a
-            href="https://play.google.com/store/apps/details?id=com.salamlabs.salamapp"
-            target="_blank"
-            class="relative px-7 py-6 bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6 border-2 border-aquamarine"
-          >
-            <div
-              class="flex items-center w-auto rounded-lg px-4 cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-7 md:w-8"
-                viewBox="0 0 512 512"
-                ><path
-                  fill="currentColor"
-                  d="M48 59.49v393a4.33 4.33 0 0 0 7.37 3.07L260 256L55.37 56.42A4.33 4.33 0 0 0 48 59.49ZM345.8 174L89.22 32.64l-.16-.09c-4.42-2.4-8.62 3.58-5 7.06l201.13 192.32ZM84.08 472.39c-3.64 3.48.56 9.46 5 7.06l.16-.09L345.8 338l-60.61-57.95ZM449.38 231l-71.65-39.46L310.36 256l67.37 64.43L449.38 281c19.49-10.77 19.49-39.23 0-50Z"
-                ></path>
-              </svg>
-
-              <div class="text-left ml-3">
-                <p class="text-xs text-gray-200">Download on</p>
-                <p class="text-sm md:text-base">Google Play Store</p>
-              </div>
+        {
+          downloadLinks.map((button) => (
+            <div class="relative group shadow-xl shadow-slate-900 w-72">
+              <div class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+              <a
+                href={button.href}
+                target="_blank"
+                class="relative px-5 py-4 bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-center justify-start space-x-4 border-2 border-aquamarine/50 hover:border-aquamarine transition duration-300"
+              >
+                <div class="flex items-center w-auto rounded-lg cursor-pointer text-white">
+                  <Fragment set:html={button.svg} />
+                  <div class="text-left ml-3">
+                    <p class="text-xs text-gray-400">{button.subText}</p>
+                    <p class="text-sm md:text-base font-semibold whitespace-nowrap">
+                      {button.name}
+                    </p>
+                  </div>
+                </div>
+              </a>
             </div>
-          </a>
-        </div>
-        <div class="relative group shadow-xl shadow-slate-900 w-72">
-          <div
-            class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"
-          >
-          </div>
-          <a
-            href="https://apps.apple.com/app/id1629159763?platform=iphone"
-            target="_blank"
-            class="relative px-7 py-6 bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-6 border-2 border-aquamarine"
-          >
-            <div
-              class="flex items-center w-auto rounded-lg px-4 cursor-pointer"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-7 md:w-8"
-                viewBox="0 0 24 24"
-                ><path
-                  fill="currentColor"
-                  d="M17.05 20.28c-.98.95-2.05.8-3.08.35c-1.09-.46-2.09-.48-3.24 0c-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8c1.18-.24 2.31-.93 3.57-.84c1.51.12 2.65.72 3.4 1.8c-3.12 1.87-2.38 5.98.48 7.13c-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25c.29 2.58-2.34 4.5-3.74 4.25z"
-                ></path>
-              </svg>
-
-              <div class="text-left ml-3">
-                <p class="text-xs text-gray-200">Download on</p>
-                <p class="text-sm md:text-base">Apple Store</p>
-              </div>
-            </div>
-          </a>
-        </div>
+          ))
+        }
       </div>
     </div>
   </div>
 
-  <footer class="">
+  <footer>
     <div class="container p-6 mx-auto">
       <div class="lg:flex">
         <div class="w-full -mx-6 lg:w-2/5">
@@ -125,7 +107,15 @@
                 class="mx-2 transition-colors duration-300 text-gray-300 hover:text-blue-500 dark:hover:text-blue-400"
                 aria-label="X"
               >
-             <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 fill-current" viewBox="0 0 512 512"><path fill="currentColor" d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"/></svg>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="w-5 h-5 fill-current"
+                  viewBox="0 0 512 512"
+                  ><path
+                    fill="currentColor"
+                    d="M389.2 48h70.6L305.6 224.2L487 464H345L233.7 318.6L106.5 464H35.8l164.9-188.5L26.8 48h145.6l100.5 132.9zm-24.8 373.8h39.1L151.1 88h-42z"
+                  ></path></svg
+                >
               </a>
 
               <a
@@ -194,7 +184,7 @@
 
       <div>
         <p class="text-center text-gray-400">
-          © Salam Labs 2024 - All rights reserved
+          © Salam Labs 2026 - All rights reserved
         </p>
       </div>
     </div>
