@@ -427,6 +427,9 @@ and later used to map and generate on page build
  <summary>Data Deletion Request</summary>
  
 # Data Deletion Request
+
+# NOTE : THIS IS NOW DONE INSIDE THE APP SINCE V2
+
 - Let user solve capctha
 - Get token 
 - After solving captha let user type on text field
