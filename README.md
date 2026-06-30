@@ -814,6 +814,8 @@ import BlogLayout from "../../layouts/BlogLayout.astro";
 - Follow the coding style and conventions used in the project.
 - Write clear and concise commit messages.
 - Test your changes thoroughly before submitting a pull request.
+
+
 - Contribute to discussions and help fellow contributors where possible.
 
 Feel free to contribute to the Salam App Web project and help make it even better!
