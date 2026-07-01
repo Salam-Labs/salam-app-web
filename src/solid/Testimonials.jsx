@@ -5,15 +5,13 @@ const testimonials = [
         "Love this app with the customability of the calculation methods and madhab selection. The Qibla compass is accurate for me. The design, aesthetics and themes are amazing.",
       author: {
         name: "Mohammed Khan",
-        image: "person1.png",
       },
     },
     {
       content:
-        "I love it. It has everything I need and I wish the best for the developers behind this app. May Allah keep them safe and steadfast on the religion and bless them with the best of this life and the next ameen.",
+        "This is the one Quran app I found which has a lot of features I really like and does not blast ads in your face or tries to constantly get you to upgrade to a payed plan. Truly the best of all the apps I’ve tried for Quran, Adhan, etc.",
       author: {
-        name: "Fellin34",
-        image: "person3.png",
+        name: "Ansabzy",
       },
     },
   ],
@@ -23,7 +21,6 @@ const testimonials = [
         "This was an amazing app and beautifully made MashAllah! The design and UI of the app is very elegant and the Quran with the translations and Hadiths are an amazing addition as well considering it’s all ad-free.",
       author: {
         name: "FahmiK78",
-        image: "person3.png",
       },
     },
     {
@@ -31,7 +28,6 @@ const testimonials = [
         "This actually really helps me study Quran and it even has an interactive tool to point you in the direction of Mecca! All without advertisements it’s super great, bless your hearts Salam team!",
       author: {
         name: "Cowboy7657",
-        image: "person4.png",
       },
     },
   ],
@@ -41,7 +37,6 @@ const testimonials = [
         "Phenomenal. It really is ad-free and the features are really cool. It have qibla direction, Quran, and even salah tracker. I am quite impressed at what one can do for free.",
       author: {
         name: "Firdaus Safari",
-        image: "person5.png",
       },
     },
     {
@@ -49,7 +44,6 @@ const testimonials = [
         "Never found a app without ads and this good. Widgets are amazing, I recommended this to my classmate and she has been using it a lot. Salam App should have more reviews and more people. Thank you for this app!",
       author: {
         name: "ABDULLAH MUAJ",
-        image: "person6.png",
       },
     },
   ],
@@ -79,10 +73,10 @@ export function Testimonials() {
         <ul className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
           {testimonials.map((column, columnIndex) => (
             <li key={columnIndex}>
-              <ul className="space-y-6 sm:space-y-8">
+              <ul className="space-y-6 sm:space-y-8 ">
                 {column.map((testimonial, testimonialIndex) => (
                   <li key={testimonialIndex}>
-                    <div class="relative group shadow-xl shadow-slate-900 select-none cursor-pointer">
+                    <div class="relative group shadow-xl  shadow-slate-900  select-none cursor-pointer">
                       <div class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
                       <div class="relative px-7 py-6 bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9  border-2 border-aquamarine">
                         <figure className="relative rounded-2xl  p-6 ">
@@ -96,14 +90,6 @@ export function Testimonials() {
                               <div className="font-display text-base text-white">
                                 {testimonial.author.name}
                               </div>
-                            </div>
-                            <div className="h-8 w-8 overflow-hidden rounded-full bg-slate-50">
-                              <img
-                                src={testimonial.author.image}
-                                alt="image"
-                                height={32}
-                                width={32}
-                              />
                             </div>
                           </figcaption>
                         </figure>
