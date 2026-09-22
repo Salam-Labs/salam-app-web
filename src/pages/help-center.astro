@@ -54,7 +54,11 @@ import { data as blogData } from "../../public/searchData.json";
   </style>
 
   <script is:inline>
+    /* global blogData */
+    /* exported handleInput, handleSearch */
+
     // This function now handles both search suggestions and displaying full results.
+    // eslint-disable-next-line no-unused-vars
     function handleInput() {
       const input = document.querySelector("input");
       const inputValue = input.value.toLowerCase();
@@ -131,6 +135,7 @@ import { data as blogData } from "../../public/searchData.json";
     }
 
     // Function to handle Enter key press for search
+    // eslint-disable-next-line no-unused-vars
     function handleSearch(event) {
       if (event.key === "Enter") {
         const input = document.querySelector("input");
