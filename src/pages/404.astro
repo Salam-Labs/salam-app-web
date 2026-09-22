@@ -3,16 +3,14 @@ import Layout from "@layouts/Layout.astro";
 ---
 
 <Layout title="Salam App">
-  <div class="relative">
-    <p class="text-3xl font-semibold text-white text-center pt-16 sm:text-4xl">
-      Hey friend, looks like you are lost
-    </p>
-    <div class="text-center pt-10">
-      <a href="/" class="text-aquamarine underline font-medium text-2xl"
-        >return to home page</a
-      >
+  <main class="page-shell flex min-h-[60vh] items-center justify-center py-24 text-center">
+    <div class="motion-rise max-w-xl">
+      <p class="text-sm font-medium uppercase tracking-[0.18em] text-[var(--accent)]">404</p>
+      <h1 class="mt-4 text-4xl font-semibold tracking-tight text-white sm:text-6xl">This page wandered off.</h1>
+      <p class="mt-5 text-lg leading-8 text-[var(--muted)]">The link may be old, or the page may have moved.</p>
+      <a href="/" class="mt-8 inline-flex rounded-md bg-aquamarine px-5 py-3 font-semibold text-black hover:bg-aquamarine-300">Return home</a>
     </div>
-  </div>
+  </main>
 </Layout>
 
 <style>

@@ -1,16 +1,16 @@
-import { createSignal, Show } from "solid-js";
+import { createSignal } from "solid-js";
 
-export const NavBar = (props) => {
+export const NavBar = () => {
   const [show, setShow] = createSignal(false);
   return (
-    <nav class="bg-smoke-400 z-[100] relative">
-      <div class="2xl:max-w-[90%] mx-auto px-2  lg:px-8">
+    <nav class="relative z-[100] border-b border-[var(--line)] bg-[var(--page)]">
+      <div class="mx-auto max-w-7xl px-4 lg:px-8">
         <div class="flex items-center justify-between h-16">
           <div class="flex items-center">
             <div class="flex-shrink-0">
               <a href="/" aria-label="Link to homepage">
                 <img
-                  class="h-[45px] w-[45] mr-3"
+                  class="mr-3 h-10 w-10"
                   src="/icon.svg"
                   width="45"
                   height="45"
@@ -22,14 +22,12 @@ export const NavBar = (props) => {
           <div class=" flex items-center sm:hidden">
             <button
               type="button"
-              class="inline-flex items-center px-6 py-2 border border-transparent shadow-sm text-base font-bold rounded-md text-black bg-aquamarine hover:bg-aquamarine-400 "
+              class="inline-flex items-center rounded-md border border-[var(--line)] px-3 py-2 text-sm font-semibold text-white hover:border-[var(--accent)] hover:text-[var(--accent)]"
               // focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aquamarine-300
               aria-controls="mobile-menu"
-              aria-expanded="false"
-              aria-label="mobile-menu"
-              onClick={
-                "document.getElementById('mobile-menu').classList.toggle('hidden');"
-              }
+              aria-expanded={show()}
+              aria-label="Toggle navigation menu"
+              onClick={() => setShow(!show())}
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -53,47 +51,45 @@ export const NavBar = (props) => {
                 <a
                   href="https://salam-app.canny.io/"
                   target="_blank"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
+                  class="rounded-md px-2 py-2 text-xs font-medium uppercase tracking-wide text-[var(--muted)] hover:text-white lg:px-3"
                 >
-                  FEATURE REQUEST
+                  Feature request
                 </a>
                 <a
                   href="/gallery"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
+                  class="rounded-md px-2 py-2 text-xs font-medium uppercase tracking-wide text-[var(--muted)] hover:text-white lg:px-3"
                 >
-                  GALLERY
+                  Gallery
                 </a>
                 <a
                   href="/team"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
+                  class="rounded-md px-2 py-2 text-xs font-medium uppercase tracking-wide text-[var(--muted)] hover:text-white lg:px-3"
                 >
-                  TEAM
+                  Team
                 </a>
                 <a
                   href="/help-center"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
+                  class="rounded-md px-2 py-2 text-xs font-medium uppercase tracking-wide text-[var(--muted)] hover:text-white lg:px-3"
                 >
-                  HELP CENTER
+                  Help center
                 </a>
                 <a
                   href="/version-history"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
+                  class="rounded-md px-2 py-2 text-xs font-medium uppercase tracking-wide text-[var(--muted)] hover:text-white lg:px-3"
                 >
-                  VERSION HISTORY
+                  Version history
                 </a>
                 <a
                   href="/privacy-policy"
-                  class="text-swans-50 hover:bg-gray-700 hover:text-swans-500 px-2 lg:px-3 py-2 rounded-md text-sm font-bold"
+                  class="rounded-md px-2 py-2 text-xs font-medium uppercase tracking-wide text-[var(--muted)] hover:text-white lg:px-3"
                 >
-                  PRIVACY POLICY
+                  Privacy policy
                 </a>
 
-                <a class="px-3" href="/#download">
-                  {props.get_app_btn}
-                  <button
-                    type="button"
-                    class="inline-flex items-center px-6 py-2 border border-transparent shadow-sm text-base font-bold rounded-md text-black bg-aquamarine hover:bg-aquamarine-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-aquamarine-300"
-                  >
+                <a
+                  class="inline-flex items-center rounded-md border border-transparent bg-aquamarine px-5 py-2 text-sm font-semibold text-black hover:bg-aquamarine-300"
+                  href="/#app-download"
+                >
                     <p className="mx-1">Download</p>
                     <div className="flex">
                       <svg
@@ -130,7 +126,6 @@ export const NavBar = (props) => {
                         />
                       </svg>
                     </div>
-                  </button>
                 </a>
               </div>
             </div>
@@ -138,11 +133,11 @@ export const NavBar = (props) => {
         </div>
       </div>
 
-      <div class="hidden sm:hidden z-20 relative" id="mobile-menu">
-        <div class="px-2 pt-2 pb-3 space-y-1 absolute w-full bg-smoke-400">
+      <div class={show() ? "relative z-20 sm:hidden" : "relative z-20 hidden sm:hidden"} id="mobile-menu">
+        <div class="absolute w-full space-y-1 border-t border-[var(--line)] bg-[var(--page)] px-2 pb-3 pt-2">
           <a
             href="https://salam-app.canny.io/"
-            class="text-gray-300  hover:bg-gray-700 block px-3 py-2 rounded-md text-base font-medium"
+            class="block rounded-md px-3 py-2 text-base font-medium text-[var(--muted)] hover:bg-[var(--surface-raised)] hover:text-white"
             aria-current="page"
           >
             Feature Request
@@ -150,39 +145,39 @@ export const NavBar = (props) => {
 
           <a
             href="/gallery"
-            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            class="block rounded-md px-3 py-2 text-base font-medium text-[var(--muted)] hover:bg-[var(--surface-raised)] hover:text-white"
           >
             Gallery
           </a>
 
           <a
             href="/team"
-            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            class="block rounded-md px-3 py-2 text-base font-medium text-[var(--muted)] hover:bg-[var(--surface-raised)] hover:text-white"
           >
             Team
           </a>
           <a
             href="/help-center"
-            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            class="block rounded-md px-3 py-2 text-base font-medium text-[var(--muted)] hover:bg-[var(--surface-raised)] hover:text-white"
           >
             Help Center
           </a>
           <a
             href="/version-history"
-            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            class="block rounded-md px-3 py-2 text-base font-medium text-[var(--muted)] hover:bg-[var(--surface-raised)] hover:text-white"
           >
             Version History
           </a>
 
           <a
-            href="/#download"
-            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            href="/#app-download"
+            class="block rounded-md px-3 py-2 text-base font-medium text-[var(--muted)] hover:bg-[var(--surface-raised)] hover:text-white"
           >
             Download
           </a>
           <a
             href="/privacy-policy"
-            class="text-gray-300  hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
+            class="block rounded-md px-3 py-2 text-base font-medium text-[var(--muted)] hover:bg-[var(--surface-raised)] hover:text-white"
           >
             Privacy Policy
           </a>

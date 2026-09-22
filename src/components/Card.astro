@@ -2,23 +2,20 @@
 const { title, image, brief, link } = Astro.props;
 ---
 
-<div
-  class="max-w-[320px] border-2 border-aquamarine-500 rounded-lg shadow-sm shadow-aquamarine-500 hover:shadow-md hover:shadow-aquamarine-600 bg-gray-800 hover:bg-smoke-500 m-4 transform translate-y-0 hover:-translate-y-5 transition-all duration-300"
->
-  <a href={link}>
-    <div class="">
-      <img
-        class="rounded-t-lg h-[180px] w-[320px]"
-        src={image}
-        alt={title}
-        loading="lazy"
-      />
-    </div>
-    <div class="px-3 py-2 text-center">
-      <h5 class="mb-2 text-2xl font-bold tracking-tight text-white">
-        {title}
-      </h5>
-      <p class="mb-3 font-normal text-gray-400">{brief}</p>
+<article class="motion-rise surface group w-full overflow-hidden rounded-xl transition hover:-translate-y-1 hover:border-[var(--accent)]">
+  <a href={link} class="block h-full">
+    <img
+      class="h-48 w-full object-cover transition duration-500 group-hover:scale-[1.02]"
+      src={image}
+      alt={title}
+      loading="lazy"
+    />
+    <div class="p-5">
+      <h2 class="text-lg font-semibold tracking-tight text-white">{title}</h2>
+      <p class="mt-2 line-clamp-3 text-sm leading-6 text-[var(--muted)]">{brief}</p>
+      <span class="mt-4 inline-flex items-center text-sm font-semibold text-[var(--accent)]">
+        Read article <span class="ml-2 transition-transform group-hover:translate-x-1" aria-hidden="true">→</span>
+      </span>
     </div>
   </a>
-</div>
+</article>

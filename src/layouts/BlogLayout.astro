@@ -1,6 +1,7 @@
 ---
 // Import the NavBar component
 import { NavBar } from "../solid/Navbar.jsx";
+import Footer from "@components/Footer.astro";
 import "../styles/global.css";
 ---
 
@@ -46,19 +47,16 @@ import "../styles/global.css";
     />
     <meta name="keywords" content={Astro.props.words || "salam,app"} />
 
-    <style is:global>
-      @import "../styles/global.css";
-    </style>
   </head>
-  <body class="bg-smoke-400">
+  <body>
     <NavBar client:load />
 
-    <div class="w-full flex justify-center">
+    <main class="page-shell flex justify-center">
       <div
-        class="prose lg:prose-base sm:prose-xl xl:prose-2xl prose-blockquote:font-serif prose-a:text-lime-300 prose-a:underline align-middle prose-invert p-5 pt-16 sm:p-20"
+        class="prose prose-invert prose-base max-w-3xl px-4 py-16 prose-headings:tracking-tight prose-headings:text-white prose-h1:text-4xl prose-h1:font-semibold prose-h2:mt-16 prose-h2:text-2xl prose-h2:font-semibold prose-h2:text-white prose-h3:text-xl prose-a:text-[var(--accent)] prose-a:no-underline hover:prose-a:underline prose-blockquote:border-l-[var(--accent)] prose-blockquote:font-serif sm:px-8 sm:py-24"
       >
         <div
-          class="prose-img:rounded-2xl sm:prose-img:w-1/2 sm:prose-img:mx-auto prose-h1:text-aquamarine-500 prose-h2:text-aquamarine-300"
+          class="prose-img:rounded-2xl prose-img:border prose-img:border-[var(--line)] sm:prose-img:mx-auto sm:prose-img:w-1/2"
         >
           <div
             class="bg-aquamarine-600 rounded-r-full h-1 left-0 w-0 fixed top-0 z-50"
@@ -70,7 +68,8 @@ import "../styles/global.css";
           </>
         </div>
       </div>
-    </div>
+    </main>
+    <Footer />
   </body>
 
   <script>

@@ -14,29 +14,26 @@ import { data as blogData } from "../../public/searchData.json";
 >
   <style is:inline>
     .search-container {
-      background-color: #21252f !important;
-      border: 1px solid #66fcf1;
-      border-radius: 10px;
-      margin: 10px;
       position: relative;
     }
 
     .search-results {
       position: absolute;
-      left: auto;
-      right: auto;
       z-index: 10;
-      margin-top: 10px;
-      border: 2px solid #66fcf1;
-      border-radius: 8px;
-      background-color: #1e2939;
-      color: #ccc;
+      margin-top: 0.75rem;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 0.75rem;
+      background: var(--surface);
+      color: var(--muted);
+      box-shadow: 0 20px 40px rgb(0 0 0 / 20%);
     }
+
     .search-item {
-      padding: 8px;
+      padding: 0.5rem;
       cursor: pointer;
       display: block;
-      transition: background-color 0.3s ease;
+      transition: background-color 160ms ease;
     }
 
     .search-item a {
@@ -52,7 +49,7 @@ import { data as blogData } from "../../public/searchData.json";
     }
 
     .search-item:hover {
-      background-color: #101217 !important;
+      background-color: var(--surface-raised) !important;
     }
   </style>
 
@@ -77,7 +74,7 @@ import { data as blogData } from "../../public/searchData.json";
           ${blogData
             .map(
               (data) => `
-            <div class="m-2">
+            <div class="motion-rise">
               <Card title="${data.title}" image="${data.image}" brief="${data.brief}" link="${data.link}" />
             </div>
           `
@@ -154,7 +151,7 @@ import { data as blogData } from "../../public/searchData.json";
             ${blogData
               .map(
                 (data) => `
-              <div class="m-2">
+              <div class="motion-rise">
                 <Card title="${data.title}" image="${data.image}" brief="${data.brief}" link="${data.link}" />
               </div>
             `
@@ -194,24 +191,24 @@ import { data as blogData } from "../../public/searchData.json";
       }
     }
   </script>
-  <section id="section" class="text-white body-font mb-36 w-full">
-    <h1
-      class="text-5xl mt-16 sm:text-5xl font-bold text-center text-aquamarine-500"
-      id="texteffect"
-    >
-      Help Center
-    </h1>
-    <div class="flex justify-center items-center mt-16">
-      <div class="relative w-11/12 sm:w-8/12 lg:w-[610px]">
+  <main id="section" class="page-shell mb-36 text-white">
+    <header class="mx-auto max-w-3xl py-16 text-center sm:py-24">
+      <p class="text-sm font-medium uppercase tracking-[0.18em] text-[var(--accent)]">Support, without the search maze</p>
+      <h1 class="mt-4 text-5xl font-semibold tracking-[-0.05em] text-white sm:text-7xl" id="texteffect">Help center</h1>
+      <p class="mt-6 text-lg leading-8 text-[var(--muted)]">Find clear answers for Quran, prayer times, widgets, backups, and more.</p>
+    </header>
+    <div class="flex justify-center">
+      <div class="search-container relative w-full max-w-2xl">
         <input
-          placeholder="Search"
-          class="w-full p-1 px-2 focus:outline-none rounded-lg text-2xl text-gray-200 bg-grey-500 border-2 border-aquamarine-500"
+          aria-label="Search help center"
+          placeholder="Search articles"
+          class="w-full rounded-xl border border-[var(--line)] bg-[var(--surface)] px-5 py-4 pr-14 text-base text-white placeholder:text-[var(--muted)] focus:border-[var(--accent)] focus:outline-none"
           type="text"
           oninput="handleInput()"
           onkeydown="handleSearch(event)"
         />
         <CiSearch
-          class="absolute right-0 bottom-0 mr-0 text-[35px] rounded-r-lg bg-aquamarine-500 text-black"
+          class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-2xl text-[var(--accent)]"
         />
       </div>
     </div>
@@ -222,21 +219,17 @@ import { data as blogData } from "../../public/searchData.json";
       >
       </div>
     </div>
-    <h2 class="text-2xl text-center font-bold mt-16">
-      Facing an Issue? We've Got You Covered!
-    </h2>
-    <p class="mt-8 text-center text-lg w-full px-2 sm:px-12 lg:px-56">
-      Explore our support resources for app modules and settings. If you're new
-      to Salam App, find helpful tips in our articles. For direct assistance,
-      join our Discord support server.
+    <h2 class="mt-20 text-center text-2xl font-semibold tracking-tight sm:text-3xl">Facing an issue? Start here.</h2>
+    <p class="mx-auto mt-5 max-w-2xl text-center text-base leading-7 text-[var(--muted)]">
+      Explore support resources for app modules and settings. For direct assistance, join our Discord support server.
     </p>
     <div
       id="no-results-text"
-      class="hidden mt-16 text-center text-lg text-gray-400"
+      class="hidden mt-12 text-center text-base text-[var(--muted)]"
     >
       No results found. Please try a different search query.
     </div>
-    <div id="cards" class="flex flex-wrap justify-center my-16">
+    <div id="cards" class="my-14 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         blogData.map((data) => (
           <Card
@@ -249,17 +242,17 @@ import { data as blogData } from "../../public/searchData.json";
       }
     </div>
 
-    <div class="fixed bottom-0 right-0 m-4 z-50">
+    <div class="fixed bottom-4 right-4 z-50">
       <a
         href="https://discord.com/invite/bKqvBtD"
         target="_blank"
-        class="flex items-center p-2 border-4 border-aquamarine-500 text-lg rounded-full text-aquamarine-500 hover:shadow bg-gray-800 hover:bg-smoke-500 m-4 transform duration-300"
+        class="surface flex items-center rounded-full px-4 py-3 text-sm font-semibold text-[var(--accent)] shadow-xl shadow-black/20 hover:-translate-y-1 hover:border-[var(--accent)]"
       >
         <CiDiscord class="text-xl m-1" />
         <p>Get Support</p>
       </a>
     </div>
-  </section>
+  </main>
 </Layout>
 
 <script is:inline>

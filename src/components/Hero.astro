@@ -2,83 +2,52 @@
 import { Modal } from "../solid/Modal.jsx";
 ---
 
-<div class="pb-8 sm:pb-12 lg:pb-12 flex justify-center">
-  <div class="pt-8 overflow-hidden sm:pt-12 lg:relative lg:py-48 lg:w-[1500px]">
-    <div class="sm:mx-16 sm:w-fit sm:px-4 sm:max-w-3xl lg:px-8 lg:max-w-7xl">
-      <!-- <div class="2xl:ml-72"> -->
-      <div>
-        <div class="flex flex-col">
-          <div class="flex justify-center sm:justify-start">
-            <a
-              href="/release/2.0.0"
-              class="rounded-full z-20 m-3 bg-aquamarine-500 px-4 py-1 text-xs font-medium text-gray-900 border border-transparent hover:bg-gray-800 hover:text-aquamarine hover:border-aquamarine"
-            >
-              ✨ Salam App 2.0 is here! →
-            </a>
-          </div>
-
-          <h1
-            class="text-6xl font-extrabold text-white tracking-tight text-center sm:text-left sm:text-8xl"
-          >
-            AD-FREE.
-          </h1>
-          <h1
-            class="text-5xl font-extrabold text-white tracking-tight text-center sm:text-left lg:ml-12 sm:text-8xl"
-          >
-            PRIVACY.
-          </h1>
-          <h1
-            class="text-4xl font-extrabold text-white tracking-tight text-center sm:text-left lg:ml-24 sm:text-7xl"
-          >
-            FOREVER FREE.
-          </h1>
-        </div>
-        <div
-          class="flex justify-end flex-col items-center sm:items-start lg:items-end"
-        >
-          <p
-            class="mt-2 text-2xl sm:text-4xl text-white content-end font-bold mb-5"
-          >
-            NO COMPROMISES.
-          </p>
-
-          <Modal client:idle />
-        </div>
-      </div>
-    </div>
-    <!-- -->
-
-    <div class="sm:mx-auto sm:max-w-3xl sm:px-6">
-      <div
-        class="py-12 sm:relative sm:py-16 lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2"
+<section class="border-b border-[var(--line)]">
+  <div
+    class="mx-auto grid max-w-6xl items-center gap-16 px-6 py-16 sm:px-8 sm:py-24 lg:grid-cols-[1.05fr_0.95fr] lg:px-10 lg:py-28"
+  >
+    <div class="motion-rise max-w-2xl">
+      <a
+        href="/release/2.0.0"
+        class="mb-8 inline-flex items-center rounded-full border border-[var(--line)] px-3 py-1.5 text-sm font-medium text-[var(--accent)] hover:border-[var(--accent)]"
       >
-        <div class="hidden sm:block">
-          <!-- <div> -->
-          <div
-            class="absolute inset-y-0 left-1/2 w-screen rounded-l-3xl lg:left-80 lg:right-0 lg:w-full"
-          >
-          </div>
-        </div>
+        <span aria-hidden="true">✦</span>
+        <span class="ml-2">Salam App 2.0 is here</span>
+        <span class="ml-2" aria-hidden="true">→</span>
+      </a>
 
-        <div class="flex justify-center relative">
-          <img
-            src="/theme5.png"
-            class="h-[645px] w-[341px] relative"
-            alt="photo of salam app"
-          />
-        </div>
+      <h1 class="text-5xl font-semibold leading-[0.95] tracking-[-0.06em] text-white sm:text-7xl lg:text-8xl">
+        A calmer way to
+        <span class="text-[var(--accent)]">practice.</span>
+      </h1>
+      <div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
+        <Modal client:idle />
+      </div>
 
-        <!-- tab image here  -->
-        <!-- <div
-          class="hidden sm:block relative pl-4 -mr-40 sm:mx-auto sm:max-w-3xl sm:px-0 lg:max-w-none lg:h-full lg:pl-12"
-        >
-          <img
-            src="/image1.png"
-            class=" relative mr-auto ml-44"
-            alt="photo of salam app"
-          />
-        </div> -->
+      <dl class="mt-12 grid max-w-lg grid-cols-3 gap-5 border-t border-[var(--line)] pt-5">
+        <div>
+          <dt class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">Ads</dt>
+          <dd class="mt-1 text-lg font-semibold text-white">Never</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">Privacy</dt>
+          <dd class="mt-1 text-lg font-semibold text-white">By default</dd>
+        </div>
+        <div>
+          <dt class="text-xs font-medium uppercase tracking-[0.18em] text-[var(--muted)]">Price</dt>
+          <dd class="mt-1 text-lg font-semibold text-white">Free</dd>
+        </div>
+      </dl>
+    </div>
+
+    <div class="motion-rise flex justify-center lg:justify-end">
+      <div class="rounded-[2.5rem] border border-[var(--line)] bg-[var(--surface)] p-3 shadow-2xl shadow-black/20">
+        <img
+          src="/theme5.png"
+          class="h-[560px] w-[296px] rounded-[2rem] object-cover sm:h-[640px] sm:w-[338px]"
+          alt="Salam App prayer tracker screen"
+        />
       </div>
     </div>
   </div>
-</div>
+</section>

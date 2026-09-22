@@ -1,5 +1,4 @@
 ---
-import CiDate from "~icons/fontisto/date";
 import Layout from "@layouts/Layout.astro";
 
 const data = [
@@ -77,29 +76,33 @@ const data = [
   url="https://salam.app/version-history"
   words="salam,app,help,artciles,blog"
 >
-  <div class="pt-10">
+  <main class="page-shell pb-24">
+    <header class="mx-auto max-w-3xl py-16 text-center sm:py-24">
+      <p class="text-sm font-medium uppercase tracking-[0.18em] text-[var(--accent)]">What’s new</p>
+      <h1 class="mt-4 text-5xl font-semibold tracking-[-0.05em] text-white sm:text-7xl">Version history.</h1>
+      <p class="mt-6 text-lg leading-8 text-[var(--muted)]">A clear record of the work behind every release.</p>
+    </header>
     {
       data.map((item) => (
-        <div class="flex justify-center relative p-2 mt-8 sm:mt-0 sm:p-5">
+        <div class="motion-rise mb-5">
           <a
             href={`release/${item.version}`}
-            class="flex flex-col items-center rounded-lg shadow md:flex-row w-11/12 lg:w-2/3 border-gray-800 bg-gray-900 hover:bg-gray-700"
+            class="surface mx-auto flex w-full items-start justify-between gap-6 rounded-2xl p-6 hover:-translate-y-1 hover:border-[var(--accent)] sm:p-8"
           >
-            <div class="flex flex-col justify-between p-4 leading-normal">
-              <h1 class="mb-2 text-4xl font-bold tracking-tight text-white">
-                {item.heading}
-              </h1>
-              <div class="flex">
-                <p class="mb-3 font-normaln  text-gray-200">
-                  Date : {item.date}
-                </p>
-                <CiDate class="w-5 h-5 ml-2  fill-current text-grey-50" />
+            <div class="flex min-w-0 flex-1 flex-col justify-between leading-normal">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="rounded-full border border-[var(--line)] px-3 py-1 text-xs font-semibold uppercase tracking-[0.16em] text-[var(--accent)]">{item.version}</span>
+                <span class="text-sm text-[var(--muted)]">{item.date}</span>
               </div>
-              <p class="mb-3 font-normal text-lg text-gray-400">{item.brief}</p>
+              <h2 class="mb-3 mt-4 text-2xl font-semibold tracking-tight text-white sm:text-3xl">
+                {item.heading}
+              </h2>
+              <p class="text-base leading-7 text-[var(--muted)]">{item.brief}</p>
             </div>
+            <span class="hidden shrink-0 text-2xl text-[var(--accent)] sm:block" aria-hidden="true">→</span>
           </a>
         </div>
       ))
     }
-  </div>
+  </main>
 </Layout>

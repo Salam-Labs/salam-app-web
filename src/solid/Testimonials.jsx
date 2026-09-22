@@ -54,40 +54,35 @@ export function Testimonials() {
     <section
       id="testimonials"
       aria-labelledby="testimonials-title"
-      className="py-20 sm:py-32"
+      className="py-16 sm:py-24"
     >
       <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl md:text-center">
           <h2
             id="testimonials-semi-title"
-            className="font-display font-bold text-3xl tracking-tight text-white sm:text-4xl"
+            className="text-3xl font-semibold tracking-tight text-white sm:text-4xl"
           >
             Loved by Muslims Worldwide.
           </h2>
-          <p className="mt-4 text-white text-lg tracking-tight text-slate-700">
-            Our app is simple and focused on the features you need and free of
-            distracting ads so you can concentrate on your spirituality.
-          </p>
         </div>
 
-        <ul className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
+        <ul className="mx-auto mt-16 grid max-w-2xl grid-cols-1 items-stretch gap-6 sm:gap-8 lg:mt-20 lg:max-w-none lg:grid-cols-3">
           {testimonials.map((column, columnIndex) => (
-            <li key={columnIndex}>
-              <ul className="space-y-6 sm:space-y-8 ">
+            <li className="h-full" key={columnIndex}>
+              <ul className="grid h-full grid-rows-2 gap-6 sm:gap-8">
                 {column.map((testimonial, testimonialIndex) => (
-                  <li key={testimonialIndex}>
-                    <div class="relative group shadow-xl  shadow-slate-900  select-none cursor-pointer">
-                      <div class="absolute -inset-1 bg-gradient-to-r from-aquamarine-600 to-indigo-500 rounded-lg blur opacity-25 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
-                      <div class="relative px-7 py-6 bg-smoke-400 ring-1 ring-gray-900/5 rounded-lg leading-none flex items-top justify-start space-x-9  border-2 border-aquamarine">
-                        <figure className="relative rounded-2xl  p-6 ">
-                          <blockquote className="relative">
-                            <p className="text-xl tracking-tight  text-white">
+                  <li className="h-full" key={testimonialIndex}>
+                    <div class="motion-rise surface flex h-full min-h-[18rem] select-none flex-col rounded-xl border-l-4 border-l-[var(--accent)]">
+                      <div class="flex h-full flex-col px-6 py-6">
+                        <figure className="flex h-full flex-col">
+                          <blockquote className="relative grow">
+                            <p className="text-lg leading-8 tracking-tight text-white">
                               {testimonial.content}
                             </p>
                           </blockquote>
-                          <figcaption className="relative mt-6 flex flex-row-reverse  items-center justify-between border-t border-slate-100 pt-6">
+                          <figcaption className="relative mt-6 flex items-center justify-between border-t border-[var(--line)] pt-4">
                             <div>
-                              <div className="font-display text-base text-white">
+                              <div className="text-sm font-semibold text-[var(--muted)]">
                                 {testimonial.author.name}
                               </div>
                             </div>

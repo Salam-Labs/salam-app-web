@@ -386,72 +386,73 @@ const developers = [
   url="https://salam.app/team"
   words="salam,app,team"
 >
-  <section class="text-white body-font sm:px-10 relative">
+  <main class="page-shell pb-24 text-white">
+    <header class="mx-auto max-w-3xl py-16 text-center sm:py-24">
+      <p class="text-sm font-medium uppercase tracking-[0.18em] text-[var(--accent)]">The people behind Salam</p>
+      <h1 class="mt-4 text-5xl font-semibold tracking-[-0.05em] text-white sm:text-7xl">Meet the team.</h1>
+      <p class="mt-6 text-lg leading-8 text-[var(--muted)]">A small, distributed group building thoughtful tools for the Ummah.</p>
+    </header>
+
     <div class="flex justify-center">
       <div
-        class="my-4 flex flex-wrap justify-center space-x-6 p-2 w-4/6 sm:w-full"
+        class="surface flex flex-wrap justify-center gap-1 rounded-full p-1"
       >
         <button
           id="All"
-          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          class="rounded-full px-4 py-2 text-sm font-semibold text-[var(--muted)] hover:text-white"
           onclick="showDevelopers('All')"
           >ALL
         </button>
-        <div>/</div>
         <button
           id="App"
-          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          class="rounded-full px-4 py-2 text-sm font-semibold text-[var(--muted)] hover:text-white"
           onclick="showDevelopers('App')"
           >APP
         </button>
-        <div>/</div>
         <button
           id="Web"
-          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          class="rounded-full px-4 py-2 text-sm font-semibold text-[var(--muted)] hover:text-white"
           onclick="showDevelopers('Web')"
           >WEB
         </button>
-        <div>/</div>
         <button
           id="GFX"
-          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          class="rounded-full px-4 py-2 text-sm font-semibold text-[var(--muted)] hover:text-white"
           onclick="showDevelopers('GFX')"
           >GFX
         </button>
-        <div>/</div>
         <button
           id="Writer"
-          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          class="rounded-full px-4 py-2 text-sm font-semibold text-[var(--muted)] hover:text-white"
           onclick="showDevelopers('Writer')"
           >TEXT
         </button>
-        <div>/</div>
         <button
           id="Quality"
-          class="p-1 hover:text-aquamarine font-semibold underline-offset-4"
+          class="rounded-full px-4 py-2 text-sm font-semibold text-[var(--muted)] hover:text-white"
           onclick="showDevelopers('Quality')"
           >QA
         </button>
       </div>
     </div>
 
-    <div class="flex flex-wrap justify-center m-4 p-5">
+    <div class="mt-12 grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
         developers.map((developer) => (
           <div
             position={developer.position}
             id="developer-card"
-            class="p-4 lg:w-1/4 md:w-1/2"
+            class="motion-rise"
             aria-label={developer.name}
           >
-            <div class="h-full flex flex-col items-center text-center">
+            <div class="surface flex h-full flex-col items-center rounded-2xl p-6 text-center">
               <img
                 src={developer.image}
-                class="mx-auto h-40 w-40 rounded-full xl:w-56 xl:h-56"
+                class="mx-auto h-32 w-32 rounded-full border border-[var(--line)] object-cover xl:h-36 xl:w-36"
                 alt={`${developer.name}'s profile picture`}
               />
-              <div class="w-full mt-10">
-                <h2 class="title-font font-medium text-lg text-white">
+              <div class="mt-6 w-full">
+                <h2 class="text-lg font-semibold text-white">
                   {developer.name}
                 </h2>
 
@@ -472,13 +473,13 @@ const developers = [
                   ))}
                 </div>
 
-                <h3 class="text-gray-400 mb-3">{developer.position}</h3>
-                <p class="mb-4">{developer.bio}</p>
+                <h3 class="mb-3 text-sm text-[var(--muted)]">{developer.position}</h3>
+                <p class="mb-4 text-sm leading-6 text-[var(--muted)]">{developer.bio}</p>
                 <span class="inline-flex">
                   {developer.links.map((link) => (
                     <a
                       key={Object.values(link)[0]}
-                      class="text-white p-3"
+                      class="rounded-full p-3 text-[var(--muted)] hover:bg-[var(--surface-raised)] hover:text-[var(--accent)]"
                       target="_blank"
                       href={Object.values(link)[0]}
                       aria-label={`Link to ${Object.keys(link)[0]}`}
@@ -501,7 +502,7 @@ const developers = [
         ))
       }
     </div>
-  </section>
+  </main>
 
   <style>
     html {
@@ -515,13 +516,11 @@ const developers = [
 
     function underline(position) {
       array.forEach((element) => {
-        const selectedElement = document.getElementById(element);
-        selectedElement.classList.remove("underline");
-        selectedElement.classList.remove("text-aquamarine");
+      const selectedElement = document.getElementById(element);
+        selectedElement.classList.remove("bg-aquamarine", "text-black");
       });
       const selectedElement = document.getElementById(position);
-      selectedElement.classList.add("underline");
-      selectedElement.classList.add("text-aquamarine");
+      selectedElement.classList.add("bg-aquamarine", "text-black");
     }
 
     function showDevelopers(position) {

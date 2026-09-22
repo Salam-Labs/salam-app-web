@@ -19,7 +19,7 @@ export const Modal = () => {
     <div>
       <button
         type="submit"
-        class=" relative w-52 rounded-md flex justify-center   border border-transparent px-5 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
+        class="relative flex w-52 justify-center rounded-md border border-transparent bg-aquamarine px-5 py-3 text-base font-semibold text-black hover:bg-aquamarine-300"
         ref={btnEl}
       >
         <svg
@@ -41,8 +41,8 @@ export const Modal = () => {
       </button>
       {/* repeated here  and link was /r/download*/}
       <a
-        href="#download"
-        class="lg:hidden  relative mt-5 w-52 rounded-md flex justify-center items-center  border border-transparent pl-4 py-3 bg-aquamarine text-base font-bold text-black shadow hover:bg-aquamarine-300 focus:outline-none focus:ring-2 focus:ring-aquamarine-900 focus:ring-offset-2 "
+        href="#app-download"
+        class="relative mt-5 flex w-52 items-center justify-center rounded-md border border-[var(--line)] px-4 py-3 text-base font-semibold text-white hover:border-[var(--accent)] hover:text-[var(--accent)] lg:hidden"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -94,12 +94,12 @@ export const Modal = () => {
         focusElementOnOpen="menuPopup"
       >
         <div
-          class="modal-container fixed top-0 left-0 w-full h-full flex justify-center items-center z-50 bg-blend-normal bg-black backdrop-blur-3xl bg-gray-500/30"
+          class="modal-container fixed left-0 top-0 z-50 flex h-full w-full items-center justify-center bg-black/80 p-4"
           onClick={onClickOverlay}
           role="presentation"
         >
           <div
-            class="relative w-auto  bg-gray-500/30  items-end flex flex-col "
+            class="relative flex w-auto items-end flex-col overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--surface)]"
             role="dialog"
             aria-modal="true"
             tabindex="-1"
